@@ -171,13 +171,24 @@ p.lead {
 	font-size: 28px;
 	font-weight: 700;
 	text-transform: uppercase;
-	color: #ff6c63;
+	background: linear-gradient(199.84deg, #ffb147, #ff6c63, #b86adf);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-align: center;
 }
 
 .about-title {
 	font-size: 20px;
 	font-weight: 400;
+	font-style: italic;
 	color: #333;
+	margin: 0;
+	padding: 0;
+	font-family: "IBM Plex Sans", sans-serif;
+}
+
+.about-title .bold {
+	font-weight: 700; /* Bold weight for emphasis */
 }
 
 .btn-download {
