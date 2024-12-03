@@ -1,168 +1,261 @@
 /* styles.css */
 body {
-  margin: 0;
-  font-family: "IBM Plex Sans", sans-serif;
+	margin: 0;
+	font-family: "IBM Plex Sans", sans-serif;
 }
 
 #main {
-  height: 100vh;
-  color: #333;
-  display: flex;
-  align-items: center;
+	height: 100vh;
+	color: #333;
+	display: flex;
+	align-items: center;
 }
 #navbarNav {
-  padding-right: 100px;
+	padding-right: 100px;
 }
 
 a.navbar-brand .logo {
-  width: 160px;
-  margin-left: -20px;
+	width: 160px;
+	margin-left: -20px;
 }
 
 /* Navbar link hover effect */
 .nav-link {
-  position: relative;
-  color: #fff;
-  text-decoration: none;
-  font-family: "IBM Plex Sans", sans-serif;
-  text-transform: uppercase;
-  font-size: 14px;
+	position: relative;
+	color: #fff;
+	text-decoration: none;
+	font-family: "IBM Plex Sans", sans-serif;
+	text-transform: uppercase;
+	font-size: 14px;
 }
 
 .nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -2px; /* Position the line below the text */
-  left: 0;
-  width: 0;
-  height: 4px; /* Thickness of the line */
-  background: linear-gradient(to right, #ffb147, #ff6c63 52%, #b86adf);
+	content: "";
+	position: absolute;
+	bottom: -2px; /* Position the line below the text */
+	left: 0;
+	width: 0;
+	height: 4px; /* Thickness of the line */
+	background: linear-gradient(to right, #ffb147, #ff6c63 52%, #b86adf);
 }
 
 .nav-link:hover::after {
-  width: 100%; /* Full width on hover */
+	width: 100%; /* Full width on hover */
 }
 
 /* Center the menu items */
 .navbar-nav {
-  justify-content: center;
+	justify-content: center;
 }
 
 /* Adjust LinkedIn icon size and placement */
 .icon-linkedin {
-  width: 60px;
-  height: auto;
-  margin-right: -100px;
+	width: 60px;
+	height: auto;
+	margin-right: -100px;
 }
 
 h1 {
-  color: #141313;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 68px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 60px;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 0;
+	color: #141313;
+	font-family: "IBM Plex Sans", sans-serif;
+	font-size: 68px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 60px;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0;
 }
 
 h1 .no-bold {
-  font-weight: 400;
+	font-weight: 400;
 }
 
 /* Styling for the paragraph */
 p.lead {
-  color: #141313;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 32px;
-  letter-spacing: -0.96px;
-  margin: 0;
-  padding: 0;
+	color: #141313;
+	font-family: "IBM Plex Sans", sans-serif;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 32px;
+	letter-spacing: -0.96px;
+	margin: 0;
+	padding: 0;
 }
 
 /* Styling for the Instagram icon */
 .icon-instagram {
-  width: 60px;
-  height: auto;
-  margin-left: -1px;
-  margin-top: 8px;
-  vertical-align: middle;
+	width: 60px;
+	height: auto;
+	margin-left: -1px;
+	margin-top: 8px;
+	vertical-align: middle;
 }
 
 .lead {
-  display: inline-flex;
-  align-items: center;
+	display: inline-flex;
+	align-items: center;
 }
 
 #main .highlight {
-  color: #141313;
+	color: #141313;
 }
 
 #main .btn-dark {
-  background-color: #333;
-  border: none;
-  font-size: 1rem;
-  padding: 0.8rem 1.5rem;
-  display: inline-flex;
-  align-items: center;
+	background-color: #333;
+	border: none;
+	font-size: 1rem;
+	padding: 0.8rem 1.5rem;
+	display: inline-flex;
+	align-items: center;
 }
 
 #main .btn-dark img {
-  width: 20px;
-  margin-left: 10px;
+	width: 20px;
+	margin-left: 10px;
 }
 
 .row {
-  gap: 0;
+	gap: 0;
 }
 
 .container {
-  padding-left: 100px;
+	padding-left: 100px;
 }
 
 /** Moved first column down  **/
 .col-md-6:first-child {
-  margin-top: 40px;
+	margin-top: 40px;
 }
 
 .main-image {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
+	width: 100%;
+	max-width: 400px;
+	height: auto;
 }
 
 .vector-image {
-  position: absolute;
-  z-index: -1;
-  top: -10%;
-  left: -10%;
-  width: 100%;
-  max-width: 200px;
-  opacity: 0.8;
+	position: absolute;
+	z-index: -1;
+	top: -10%;
+	left: -10%;
+	width: 100%;
+	max-width: 200px;
+	opacity: 0.8;
 }
 
 .contact-icons img {
-  width: 25px; /* Resize icons */
-  margin-right: 10px;
+	width: 25px; /* Resize icons */
+	margin-right: 10px;
 }
 
 .contact-icons span {
-  margin-right: 20px;
-  color: #555;
+	margin-right: 20px;
+	color: #555;
 }
 
+/*************************** About Me Section *******************************************/
+.about-section {
+	padding: 4rem 0;
+	background-color: #f9f9f9; /* Light background */
+}
+
+.about-image {
+	width: 100%;
+	max-width: 400px; /* Limit size of the collage */
+	margin-bottom: 20px;
+}
+
+.about-name {
+	font-size: 28px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #ff6c63;
+}
+
+.about-title {
+	font-size: 20px;
+	font-weight: 400;
+	color: #333;
+}
+
+.btn-download {
+	font-size: 16px;
+	font-weight: 500;
+	display: inline-flex;
+	align-items: center;
+	text-transform: uppercase;
+	background-color: #333;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin-top: 20px;
+	text-decoration: none;
+}
+
+.btn-download img {
+	width: 16px;
+	margin-left: 10px;
+}
+
+.contact-info {
+	list-style: none;
+	padding: 0;
+	margin: 20px 0;
+}
+
+.contact-info li {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.contact-info img {
+	width: 24px;
+	height: auto;
+	margin-right: 10px;
+}
+
+.about-details h3 {
+	font-size: 20px;
+	font-weight: 700;
+	color: #141313;
+	margin-top: 20px;
+}
+
+.about-details p {
+	font-size: 16px;
+	font-weight: 400;
+	color: #555;
+}
+
+.quote-box {
+	margin-top: 20px;
+	background-color: #141313;
+	color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	font-size: 18px;
+	font-style: italic;
+	line-height: 1.5;
+}
+
+.quote-box img {
+	width: 24px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+/*****************************************************************************************/
 @media (max-width: 768px) {
-  #main h1 {
-    font-size: 2rem; /* Adjust text size for smaller screens */
-  }
-  .main-image {
-    max-width: 200px; /* Further limit image size on small screens */
-  }
-  .vector-image {
-    max-width: 100px; /* Further reduce vector size on small screens */
-  }
+	#main h1 {
+		font-size: 2rem; /* Adjust text size for smaller screens */
+	}
+	.main-image {
+		max-width: 200px; /* Further limit image size on small screens */
+	}
+	.vector-image {
+		max-width: 100px; /* Further reduce vector size on small screens */
+	}
 }
