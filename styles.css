@@ -293,6 +293,53 @@ p.lead {
 	border-radius: 5px;
 }
 
+/************************* Projects Section ******************/
+.projects-section {
+	padding: 4rem 0;
+}
+
+.project-item {
+	margin-bottom: 2rem;
+}
+
+.project-info {
+	margin-bottom: 1rem;
+}
+
+.project-title {
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.project-link img {
+	width: 20px;
+}
+
+.project-image {
+	width: 100%;
+	border-radius: 10px;
+	transition: transform 0.3s ease;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-image:hover {
+	transform: scale(1.05);
+}
+
+/*****************************************************************************************/
+/* Mobile-Friendly Adjustments PROJECT */
+@media (max-width: 768px) {
+	.projects-section {
+		padding: 2rem 0;
+	}
+	.project-info {
+		text-align: center;
+	}
+	.project-image {
+		margin-top: 20px;
+	}
+}
+
 /*****************************************************************************************/
 @media (max-width: 768px) {
 	#main h1 {
