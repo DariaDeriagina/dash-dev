@@ -340,6 +340,95 @@ p.lead {
 	}
 }
 
+/***************CONTACT ME *********************/
+.contact-section {
+	padding: 4rem 0;
+	background-color: #f9f9f9;
+}
+
+.contact-subtitle {
+	font-size: 16px;
+	color: #888;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.contact-title {
+	font-size: 36px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.contact-location {
+	font-size: 18px;
+	color: #555;
+}
+
+.contact-details {
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+.contact-email {
+	text-decoration: none;
+	color: #333;
+}
+
+.contact-email:hover {
+	text-decoration: underline;
+}
+
+.social-links a {
+	color: #333;
+	text-decoration: none;
+}
+
+.social-links a:hover {
+	color: #ff6c63;
+}
+
+.contact-form h2 {
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.contact-form .form-control {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.contact-form button {
+	background-color: #333;
+	border: none;
+	color: #fff;
+	padding: 10px 20px;
+	font-size: 16px;
+	border-radius: 5px;
+	display: inline-flex;
+	align-items: center;
+}
+
+.contact-form button img {
+	width: 16px;
+	margin-left: 10px;
+}
+
+.contact-quote {
+	font-size: 18px;
+	font-weight: 700;
+	color: #333;
+	display: inline-block;
+	text-align: center;
+}
+
+.contact-quote img {
+	width: 240px;
+	margin-bottom: 20px;
+}
+
 /*****************************************************************************************/
 @media (max-width: 768px) {
 	#main h1 {
