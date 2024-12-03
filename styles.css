@@ -1,0 +1,168 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+#main {
+  height: 100vh;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+#navbarNav {
+  padding-right: 100px;
+}
+
+a.navbar-brand .logo {
+  width: 160px;
+  margin-left: -20px;
+}
+
+/* Navbar link hover effect */
+.nav-link {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Position the line below the text */
+  left: 0;
+  width: 0;
+  height: 4px; /* Thickness of the line */
+  background: linear-gradient(to right, #ffb147, #ff6c63 52%, #b86adf);
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Full width on hover */
+}
+
+/* Center the menu items */
+.navbar-nav {
+  justify-content: center;
+}
+
+/* Adjust LinkedIn icon size and placement */
+.icon-linkedin {
+  width: 60px;
+  height: auto;
+  margin-right: -100px;
+}
+
+h1 {
+  color: #141313;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 68px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+h1 .no-bold {
+  font-weight: 400;
+}
+
+/* Styling for the paragraph */
+p.lead {
+  color: #141313;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: -0.96px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling for the Instagram icon */
+.icon-instagram {
+  width: 60px;
+  height: auto;
+  margin-left: -1px;
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+.lead {
+  display: inline-flex;
+  align-items: center;
+}
+
+#main .highlight {
+  color: #141313;
+}
+
+#main .btn-dark {
+  background-color: #333;
+  border: none;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+#main .btn-dark img {
+  width: 20px;
+  margin-left: 10px;
+}
+
+.row {
+  gap: 0;
+}
+
+.container {
+  padding-left: 100px;
+}
+
+/** Moved first column down  **/
+.col-md-6:first-child {
+  margin-top: 40px;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.vector-image {
+  position: absolute;
+  z-index: -1;
+  top: -10%;
+  left: -10%;
+  width: 100%;
+  max-width: 200px;
+  opacity: 0.8;
+}
+
+.contact-icons img {
+  width: 25px; /* Resize icons */
+  margin-right: 10px;
+}
+
+.contact-icons span {
+  margin-right: 20px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  #main h1 {
+    font-size: 2rem; /* Adjust text size for smaller screens */
+  }
+  .main-image {
+    max-width: 200px; /* Further limit image size on small screens */
+  }
+  .vector-image {
+    max-width: 100px; /* Further reduce vector size on small screens */
+  }
+}
