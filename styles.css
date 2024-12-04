@@ -157,7 +157,7 @@ p.lead {
 
 /*************************** About Me Section *******************************************/
 .about-section {
-	padding: 4rem 0;
+	padding: 8rem 0;
 	background-color: #f9f9f9; /* Light background */
 }
 
@@ -469,13 +469,13 @@ p.lead {
 
 /*****************************************************************************************/
 /* Mobile-Friendly Adjustments PROJECT */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
 	/***Navigation bar****/
 
-	#main h1 {
-		margin-top: 15px;
-		font-size: 2rem;
+	/* #main h1 {
+		font-size: 1.5rem;
 	}
+
 	.main-image {
 		max-width: 200px;
 		display: block;
@@ -483,6 +483,7 @@ p.lead {
 		margin-right: auto;
 		width: 50%;
 	}
+
 	.vector-image {
 		margin-top: 15px;
 		max-width: 100px;
@@ -496,5 +497,5 @@ p.lead {
 	}
 	.project-image {
 		margin-top: 20px;
-	}
+	} */
 }
