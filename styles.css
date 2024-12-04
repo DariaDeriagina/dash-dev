@@ -114,6 +114,7 @@ p.lead {
 #main .btn-dark img {
 	width: 20px;
 	margin-left: 10px;
+	display: block;
 }
 
 .row {
@@ -226,6 +227,26 @@ p.lead {
 	width: 24px;
 	height: auto;
 	margin-right: 10px;
+}
+
+.gradient-text {
+	background: linear-gradient(
+		270deg,
+		#ffb147 5.74%,
+		#ff6c63 50.64%,
+		#b86adf 92.05%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-align: center;
+	font-family: "IBM Plex Sans", sans-serif;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 48px;
+	letter-spacing: -2.4px;
+	text-transform: uppercase;
 }
 
 .about-details h3 {
@@ -469,33 +490,17 @@ p.lead {
 
 /*****************************************************************************************/
 /* Mobile-Friendly Adjustments PROJECT */
+/* Smartphones (Portrait) */
 @media (max-width: 480px) {
-	/***Navigation bar****/
-
-	/* #main h1 {
-		font-size: 1.5rem;
-	}
-
-	.main-image {
-		max-width: 200px;
+	.contact-icons .mt-4 a {
 		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		width: 50%;
+		margin-bottom: 10px;
 	}
+}
+/* Phablets and small tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+}
 
-	.vector-image {
-		margin-top: 15px;
-		max-width: 100px;
-	}
-
-	.projects-section {
-		padding: 2rem 0;
-	}
-	.project-info {
-		text-align: center;
-	}
-	.project-image {
-		margin-top: 20px;
-	} */
+/* Tablets (Portrait and Landscape) */
+@media (min-width: 769px) and (max-width: 1024px) {
 }
