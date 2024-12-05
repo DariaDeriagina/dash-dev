@@ -15,7 +15,7 @@ body {
 
 a.navbar-brand .logo {
 	width: 160px;
-	margin-left: -100px;
+	/* margin-left: -100px; */
 }
 
 /* Navbar link hover effect */
@@ -23,7 +23,6 @@ a.navbar-brand .logo {
 	position: relative;
 	color: #fff;
 	text-decoration: none;
-	font-family: "IBM Plex Sans", sans-serif;
 	text-transform: uppercase;
 	font-size: 14px;
 }
@@ -51,13 +50,11 @@ a.navbar-brand .logo {
 .icon-linkedin {
 	width: 60px;
 	height: auto;
-	margin-right: -100px;
 }
 
 h1 {
 	color: #141313;
-	font-family: "IBM Plex Sans", sans-serif;
-	font-size: 68px;
+	font-size: 48px;
 	font-style: normal;
 	font-weight: 700;
 	line-height: 60px;
@@ -122,7 +119,7 @@ p.lead {
 }
 
 .container {
-	padding-left: 100px;
+	padding-left: 50px;
 }
 
 /** Moved first column down  **/
@@ -156,7 +153,7 @@ p.lead {
 	color: #555;
 }
 
-/*************************** About Me Section *******************************************/
+/*************************** MARK: About Me Section *******************************************/
 .about-section {
 	padding: 8rem 0;
 	background-color: #f9f9f9; /* Light background */
@@ -496,10 +493,6 @@ p.lead {
 /* Mobile-Friendly Adjustments PROJECT */
 /* Smartphones (Portrait) */
 @media (max-width: 480px) {
-	.contact-icons .mt-4 a {
-		display: block;
-		margin-bottom: 10px;
-	}
 }
 /* Phablets and small tablets */
 @media (min-width: 481px) and (max-width: 768px) {
