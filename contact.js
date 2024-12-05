@@ -1,35 +1,28 @@
 document
 	.getElementById("contact-form")
-	.addEventListener("submit", function (event) {
-		event.preventDefault(); // Prevent default form submission
+	.addEventListener("submit", async function (event) {
+		event.preventDefault(); // Prevent default
 
-		// Collect form data
-		const name = document.getElementById("name").value;
-		const email = document.getElementById("email").value;
-		const message = document.getElementById("message").value;
+		const form = event.target;
+		const formData = new FormData(form);
 
-		// Validate form data (optional)
-		if (!name || !email || !message) {
-			alert("Please fill out all fields.");
-			return;
-		}
-
-		// Send email using EmailJS
-		emailjs
-			.send("service_uyl05bh", "template_avjtt6u", {
-				to_name: "Dasha",
-				from_name: name,
-				from_email: email,
-				message: message,
-			})
-			.then(
-				function (response) {
-					alert("Thank you! Your message has been sent.");
-					document.getElementById("contact-form").reset(); // Reset form
+		try {
+			const response = await fetch(form.action, {
+				method: form.method,
+				body: formData,
+				headers: {
+					Accept: "application/json",
 				},
-				function (error) {
-					alert("Oops! Something went wrong. Please try again.");
-					console.error("EmailJS Error:", error);
-				}
-			);
+			});
+
+			if (response.ok) {
+				alert("Thank you! Your message has been sent.");
+				form.reset(); // Clear the form
+			} else {
+				alert("Oops! Something went wrong. Please try again.");
+			}
+		} catch (error) {
+			alert("There was a problem submitting your form. Please try again.");
+			console.error("Error:", error);
+		}
 	});
