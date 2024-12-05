@@ -488,13 +488,12 @@ p.lead {
 /* Mobile-Friendly Adjustments PROJECT */
 /* Smartphones (Portrait) */
 @media (max-width: 480px) {
+	#main {
+		height: 130vh;
+	}
 }
 /* Phablets and small tablets */
 @media (min-width: 481px) and (max-width: 768px) {
-	#main {
-		height: 180vh;
-		margin-bottom: -20px;
-	}
 }
 
 /* Tablets (Portrait and Landscape) */
