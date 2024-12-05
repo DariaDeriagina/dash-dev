@@ -443,6 +443,10 @@ p.lead {
 	border-top: 1px solid #ddd;
 }
 
+.footer-section a {
+	text-decoration: none;
+}
+
 .footer-logo {
 	width: 120px;
 }
@@ -453,7 +457,7 @@ p.lead {
 	margin: 0;
 	display: flex;
 	justify-content: center;
-	gap: 20px;
+	gap: 10px;
 }
 
 .footer-nav li {
