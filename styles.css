@@ -61,10 +61,17 @@ h1 {
 	text-transform: uppercase;
 	margin: 0;
 	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	line-height: 48px;
 }
 
 h1 .no-bold {
 	font-weight: 400;
+}
+
+h1 .highlight {
+	white-space: nowrap;
 }
 
 /* Styling for the paragraph */
@@ -106,16 +113,13 @@ p.lead {
 	padding: 0.8rem 1.5rem;
 	display: inline-flex;
 	align-items: center;
+	margin-bottom: 20px;
 }
 
 #main .btn-dark img {
 	width: 20px;
 	margin-left: 10px;
 	display: block;
-}
-
-.row {
-	gap: 0;
 }
 
 .container {
@@ -157,6 +161,10 @@ p.lead {
 .about-section {
 	padding: 8rem 0;
 	background-color: #f9f9f9; /* Light background */
+}
+
+.nice-to-meet-you {
+	text-align: left;
 }
 
 .about-image {
