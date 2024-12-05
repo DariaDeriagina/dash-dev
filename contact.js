@@ -34,7 +34,7 @@ document
 				alert("Thank you! Your message has been sent.");
 				form.reset(); // Clear the form
 			} else {
-				alert("Oops! Something went wrong. Please try again later.");
+				alert("Oops!!! Something went wrong. Please try again later.");
 				console.error("Formspree Error:", await response.json());
 			}
 		} catch (error) {
