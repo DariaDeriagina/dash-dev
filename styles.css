@@ -284,7 +284,7 @@ p.lead {
 	vertical-align: middle;
 }
 
-/******************** Video Section ********************/
+/******************** MARK: Video Section ********************/
 .video-section {
 	padding: 4rem 0;
 	background: linear-gradient(90deg, #ffdf8c, #ff6c63);
@@ -319,7 +319,7 @@ p.lead {
 	border-radius: 5px;
 }
 
-/************************* Projects Section ******************/
+/************************* MARK: Projects Section ******************/
 .projects-section {
 	padding: 4rem 0;
 }
@@ -352,7 +352,7 @@ p.lead {
 	transform: scale(1.05);
 }
 
-/***************CONTACT ME *********************/
+/***************  MARK: CONTACT ME *********************/
 .contact-section {
 	background: linear-gradient(90deg, #ffdf8c, #ff6c63);
 	padding: 4rem 0;
@@ -428,20 +428,13 @@ p.lead {
 	margin-left: 10px;
 }
 
-.contact-quote {
-	font-size: 18px;
-	font-weight: 700;
-	color: #333;
-	display: inline-block;
-	text-align: center;
-}
-
 .contact-quote img {
 	width: 240px;
-	margin-bottom: 20px;
+	margin-top: -140px;
+	margin-bottom: 0;
 }
 
-/**********FOOTER SECTION***************/
+/**********  MARK: FOOTER SECTION***************/
 .footer-section {
 	background-color: #f9f9f9;
 	padding: 2rem 0;
@@ -504,6 +497,9 @@ p.lead {
 }
 /* Phablets and small tablets */
 @media (min-width: 481px) and (max-width: 768px) {
+	#main {
+		height: 150vh;
+	}
 }
 
 /* Tablets (Portrait and Landscape) */
