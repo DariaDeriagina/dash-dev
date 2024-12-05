@@ -1,28 +1,22 @@
-// Initialize EmailJS
-(function () {
-	emailjs.init("fhWNTia2q7mX6J6cl"); // Replace with your EmailJS Public Key
-})();
-
-// Handle Form Submission
 document
 	.getElementById("contact-form")
 	.addEventListener("submit", function (event) {
 		event.preventDefault(); // Prevent default form submission
 
-		// Get form data
+		// Collect form data
 		const name = document.getElementById("name").value;
 		const email = document.getElementById("email").value;
 		const message = document.getElementById("message").value;
 
-		// Simple validation
+		// Validate form data (optional)
 		if (!name || !email || !message) {
 			alert("Please fill out all fields.");
 			return;
 		}
 
-		// EmailJS send function
+		// Send email using EmailJS
 		emailjs
-			.send("service_8zmvq2i", "template_tjlj9ef", {
+			.send("service_uyl05bh", "template_avjtt6u", {
 				to_name: "Dasha",
 				from_name: name,
 				from_email: email,
@@ -31,7 +25,7 @@ document
 			.then(
 				function (response) {
 					alert("Thank you! Your message has been sent.");
-					document.getElementById("contact-form").reset(); // Clear form
+					document.getElementById("contact-form").reset(); // Reset form
 				},
 				function (error) {
 					alert("Oops! Something went wrong. Please try again.");
