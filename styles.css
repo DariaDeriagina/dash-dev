@@ -492,7 +492,8 @@ p.lead {
 /* Phablets and small tablets */
 @media (min-width: 481px) and (max-width: 768px) {
 	#main {
-		height: 150vh;
+		height: 180vh;
+		margin-bottom: -20px;
 	}
 }
 
