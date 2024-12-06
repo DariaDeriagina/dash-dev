@@ -54,24 +54,27 @@ a.navbar-brand .logo {
 
 h1 {
 	color: #141313;
-	font-size: 38px;
+	font-size: 58px;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 60px;
 	text-transform: uppercase;
 	margin: 0;
 	padding: 0;
-	display: flex;
-	flex-wrap: wrap;
-	line-height: 48px;
+	display: block; /* Ensures block-level spacing */
+	line-height: 50px;
 }
 
 h1 .no-bold {
-	font-weight: 400;
+	font-weight: 400; /* Keeps "no-bold" style */
 }
 
 h1 .highlight {
-	white-space: nowrap;
+	white-space: nowrap; /* Prevents unintended wrapping */
+}
+
+h1 .new-line {
+	display: block; /* Forces "Deriagina" onto a new line */
+	margin-top: 10px; /* Optional: Adjust spacing between lines */
 }
 
 /* Styling for the paragraph */
@@ -81,7 +84,7 @@ p.lead {
 	font-style: normal;
 	font-weight: 400;
 	line-height: 32px;
-	letter-spacing: 1px;
+	letter-spacing: 0.5px;
 	margin: 0;
 	padding: 0;
 	line-height: 1.8;
