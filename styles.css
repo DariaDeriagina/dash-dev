@@ -136,9 +136,20 @@ p.lead {
 }
 
 .main-image {
-	width: 100%;
+	width: 200%;
 	max-width: 400px;
 	height: auto;
+}
+
+.skills-icons {
+	display: flex;
+	justify-content: right;
+	margin-top: 6px;
+}
+
+.icons-image {
+	width: 60%;
+	max-width: 400px;
 }
 
 .vector-image {
@@ -169,6 +180,8 @@ p.lead {
 
 .nice-to-meet-you {
 	text-align: left;
+	font-style: italic;
+	font-size: 1rem;
 }
 
 .about-image {
