@@ -452,59 +452,68 @@ p.lead {
 }
 
 /**********  MARK: FOOTER SECTION***************/
+/* Footer Base Styles */
 .footer-section {
-	background-color: #f9f9f9;
 	padding: 2rem 0;
+	background-color: #f9f9f9;
 	border-top: 1px solid #ddd;
+	text-align: center; /* Default for mobile */
 }
 
-.footer-section a {
-	text-decoration: none;
-}
-
+/* Logo Styling */
 .footer-logo {
 	width: 120px;
+	max-width: 100%;
 }
 
+/* Navigation Links */
 .footer-nav {
-	list-style: none;
 	padding: 0;
 	margin: 0;
+	display: flex;
+	flex-direction: column; /* Stack links on mobile */
+	align-items: center;
+	gap: 8px;
+}
+
+.footer-nav li {
+	list-style: none;
+}
+
+.footer-nav a {
+	text-decoration: none;
+	font-size: 16px;
+	color: black;
+	transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+	color: #ff6c63; /* Hover effect */
+}
+
+/* Social Icons */
+.social-icons {
 	display: flex;
 	justify-content: center;
 	gap: 10px;
 }
 
-.footer-nav li {
-	display: inline-block;
-}
-
-.footer-nav a {
-	text-decoration: none;
-	font-size: 14px;
-	color: #333;
-	transition: color 0.3s;
-}
-
-.footer-nav a:hover {
-	color: #ff6c63; /* Hover color */
-}
-
 .social-icon {
-	width: 24px;
-	height: 24px;
-	margin-left: 10px;
-	transition: transform 0.3s;
+	width: 32px;
+	height: 32px;
+	transition: transform 0.3s ease;
 }
 
 .social-icon:hover {
 	transform: scale(1.2);
 }
 
+/* Copyright Text */
 .copyright {
-	font-size: 12px;
+	font-size: 14px;
 	color: #555;
 	margin-top: 10px;
+	justify-content: center;
 }
 
 /*****************************************************************************************/
@@ -521,4 +530,23 @@ p.lead {
 
 /* Tablets (Portrait and Landscape) */
 @media (min-width: 769px) and (max-width: 1024px) {
+}
+
+/* Footer Media*/
+@media (min-width: 768px) {
+	.footer-section .row {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.footer-nav {
+		flex-direction: row; /* Horizontal layout on larger screens */
+		justify-content: center;
+	}
+
+	.copyright {
+		text-align: center;
+		margin-top: 0;
+	}
 }
