@@ -2,24 +2,33 @@ document.addEventListener("DOMContentLoaded", () => {
 	const desktopText = "UX/UI & Web Designer | Photographer";
 	const mobileText = "UX/UI & Web Designer\nPhotographer";
 
-	// Detect screen size
-	if (window.innerWidth <= 768) {
-		typeText("typed-text-mobile", mobileText);
-	} else {
-		typeText("typed-text-desktop", desktopText);
+	const isMobile = window.innerWidth <= 768;
+	const targetId = isMobile ? "typed-text-mobile" : "typed-text-desktop";
+	const text = isMobile ? mobileText : desktopText;
+
+	const el = document.getElementById(targetId);
+	const instaIcon = document.getElementById("insta-after-text");
+
+	if (el) {
+		typeText(el, text, instaIcon);
 	}
 });
 
-function typeText(id, text) {
-	const el = document.getElementById(id);
-	let i = 0;
-	function type() {
-		if (i < text.length) {
-			const char = text[i] === "\n" ? "<br>" : text[i];
-			el.innerHTML += char;
-			i++;
-			setTimeout(type, 50);
-		}
+async function typeText(el, text, instaIcon) {
+	for (let i = 0; i < text.length; i++) {
+		const char = text[i] === "\n" ? "<br>" : text[i];
+		el.innerHTML += char;
+		await delay(50);
 	}
-	type();
+
+	// Show Instagram icon after text typing
+	if (instaIcon) {
+		instaIcon.style.display = "inline-block";
+		await delay(50);
+		instaIcon.classList.add("show");
+	}
+}
+
+function delay(ms) {
+	return new Promise((resolve) => setTimeout(resolve, ms));
 }
