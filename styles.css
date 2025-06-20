@@ -543,6 +543,22 @@ p.subtitle {
 .project-link img {
 	width: 20px;
 }
+.project-link img,
+.project-info a img {
+	text-decoration: none;
+	border: none;
+}
+
+.project-link,
+.project-info a {
+	text-decoration: none !important;
+}
+
+.project-link:focus,
+.project-link:hover {
+	outline: none;
+	text-decoration: none !important;
+}
 
 .project-image {
 	width: 100%;
