@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dasha Deriagina | Link In Bio</title>
+
+		<!-- Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Jost:wght@400;600&display=swap"
+			rel="stylesheet"
+		/>
+
+		<style>
+			body {
+				margin: 0;
+				font-family: "IBM Plex Sans", sans-serif;
+				background: #fff;
+				color: #111;
+				text-align: center;
+				padding: 20px;
+			}
+
+			.container {
+				max-width: 420px;
+				margin: 0 auto;
+				padding: 40px 20px;
+				border: 1px solid #ccc;
+				border-radius: 12px;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+				animation: fadeInUp 1s ease-out both;
+				position: relative;
+			}
+
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.greeting {
+				position: absolute;
+				top: -30px;
+				left: 50%;
+				transform: translateX(-50%);
+				background: #f17396;
+				color: white;
+				padding: 8px 16px;
+				border-radius: 20px;
+				font-size: 14px;
+				font-weight: 500;
+				opacity: 0;
+				animation: popFade 1.6s ease-out 0.5s forwards;
+			}
+
+			@keyframes popFade {
+				0% {
+					opacity: 0;
+					transform: translate(-50%, -10px);
+				}
+				50% {
+					opacity: 1;
+					transform: translate(-50%, 0);
+				}
+				100% {
+					opacity: 0;
+					transform: translate(-50%, -10px);
+				}
+			}
+
+			.avatar {
+				width: 160px;
+				height: 160px;
+				border-radius: 50%;
+				object-fit: cover;
+				margin-bottom: 20px;
+				animation: scaleIn 1s ease forwards;
+			}
+
+			@keyframes scaleIn {
+				0% {
+					transform: scale(0.6);
+					opacity: 0;
+				}
+				100% {
+					transform: scale(1);
+					opacity: 1;
+				}
+			}
+
+			h1 {
+				font-family: "IBM Plex Sans", sans-serif;
+				font-size: 36px;
+				margin-bottom: 4px;
+			}
+
+			h2 {
+				font-size: 18px;
+				font-weight: 400;
+				color: #555;
+				margin-top: 0;
+				margin-bottom: 20px;
+			}
+
+			.tagline {
+				font-size: 15px;
+				font-style: italic;
+				color: #444;
+				margin-top: 0px;
+				margin-bottom: 25px;
+			}
+
+			.icons {
+				display: flex;
+				justify-content: center;
+				gap: 16px;
+				margin-bottom: 30px;
+			}
+
+			.icons img {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+				animation: fadeInIcons 1s ease-in both;
+			}
+
+			.icons img:hover {
+				transform: translateY(-5px) scale(1.2);
+				box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+				filter: brightness(1.1);
+			}
+
+			@keyframes fadeInIcons {
+				from {
+					opacity: 0;
+					transform: scale(0.8);
+				}
+				to {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+
+			.btn {
+				display: inline-block;
+				width: 100%;
+				max-width: 320px;
+				padding: 14px 22px;
+				border-radius: 8px;
+				font-weight: 500;
+				font-size: 24px;
+				font-family: "IBM Plex Sans", sans-serif;
+				text-decoration: none;
+				margin-bottom: 16px;
+				box-sizing: border-box;
+				transition: all 0.3s ease;
+			}
+
+			.btn.primary {
+				background: #111;
+				color: white;
+				box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+			}
+
+			.btn.primary:hover {
+				background: #333;
+				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+			}
+
+			.btn.secondary {
+				border: 2px solid #000;
+				color: #000;
+				background: white;
+				position: relative;
+				padding-right: 48px;
+			}
+
+			.btn.secondary:hover {
+				background: #f7f7f7;
+				box-shadow: 0 4px 12px rgba(247, 115, 150, 0.25);
+			}
+
+			.btn.secondary::after {
+				content: "↗";
+				position: absolute;
+				right: 18px;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 18px;
+				color: #d75fa1;
+			}
+
+			.bio-text {
+				margin-top: 20px;
+				font-size: 16px;
+				color: #333;
+				line-height: 1.4;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 8px;
+			}
+
+			.bio-text .second-line {
+				text-align: center;
+				max-width: 340px;
+			}
+
+			.divider {
+				margin: 30px auto;
+				height: 2px;
+				background: linear-gradient(to right, #9f6edb, #f17396, #f5a142);
+				border: none;
+				width: 80%;
+			}
+
+			.footer {
+				font-size: 15px;
+				color: #888;
+				margin-top: 0px;
+			}
+
+			.footer span {
+				color: #f17396;
+			}
+
+			@media (max-width: 480px) {
+				.container {
+					padding: 30px 15px;
+				}
+
+				.avatar {
+					width: 120px;
+					height: 120px;
+				}
+			}
+
+			.animated-bg {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(-45deg, #ffafbd, #ffc3a0, #a18cd1, #fbc2eb);
+				background-size: 400% 400%;
+				z-index: -1;
+				animation: gradientFlow 15s ease infinite;
+				opacity: 0.5;
+			}
+
+			@keyframes gradientFlow {
+				0% {
+					background-position: 0% 50%;
+				}
+				50% {
+					background-position: 100% 50%;
+				}
+				100% {
+					background-position: 0% 50%;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="animated-bg"></div>
+		<div class="container">
+			<div class="greeting">Hi, I’m Dasha 👋</div>
+
+			<a href="https://dash-dev.net" target="_blank">
+				<img
+					src="./images/linkInBio/dashaLinkInBio.jpg"
+					alt="Dasha"
+					class="avatar"
+				/>
+			</a>
+
+			<h1>Dasha Deriagina</h1>
+			<h2>UX/UI Designer & Front-End Developer</h2>
+			<p class="tagline">Design in Figma. Code it to life.</p>
+
+			<div class="icons">
+				<a href="https://www.behance.net/dariaderiagina" target="_blank">
+					<img src="./images/linkInBio/beIcon.png" alt="Behance" />
+				</a>
+				<a href="https://www.linkedin.com/in/daria-web-design/" target="_blank">
+					<img src="./images/linkInBio/linkedin.png" alt="LinkedIn" />
+				</a>
+				<a href="https://github.com/dariaderiagina" target="_blank">
+					<img src="./images/linkInBio/github.png" alt="GitHub" />
+				</a>
+				<a href="mailto:thedash.dev@gmail.com">
+					<img src="./images/linkInBio/emailIcon.png" alt="Email" />
+				</a>
+			</div>
+
+			<a
+				href="https://dash-dev.net/#projects"
+				class="btn primary"
+				target="_blank"
+				>My Portfolio</a
+			>
+			<a href="https://dash-dev.net/#contact" class="btn secondary"
+				>Let’s Work Together</a
+			>
+
+			<p class="bio-text">
+				<span class="first-line"
+					>Hi 👋! I’m Dasha — a UX/UI designer who codes.</span
+				>
+				<span class="second-line"
+					>I create user-focused, modern websites from scratch, combining design
+					and development into one creative process.</span
+				>
+			</p>
+
+			<div class="divider"></div>
+
+			<div class="footer">
+				© 2025 Made with <span>🫶🏼</span> by DashDev<br />
+				All work shown is original & designed by me
+			</div>
+		</div>
+	</body>
+</html>
