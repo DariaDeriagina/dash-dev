@@ -684,6 +684,11 @@ p.subtitle {
 }
 
 /***************  MARK: CONTACT ME *********************/
+
+#contact {
+	scroll-margin-top: 100px;
+}
+
 .contact-section {
 	background: linear-gradient(90deg, #ffdf8c, #ff6c63);
 	padding: 4rem 0;
