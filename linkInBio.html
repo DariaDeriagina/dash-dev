@@ -185,15 +185,13 @@
 				background: #f7f7f7;
 				box-shadow: 0 4px 12px rgba(247, 115, 150, 0.25);
 			}
-
-			.btn.secondary::after {
-				content: "↗";
+			.arrow-icon {
 				position: absolute;
 				right: 18px;
 				top: 50%;
 				transform: translateY(-50%);
-				font-size: 18px;
-				color: #d75fa1;
+				width: 20px;
+				height: 20px;
 			}
 
 			.bio-text {
@@ -306,9 +304,18 @@
 				target="_blank"
 				>My Portfolio</a
 			>
-			<a href="https://dash-dev.net/#contact" class="btn secondary"
-				>Let’s Work Together</a
+			<a
+				href="https://dash-dev.net/#contact"
+				class="btn secondary"
+				target="_blank"
 			>
+				Let’s Work Together
+				<img
+					src="./images/linkInBio/buttonArrow.png"
+					alt="arrow icon"
+					class="arrow-icon"
+				/>
+			</a>
 
 			<p class="bio-text">
 				<span class="first-line"
