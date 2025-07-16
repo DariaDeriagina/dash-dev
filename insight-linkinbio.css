@@ -15,7 +15,7 @@ body {
 .article-container {
 	max-width: 750px;
 	margin: auto;
-	padding-bottom: 100px;
+	padding-bottom: 1rem;
 }
 
 header {
@@ -152,7 +152,8 @@ figcaption {
 
 .cta-button {
 	display: inline-block;
-	margin-top: 2.5rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
 	background: linear-gradient(to right, #ff7c5c, #ff3c91);
 	color: white;
 	text-decoration: none;
@@ -199,12 +200,14 @@ figcaption {
 	}
 }
 .footer {
-	margin-top: 4rem;
+	margin-top: 0;
+	margin-bottom: 0;
 	text-align: center;
 	font-size: 0.95rem;
 	color: #999;
 	border-top: 1px solid #eee;
 	padding-top: 2rem;
+	padding-bottom: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -213,7 +216,7 @@ figcaption {
 		align-items: center;
 		text-align: center;
 		gap: 1rem;
-		padding-top: 1.5rem;
+		padding-top: 1rem;
 	}
 
 	.logo-fixed {
@@ -229,7 +232,7 @@ figcaption {
 		align-items: center;
 		text-align: center;
 		gap: 1rem;
-		padding-top: 2rem;
+		padding-top: 1rem;
 	}
 
 	.logo-fixed {
