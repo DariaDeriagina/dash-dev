@@ -2,6 +2,9 @@ body {
 	margin: 0;
 	font-family: "IBM Plex Sans", sans-serif;
 }
+html {
+	scroll-behavior: smooth;
+}
 
 #navbarNav {
 	padding-right: 100px;
@@ -565,7 +568,10 @@ p.subtitle {
 .project-image:hover {
 	transform: scale(1.05);
 }
-/*-- === MARK: DEV POSTS=== */
+/*-- === MARK: NOTES=== */
+#notes {
+	scroll-margin-top: 100px;
+}
 .notes-section {
 	padding: 4rem 0;
 	background: linear-gradient(to bottom right, #fffaf0, #ffe2d1);
@@ -601,6 +607,7 @@ p.subtitle {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	margin-bottom: 10px;
 }
 
 .note-card:hover {
@@ -609,6 +616,7 @@ p.subtitle {
 }
 
 .note-title {
+	margin-top: 10px;
 	font-size: 20px;
 	font-weight: 700;
 	color: #141313;
