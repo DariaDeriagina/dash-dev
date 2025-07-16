@@ -242,3 +242,6 @@ figcaption {
 		margin-bottom: 0.5rem;
 	}
 }
+#notes {
+	scroll-margin-top: 10px;
+}
