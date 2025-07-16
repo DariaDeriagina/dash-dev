@@ -344,15 +344,10 @@ p.subtitle {
 }
 
 /*************************** MARK: About Me Section *******************************************/
-.about-section {
-	padding: 8rem 0;
-	background-color: #f9f9f9; /* Light background */
-}
 
-.nice-to-meet-you {
-	text-align: left;
-	font-style: italic;
-	font-size: 1.4rem;
+.about-section {
+	padding: 2rem 0;
+	background-color: #f9f9f9; /* Light background */
 }
 
 .about-image {
@@ -570,117 +565,78 @@ p.subtitle {
 .project-image:hover {
 	transform: scale(1.05);
 }
-/* MARK: PHOTO Gallery */
-
-.photo-gallery-section {
+/*-- === MARK: DEV POSTS=== */
+.notes-section {
 	padding: 4rem 0;
-	background-color: #fdfdfd;
+	background: linear-gradient(to bottom right, #fffaf0, #ffe2d1);
 }
 
-.photo-gallery-section .section-title {
+.notes-section .section-subtitle {
+	font-size: 18px;
+	color: #777;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+.notes-section .section-title {
 	font-size: 36px;
 	font-weight: 700;
 	margin-bottom: 10px;
 }
 
-.photo-gallery-section .section-subtitle {
+.notes-section .section-description {
 	font-size: 18px;
-	color: #777;
+	color: #555;
 	margin-bottom: 30px;
+	max-width: 720px;
 }
 
-.gallery-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-	gap: 20px;
-	margin-bottom: 40px;
-}
-
-.gallery-grid img {
-	width: 100%;
-	height: auto;
+.note-card {
+	background-color: #fff;
 	border-radius: 12px;
-	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-	transition: transform 0.3s ease;
-}
-
-.gallery-grid img:hover {
-	transform: scale(1.03);
-}
-.gallery-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-	gap: 1rem;
-}
-
-@media (max-width: 992px) {
-	.gallery-grid {
-		grid-template-columns: repeat(2, 1fr); /* планшет */
-	}
-}
-
-@media (max-width: 576px) {
-	.gallery-grid {
-		grid-template-columns: 1fr; /* мобильные */
-	}
-}
-
-/* Modal Background */
-.photo-modal {
-	display: none;
-	position: fixed;
-	z-index: 999;
-	padding-top: 60px;
-	left: 0;
-	top: 0;
-	width: 100%;
+	padding: 24px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.85);
-	text-align: center;
-}
-
-/* Modal Image */
-.modal-content {
-	max-width: 80%;
-	max-height: 80vh;
-	margin: auto;
-	border-radius: 10px;
-}
-
-/* Close Button */
-.close-modal {
-	position: absolute;
-	top: 30px;
-	right: 50px;
-	color: white;
-	font-size: 36px;
-	font-weight: bold;
-	cursor: pointer;
-}
-
-/* Navigation Buttons */
-.modal-controls {
-	position: absolute;
-	top: 50%;
-	width: 100%;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
-	padding: 0 60px;
 }
 
-.modal-controls button {
-	background-color: rgba(255, 255, 255, 0.2);
-	border: none;
-	font-size: 32px;
-	color: white;
-	cursor: pointer;
-	padding: 10px;
-	border-radius: 50%;
-	transition: background-color 0.3s;
+.note-card:hover {
+	transform: scale(1.02);
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-.modal-controls button:hover {
-	background-color: rgba(255, 255, 255, 0.5);
+.note-title {
+	font-size: 20px;
+	font-weight: 700;
+	color: #141313;
+	margin-bottom: 8px;
+}
+
+.note-tags {
+	font-size: 14px;
+	color: #ff6c63;
+	font-weight: 600;
+	margin-bottom: 12px;
+}
+
+.note-excerpt {
+	font-size: 16px;
+	color: #555;
+	margin-bottom: 16px;
+}
+
+.read-more {
+	text-decoration: none;
+	color: #000;
+	font-weight: 600;
+	transition: color 0.3s;
+}
+
+.read-more:hover {
+	color: #ff6c63;
 }
 
 /***************  MARK: CONTACT ME *********************/

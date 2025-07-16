@@ -57,18 +57,19 @@
 							<li class="nav-item">
 								<a class="nav-link" href="#about">About</a>
 							</li>
-							<li class="nav-item">
+							<!-- <li class="nav-item">
 								<a class="nav-link" href="#video">Video Intro</a>
-							</li>
+							</li> -->
 							<li class="nav-item">
 								<a class="nav-link" href="#projects">Projects</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#gallery">Photo Gallery</a>
+								<a class="nav-link" href="#notes">Insights</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#contact">Contact Me</a>
 							</li>
+							
 						</ul>
 						<a
 							href="https://www.linkedin.com/in/daria-web-design/"
@@ -186,9 +187,10 @@
 		<section id="about" class="about-section">
 			<div class="container">
 				<div class="row text-center mb-5" data-aos="fade-up">
-					<div class="col">
-						<h1 class="welcome-text">About Me</h1>
-					</div>
+				<div class="section-heading text-left" data-aos="fade-up">
+  <p class="section-subtitle">INTRO</p>
+  <h2 class="section-title">About Me</h2>
+</div>
 				</div>
 				<div class="row align-items-center">
 					<!-- Left Column: Image and Intro -->
@@ -262,37 +264,44 @@
 			</div>
 		</section>
 
-		<!---- MARK: VIDEO SECTION------->
-		<section id="video" class="video-section">
-			<div class="container">
-				<div class="row align-items-center">
-					<!-- Left Column: Text -->
-					<div class="col-md-6" data-aos="fade-up">
-						<div class="video-text">
-							<h2>Watch my video introduction</h2>
-						</div>
-					</div>
+	<!--
 
-					<!-- Right Column: Video -->
-					<div class="col-md-6 text-center" data-aos="fade-up">
-						<div class="video-container">
-							<video
-								controls
-								poster="./images/videoThumbnail.png"
-								class="elevator-video"
-							>
-								<source
-									src="./video/DariaDeriaginaVideoIntroduction.mp4"
-									type="video/mp4"
-								/>
-								Your browser does not support the video tag.
-							</video>
-							<p class="video-timestamp">30 sec</p>
-						</div>
-					</div>
+<section id="video" class="video-section">
+	<div class="container">
+		<div class="section-heading" data-aos="fade-up">
+			<p class="section-subtitle">INTRO VIDEO</p>
+			<h2 class="section-title">Get to Know Me in 30 Seconds</h2>
+		</div>
+		<div class="row align-items-center">
+			Left Column: Text
+			<div class="col-md-6" data-aos="fade-up">
+				<div class="video-text">
+					<h2>Watch my video introduction</h2>
 				</div>
 			</div>
-		</section>
+
+			Right Column: Video
+			<div class="col-md-6 text-center" data-aos="fade-up">
+				<div class="video-container">
+					<video
+						controls
+						poster="./images/videoThumbnail.png"
+						class="elevator-video"
+					>
+						<source
+							src="./video/DariaDeriaginaVideoIntroduction.mp4"
+							type="video/mp4"
+						/>
+						Your browser does not support the video tag.
+					</video>
+					<p class="video-timestamp">30 sec</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+-->
+
 
 		<!-- MARK: PROJECTS -->
 		<section id="projects" class="projects-section">
@@ -710,79 +719,46 @@
 				</div>
 			</div>
 		</section>
+		<!-- MARK: DEV & DESIGN NOTES SECTION -->
+<section id="notes" class="notes-section">
+  <div class="container text-start">
+    <!-- Section Title -->
+    <p class="section-subtitle">INSIGHTS</p>
+    <h2 class="section-title">Dev & Design Notes</h2>
+    <p class="section-description">
+     My honest take on design, code, and the creative process — no fluff.
+    </p>
 
-		<!-- MARK: PHOTOGRAPHY GALLERY SECTION -->
-		<section id="gallery" class="photo-gallery-section">
-			<div class="container text-center">
-				<div class="col text-start">
-					<p class="section-subtitle">PHOTOGRAPHY</p>
-					<h2 class="section-title">Selected Photo Works</h2>
-					<p class="section-description">
-						Showcasing my work as a photographer — a blend of technique, style,
-						and emotion in every shot.
-					</p>
-				</div>
+    <!-- Notes Grid -->
+    <div class="row g-4">
+      <!-- Note Card 1 -->
+      <div class="col-md-6">
+        <div class="note-card" data-aos="fade-up">
+          <h3 class="note-title">Building Link in Bio from Figma to WordPress</h3>
+          <p class="note-tags">#Figma #WordPress #ACF #NoBuilder</p>
+          <p class="note-excerpt">
+            No Elementor, no shortcuts. Just clean code, ACF fields, and matching my Figma layout pixel by pixel. Here's how I turned a static design into a live WordPress page — fully editable and optimized.
+          </p>
+          <a href="insight-linkinbio.html" class="read-more">Read Breakdown →</a>
+      </div>
 
-				<div class="gallery-grid" data-aos="fade-up">
-					<img
-						src="images/photoGalleryImages/Photo1.jpg"
-						alt="Castle Portrait"
-					/>
+      <!-- Placeholder for future notes -->
+      <!-- <div class="col-md-6">
+        <div class="note-card" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="note-title">Why I avoid page builders</h3>
+          <p class="note-tags">#Process #Performance</p>
+          <p class="note-excerpt">
+            Some thoughts on long-term code quality, layout precision, and the value of building from scratch.
+          </p>
+          <a href="#" class="read-more">Read Breakdown →</a>
+        </div>
+      </div> -->
 
-					<img src="images/photoGalleryImages/Photo2.jpg" alt="Girl in China" />
-					<img src="images/photoGalleryImages/Photo3.jpg" alt="Shanghai Band" />
+    </div>
+  </div>
+</section>
 
-					<img
-						src="images/photoGalleryImages/Photo4.jpg"
-						alt="Little Girl Portrait"
-					/>
-					<img
-						src="images/photoGalleryImages/Photo5.jpg"
-						alt="Man on the Bike"
-					/>
-	
-
-					<img src="images/photoGalleryImages/Collage2.jpg" alt="Collage Set" />
-					<img
-						src="images/photoGalleryImages/Collage CityHall.jpg"
-						alt="City Hall"
-					/>
-					<img
-						src="images/photoGalleryImages/Bride preparation -60.jpg"
-						alt="Bride Prep"
-					/>
-			
-					<img
-						src="images/photoGalleryImages/DSC_9997.jpg"
-						alt="Graduation Pose"
-					/>
-			
-					<img
-						src="images/photoGalleryImages/Photo15.jpg"
-						alt="Creative Style"
-					/>
-				</div>
-
-				<!-- Modal Viewer -->
-				<div id="photoModal" class="photo-modal">
-					<span class="close-modal">&times;</span>
-					<img class="modal-content" id="modalImage" />
-					<div class="modal-controls">
-						<button id="prevBtn">&#10094;</button>
-						<button id="nextBtn">&#10095;</button>
-					</div>
-				</div>
-
-				<a
-					href="https://www.instagram.com/daria.wind_photography/"
-					target="_blank"
-					class="btn custom"
-				>
-					See More on Instagram
-					<img src="icons/instagram.png" alt="Instagram" class="btn-arrow" />
-				</a>
-			</div>
-		</section>
+		
 
 		<!--- MARK: CONTACT ME SECTION-->
 
@@ -888,9 +864,9 @@
 						>
 							<li><a href="#main">Home</a></li>
 							<li><a href="#about">About</a></li>
-							<li><a href="#video">Video</a></li>
+							<!-- <li><a href="#video">Video</a></li> -->
 							<li><a href="#projects">Projects</a></li>
-							<li><a href="#gallery">Gallery</a></li>
+							<li><a href="#notes">Insights</a></li>
 							<li><a href="#contact">Contact</a></li>
 						</ul>
 					</div>

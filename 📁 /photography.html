@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Photography | dashDev</title>
+
+		<!-- IBM Plex Sans -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- AOS Animate On Scroll -->
+		<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+		<!-- Your Styles -->
+		<link rel="stylesheet" href="photography.css" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	</head>
+	<body
+		style="
+			font-family: 'IBM Plex Sans', sans-serif;
+			margin: 0;
+			background: linear-gradient(90deg, #ffdf8c, #ff6c63);
+		"
+	>
+		<!-- Back to Portfolio -->
+		<header style="padding: 2rem 1rem">
+			<a
+				href="https://dash-dev.net/"
+				style="
+					text-decoration: none;
+					font-weight: 500;
+					font-size: 16px;
+					color: #141313;
+				"
+			>
+				← Back to Portfolio
+			</a>
+		</header>
+
+		<!-- MARK: PHOTOGRAPHY GALLERY SECTION -->
+		<section class="photo-gallery-section">
+			<div
+				class="container"
+				style="max-width: 1200px; margin: auto; padding: 0 20px"
+			>
+				<div class="text-center" style="text-align: center">
+					<p class="section-subtitle">PHOTOGRAPHY</p>
+					<h2 class="section-title">Selected Photo Works</h2>
+					<p class="section-description">
+						Showcasing my work as a photographer — a blend of technique, style,
+						and emotion in every shot.
+					</p>
+				</div>
+
+				<div class="gallery-grid" data-aos="fade-up">
+					<img
+						src="/images/photoGalleryImages/Photo1.jpg"
+						alt="Castle Portrait"
+					/>
+					<img
+						src="/images/photoGalleryImages/Photo2.jpg"
+						alt="Girl in China"
+					/>
+					<img
+						src="/images/photoGalleryImages/Photo3.jpg"
+						alt="Shanghai Band"
+					/>
+					<img
+						src="/images/photoGalleryImages/Photo4.jpg"
+						alt="Little Girl Portrait"
+					/>
+					<img
+						src="/images/photoGalleryImages/Photo5.jpg"
+						alt="Man on the Bike"
+					/>
+					<img
+						src="/images/photoGalleryImages/Collage2.jpg"
+						alt="Collage Set"
+					/>
+					<img
+						src="/images/photoGalleryImages/Collage CityHall.jpg"
+						alt="City Hall"
+					/>
+					<img
+						src="/images/photoGalleryImages/Bride preparation -60.jpg"
+						alt="Bride Prep"
+					/>
+					<img
+						src="/images/photoGalleryImages/DSC_9997.jpg"
+						alt="Graduation Pose"
+					/>
+					<img
+						src="/images/photoGalleryImages/Photo15.jpg"
+						alt="Creative Style"
+					/>
+				</div>
+
+				<!-- Modal Viewer -->
+				<div id="photoModal" class="photo-modal">
+					<span class="close-modal">&times;</span>
+					<img class="modal-content" id="modalImage" />
+					<div class="modal-controls">
+						<button id="prevBtn">&#10094;</button>
+						<button id="nextBtn">&#10095;</button>
+					</div>
+				</div>
+
+				<div style="text-align: center">
+					<a
+						href="https://www.instagram.com/daria.wind_photography/"
+						target="_blank"
+						class="btn custom"
+						style="
+							padding: 12px 24px;
+							font-weight: 500;
+							border: 2px solid black;
+							background: white;
+							color: black;
+							font-size: 1rem;
+							border-radius: 6px 40px 6px 6px;
+							text-decoration: none;
+							display: inline-flex;
+							align-items: center;
+							gap: 10px;
+							transition: 0.3s;
+						"
+					>
+						See More on Instagram
+						<img
+							src="icons/instagram.png"
+							alt="Instagram"
+							style="width: 18px; height: 18px"
+						/>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- AOS + Modal Scripts -->
+		<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+		<script>
+			AOS.init({ duration: 800, once: true });
+		</script>
+		<script src="galleryModal.js"></script>
+	</body>
+</html>

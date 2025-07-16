@@ -1,0 +1,241 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+	background: #f9f9f9;
+	color: #111;
+	line-height: 1.7;
+	padding: 2rem;
+}
+
+.article-container {
+	max-width: 750px;
+	margin: auto;
+	padding-bottom: 100px;
+}
+
+header {
+	margin-bottom: 2rem;
+	text-align: center;
+}
+.site-header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 0 1.5rem;
+}
+
+.logo-container {
+	max-width: 160px;
+	margin-left: 1rem;
+}
+
+.logo-img {
+	width: 100%;
+	height: auto;
+}
+
+h1 {
+	font-size: 2rem;
+	font-weight: 600;
+	color: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+.emoji {
+	font-size: 2.6rem;
+	line-height: 1;
+}
+
+.subheadline {
+	margin-top: 0.6rem;
+	font-size: 1.2rem;
+	color: #666;
+}
+.article-header {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.header-row-fixed {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0rem 1rem;
+	text-align: center;
+}
+
+.logo-fixed {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 140px;
+	height: auto;
+}
+
+.logo-inline {
+	width: 120px;
+	height: auto;
+	transform: translateX(-85px);
+}
+
+/* Image scaling */
+figure img {
+	max-width: 100%;
+	width: 100%;
+	max-height: 600px;
+	height: auto;
+	border-radius: 14px;
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+	transition: transform 0.4s ease;
+	object-fit: contain;
+}
+
+/* Center the CTA button */
+.cta-wrapper {
+	text-align: center;
+	margin-top: 2rem;
+}
+h2 {
+	font-size: 1.6rem;
+	margin-top: 2rem;
+	color: #222;
+}
+
+ul,
+ol {
+	margin: 1rem 0 1rem 1.5rem;
+}
+
+ul li::marker {
+	color: #ff5c8a;
+}
+
+.article-content p {
+	margin: 1.2rem 0;
+	font-size: 1.1rem;
+}
+
+figure {
+	margin: 2rem 0;
+	text-align: center;
+}
+
+figure img {
+	max-width: 100%;
+	border-radius: 14px;
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+	transition: transform 0.4s ease;
+}
+
+figure img:hover {
+	transform: scale(1.03);
+}
+
+figcaption {
+	font-size: 0.9rem;
+	color: #777;
+	margin-top: 0.5rem;
+}
+
+.cta-button {
+	display: inline-block;
+	margin-top: 2.5rem;
+	background: linear-gradient(to right, #ff7c5c, #ff3c91);
+	color: white;
+	text-decoration: none;
+	padding: 1rem 2rem;
+	border-radius: 40px;
+	font-weight: 600;
+	font-size: 1.1rem;
+	box-shadow: 0 4px 15px rgba(255, 124, 92, 0.4);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(255, 60, 145, 0.5);
+}
+
+/* Animations */
+.fade-in {
+	animation: fadeIn 1s ease forwards;
+	opacity: 0;
+}
+
+.fade-in-delayed {
+	animation: fadeIn 1s ease 0.4s forwards;
+	opacity: 0;
+}
+
+.zoom-in {
+	animation: zoomIn 0.6s ease 0.2s forwards;
+	opacity: 0;
+	transform: scale(0.95);
+}
+
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes zoomIn {
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+.footer {
+	margin-top: 4rem;
+	text-align: center;
+	font-size: 0.95rem;
+	color: #999;
+	border-top: 1px solid #eee;
+	padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+	.header-row-fixed {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 1rem;
+		padding-top: 1.5rem;
+	}
+
+	.logo-fixed {
+		position: static;
+		transform: none;
+		width: 100px;
+	}
+}
+/* iPads (768px до 1024px)*/
+@media (min-width: 769px) and (max-width: 1024px) {
+	.header-row-fixed {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 1rem;
+		padding-top: 2rem;
+	}
+
+	.logo-fixed {
+		position: static;
+		transform: none;
+		width: 120px;
+		margin-bottom: 0.5rem;
+	}
+}
