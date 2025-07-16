@@ -3,7 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>dashDev</title>
+		<title>DashDev</title>
+		<!-- Animation on scroll -->
+		<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
 
 		<!-- Bootstrap -->
 		<link
@@ -91,7 +94,7 @@
 
 			<div class="hero-container">
 				<!-- Left -->
-				<div class="hero-left">
+				<div class="hero-left" data-aos="fade-up">
 					<img
 						src="./images/heroImages/VectorBackground1.png"
 						alt="Vector Decoration"
@@ -124,7 +127,7 @@
 				</div>
 
 				<!-- Right -->
-				<div class="hero-right">
+				<div class="hero-right" data-aos="fade-up">
 					<img
 						src="images/heroImages/LeftMainPic.png"
 						alt="Hero Composition"
@@ -134,7 +137,7 @@
 			</div>
 
 			<!-- Buttons -->
-			<div class="hero-buttons">
+			<div class="hero-buttons" data-aos="fade-up">
 				<a href="#projects" class="btn primary">
 					My Portfolio
 					<img
@@ -154,7 +157,7 @@
 			</div>
 
 			<!-- Social Icons -->
-			<div class="social-icons">
+			<div class="social-icons" data-aos="fade-up">
 				<a
 					href="https://www.behance.net/dariaderiagina"
 					target="_blank"
@@ -182,17 +185,14 @@
 		<!--- MARK: ABOUT ME SECTION -->
 		<section id="about" class="about-section">
 			<div class="container">
-				<div class="row text-center mb-5">
+				<div class="row text-center mb-5" data-aos="fade-up">
 					<div class="col">
-						<p class="nice-to-meet-you">
-							<strong><em>Nice to meet you!</em></strong>
-						</p>
-						<h1 class="welcome-text">Welcome to...</h1>
+						<h1 class="welcome-text">About Me</h1>
 					</div>
 				</div>
 				<div class="row align-items-center">
 					<!-- Left Column: Image and Intro -->
-					<div class="col-md-6 text-center">
+					<div class="col-md-6 text-center" data-aos="fade-up">
 						<img
 							src="./images/AboutMainPicsDasha.png"
 							alt="Dasha Collage"
@@ -220,7 +220,7 @@
 					</div>
 
 					<!-- Right Column: Details -->
-					<div class="col-md-6">
+					<div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
 						<ul class="contact-info">
 							<li>
 								<img src="./icons/IconPerson.png" alt="Person Icon" />
@@ -242,11 +242,11 @@
 							<span class="gradient-text">10+</span>
 							<h3>DESIGN-TO-LAUNCH PROJECTS</h3>
 							<p>
-								I’ve worked on over 10 projects from start to finish — designing
-								in Figma and building with HTML, CSS, JavaScript, and WordPress.
-								One of my highlights: I was the designer and a speaker at
-								Google’s Good Dev Fest Windsor, where I shared tips on using
-								Figma for developers.
+							I’ve worked on multiple projects from start to finish — designing
+	in Figma and building with HTML, CSS, JavaScript, and WordPress.
+	One of my highlights: I was the designer and a speaker at
+	Google’s Good Dev Fest Windsor, where I shared tips on using
+	Figma for developers.
 							</p>
 						</div>
 
@@ -268,14 +268,14 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<!-- Left Column: Text -->
-					<div class="col-md-6">
+					<div class="col-md-6" data-aos="fade-up">
 						<div class="video-text">
 							<h2>Watch my video introduction</h2>
 						</div>
 					</div>
 
 					<!-- Right Column: Video -->
-					<div class="col-md-6 text-center">
+					<div class="col-md-6 text-center" data-aos="fade-up">
 						<div class="video-container">
 							<video
 								controls
@@ -309,7 +309,7 @@
 				<!-- Project Grid -->
 				<div class="row g-4">
 					<!-- The Lancer Method Project -->
-					<div class="col-md-6">
+					<div class="col-md-6" data-aos="fade-up">
 						<div class="project-item">
 							<div class="project-info">
 								<p class="project-type">
@@ -317,20 +317,7 @@
 								</p>
 								<h3 class="project-title">The Lancer Method</h3>
 								<p class="project-description">
-									I started this personal coaching website by working closely
-									with the client to understand her goals, audience, and
-									content. Then I mapped out the full user flow in
-									<a
-										href="https://www.figma.com/board/oEG4wLkvNbTnQ136twma75/Dena-Project?node-id=13-2965&t=VdwTJUPFSlLfaPJ6-1"
-										target="_blank"
-										rel="noopener"
-										>FigJam</a
-									>, created detailed wireframes and a complete UI in Figma.
-									After finalizing the design, I built a responsive front-end
-									using HTML, CSS, and Bootstrap. I also published a live
-									LinkBio preview on GitHub Pages. WordPress integration is
-									currently in progress. This project highlights my ability to
-									lead the UX/UI process from concept to code.
+									I started this website by working closely with the founder and strategist behind The Lancer Method to understand her goals, audience, and content. From there, I mapped out the full user flow in <a href="https://www.figma.com/board/oEG4wLkvNbTnQ136twma75/Dena-Project?node-id=13-2965&t=VdwTJUPFSlLfaPJ6-1" target="_blank" rel="noopener">FigJam</a>, designed detailed wireframes, and created a complete UI in Figma. After finalizing the design, I built a fully responsive front-end using HTML, CSS, and Bootstrap. I also published a live LinkBio preview on GitHub Pages. WordPress integration is currently in progress. This project showcases my ability to lead the UX/UI process from concept to code.
 								</p>
 								<div class="d-flex gap-3">
 									<a
@@ -342,13 +329,21 @@
 										<img src="./icons/figma-icon.svg" alt="Figma" />
 									</a>
 									<a
-										href="https://dariaderiagina.github.io/TheLancerMethod/links.html"
+										href="https://dariaderiagina.github.io/TheLancerMethod/"
 										target="_blank"
 										class="project-link"
 										title="Preview on GitHub Pages"
 									>
 										<img src="./icons/github-icon.svg" alt="GitHub Pages" />
 									</a>
+									<a
+	href="https://thelancermethod.com/linkinbio/"
+	target="_blank"
+	class="project-link"
+	title="Live WordPress Site"
+>
+	<img src="./icons/wordpressIcon.png" alt="WordPress" />
+</a>
 								</div>
 							</div>
 							<a
@@ -366,7 +361,7 @@
 					</div>
 
 					<!-- DevFest -->
-					<div class="col-md-6">
+					<div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
 						<div class="project-item">
 							<div class="project-info">
 								<p class="project-type">Front-End Development</p>
@@ -415,7 +410,7 @@
 					</div>
 
 					<!-- ServiceScout -->
-					<div class="col-md-6">
+					<div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
 						<div class="project-item">
 							<div class="project-info">
 								<p class="project-type">UX/UI · Figma</p>
@@ -464,7 +459,7 @@
 						</div>
 					</div>
 					<!-- AutoMap Project -->
-					<div class="col-md-6">
+					<div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
 						<div class="project-item">
 							<div class="project-info">
 								<p class="project-type">
@@ -515,7 +510,7 @@
 					</div>
 
 					<!-- Portfolio -->
-					<div class="col-md-6">
+					<div class="col-md-6" data-aos="fade-up" data-aos-delay="800">
 						<div class="project-item">
 							<div class="project-info">
 								<p class="project-type">HTML & CSS</p>
@@ -554,7 +549,7 @@
 					</div>
 
 					<!-- Champion's Choice -->
-					<div class="col-md-6">
+					<div class="col-md-6" data-aos="fade-up" data-aos-delay="1000">
 						<div class="project-item">
 							<div class="project-info">
 								<p class="project-type">Java · GitHub</p>
@@ -594,7 +589,7 @@
 					</div>
 
 					<!-- Pie Wireframe -->
-					<div class="col-md-6">
+					<div class="col-md-6" data-aos="fade-up" data-aos-delay="1200">
 						<div class="project-item">
 							<div class="project-info">
 								<p class="project-type">UX/UI · Figma</p>
@@ -633,7 +628,7 @@
 					</div>
 
 					<!-- Pie UI -->
-					<div class="col-md-6">
+					<div class="col-md-6" data-aos="fade-up" data-aos-delay="1400">
 						<div class="project-item">
 							<div class="project-info">
 								<p class="project-type">UI Design · Figma, Ps, Lr</p>
@@ -675,7 +670,7 @@
 					</div>
 
 					<!-- Car Services UI -->
-					<div class="col-md-6">
+					<div class="col-md-6" data-aos="fade-up" data-aos-delay="1600">
 						<div class="project-item">
 							<div class="project-info">
 								<p class="project-type">UX/UI · Figma</p>
@@ -729,7 +724,7 @@
 					</p>
 				</div>
 
-				<div class="gallery-grid">
+				<div class="gallery-grid" data-aos="fade-up">
 					<img
 						src="images/photoGalleryImages/Photo1.jpg"
 						alt="Castle Portrait"
@@ -797,7 +792,7 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<!-- Left Column: Contact Info -->
-					<div class="col-md-6">
+					<div class="col-md-6" data-aos="fade-up">
 						<h3 class="contact-subtitle">Contact</h3>
 						<h1 class="contact-title">Reach Out Me</h1>
 						<p class="contact-location">Canada</p>
@@ -815,7 +810,7 @@
 					</div>
 
 					<!-- Right Column: Contact Form -->
-					<div class="col-md-6">
+					<div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
 						<div class="contact-form">
 							<h2>Any Project?</h2>
 							<form
@@ -939,4 +934,12 @@
 		<!-- JS Files Gallery  -->
 		<script src="galleryModal.js"></script>
 	</body>
+	<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+</script>
+
 </html>
