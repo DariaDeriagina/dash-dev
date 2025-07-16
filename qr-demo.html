@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My Link in Bio — QR Demo</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				background-color: #ffffff;
+				font-family: "Inter", sans-serif;
+				color: #111;
+				text-align: center;
+				padding: 4rem 1rem;
+			}
+
+			h1 {
+				font-size: 2rem;
+				margin-bottom: 1rem;
+			}
+
+			p {
+				font-size: 1.125rem;
+				color: #444;
+				margin-bottom: 2.5rem;
+			}
+
+			.card-container {
+				max-width: 360px;
+				margin: 0 auto;
+				animation: pulse 3s ease-in-out infinite;
+			}
+
+			.card-container img {
+				width: 100%;
+				height: auto;
+				display: block;
+				border-radius: 20px;
+				box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+			}
+
+			@keyframes pulse {
+				0% {
+					transform: scale(1);
+				}
+				50% {
+					transform: scale(1.025);
+				}
+				100% {
+					transform: scale(1);
+				}
+			}
+
+			.caption {
+				margin-top: 2rem;
+				font-size: 1rem;
+				color: #666;
+			}
+
+			@media (max-width: 600px) {
+				h1 {
+					font-size: 1.5rem;
+				}
+				p {
+					font-size: 1rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h1>My Link in Bio in Action</h1>
+		<p>This is my digital business card — styled, coded & connected.</p>
+
+		<div class="card-container">
+			<img
+				src="images/qr-demo/CallingCardDashDev.png"
+				alt="Dasha Deriagina Business Card"
+			/>
+		</div>
+
+		<div class="caption">
+			Please use your phone camera to scan the QR code and see the live Link in
+			Bio page.
+		</div>
+	</body>
+</html>

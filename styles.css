@@ -1005,3 +1005,6 @@ p.subtitle {
 		}
 	}
 }
+#notes {
+	scroll-margin-top: 10px;
+}

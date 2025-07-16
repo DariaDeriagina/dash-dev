@@ -199,6 +199,24 @@ figcaption {
 		transform: scale(1);
 	}
 }
+.live-demo-link {
+	margin-top: 3rem;
+	text-align: center;
+	font-size: 1rem;
+	color: #333;
+}
+
+.live-demo-link a {
+	color: #000;
+	font-weight: 600;
+	text-decoration: underline;
+	transition: color 0.3s;
+}
+
+.live-demo-link a:hover {
+	color: #ff5c97;
+}
+
 .footer {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -241,7 +259,4 @@ figcaption {
 		width: 120px;
 		margin-bottom: 0.5rem;
 	}
-}
-#notes {
-	scroll-margin-top: 10px;
 }
