@@ -256,6 +256,8 @@ p.subtitle {
 	font-size: 1rem;
 	display: inline-flex;
 	align-items: center;
+	min-width: 200px; /* or whatever works for your layout */
+	justify-content: center;
 }
 
 /* PRIMARY BLACK */
