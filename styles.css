@@ -721,8 +721,10 @@ p.subtitle {
 	padding: 10px 20px;
 	font-size: 16px;
 	border-radius: 5px;
-	display: inline-flex;
-	align-items: center;
+	display: block;
+	margin: 20px 0 0 0; /* aligned left */
+	width: 100%;
+	max-width: 220px;
 }
 
 .contact-form button img {
