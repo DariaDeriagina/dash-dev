@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-	const desktopText = "UX/UI & Web Designer | Photographer";
-	const mobileText = "UX/UI & Web Designer\nPhotographer";
+	const desktopText = "UX/UI & Web Designer | Developer";
+	const mobileText = "UX/UI & Web Designer\nDeveloper";
 
 	const isMobile = window.innerWidth <= 768;
 	const targetId = isMobile ? "typed-text-mobile" : "typed-text-desktop";
