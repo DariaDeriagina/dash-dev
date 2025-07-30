@@ -256,7 +256,12 @@ p.subtitle {
 	font-size: 1rem;
 	display: inline-flex;
 	align-items: center;
-	min-width: 200px; /* or whatever works for your layout */
+
+	justify-content: center;
+}
+.hero-buttons .btn {
+	min-width: 220px;
+	text-align: center;
 	justify-content: center;
 }
 
@@ -571,27 +576,35 @@ p.subtitle {
 	transform: scale(1.05);
 }
 /*-- === MARK: NOTES=== */
+/* === MARK: NOTES === */
 #notes {
-	scroll-margin-top: 100px;
+	scroll-margin-top: 100px; /* ensures smooth scroll stops below navbar */
 }
+
+/* Section wrapper */
 .notes-section {
 	padding: 4rem 0;
 	background: linear-gradient(to bottom right, #fffaf0, #ffe2d1);
 }
 
+/* Subheading (INSIGHTS) */
 .notes-section .section-subtitle {
 	font-size: 18px;
 	color: #777;
 	margin-bottom: 10px;
 	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
+/* Title (Dev & Design Notes) */
 .notes-section .section-title {
 	font-size: 36px;
 	font-weight: 700;
 	margin-bottom: 10px;
+	color: #222;
 }
 
+/* Small description text */
 .notes-section .section-description {
 	font-size: 18px;
 	color: #555;
@@ -599,11 +612,12 @@ p.subtitle {
 	max-width: 720px;
 }
 
+/* === NOTE CARD === */
 .note-card {
 	background-color: #fff;
-	border-radius: 12px;
-	padding: 24px;
-	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+	border-radius: 14px;
+	padding: 20px;
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	height: 100%;
 	display: flex;
@@ -612,19 +626,52 @@ p.subtitle {
 	margin-bottom: 10px;
 }
 
+/* Modern hover (lift, subtle shadow) */
 .note-card:hover {
-	transform: scale(1.02);
-	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+	transform: translateY(-6px);
+	box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
 }
 
+/* Image link wrapper */
+.note-image-link {
+	display: block;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+/* Image style */
+.note-image {
+	width: 100%;
+	height: 250px; /* ✅ fixed height for consistency */
+	object-fit: cover;
+	border-radius: 10px;
+	transition: transform 0.4s ease;
+}
+
+.note-card:hover .note-image {
+	transform: scale(1.03); /* subtle zoom on hover */
+}
+
+/* Title (now clickable) */
 .note-title {
-	margin-top: 10px;
+	margin-top: 14px;
 	font-size: 20px;
 	font-weight: 700;
-	color: #141313;
+	line-height: 1.3;
 	margin-bottom: 8px;
 }
 
+.note-title a {
+	color: #141313;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.note-title a:hover {
+	color: #ff3c91;
+}
+
+/* Hashtags */
 .note-tags {
 	font-size: 14px;
 	color: #ff6c63;
@@ -632,12 +679,18 @@ p.subtitle {
 	margin-bottom: 12px;
 }
 
+/* Excerpt text */
 .note-excerpt {
 	font-size: 16px;
 	color: #555;
 	margin-bottom: 16px;
+	display: -webkit-box;
+	-webkit-line-clamp: 3; /* ✅ limits preview to 3 lines */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
+/* Read More link */
 .read-more {
 	text-decoration: none;
 	color: #000;
@@ -647,6 +700,66 @@ p.subtitle {
 
 .read-more:hover {
 	color: #ff6c63;
+}
+
+/* === RESPONSIVE: MOBILE === */
+@media (max-width: 768px) {
+	.notes-section {
+		padding: 2.5rem 0;
+	}
+
+	.notes-section .section-title {
+		font-size: 28px;
+		text-align: center;
+	}
+
+	.notes-section .section-subtitle {
+		text-align: center;
+		font-size: 16px;
+	}
+
+	.notes-section .section-description {
+		font-size: 16px;
+		text-align: center;
+		margin-bottom: 20px;
+		padding: 0 15px;
+	}
+
+	.note-card {
+		padding: 16px;
+		border-radius: 12px;
+	}
+
+	.note-card .note-image {
+		width: 100%;
+		height: 350px;
+		object-fit: cover;
+		object-position: top;
+		border-radius: 10px;
+		display: block;
+	}
+
+	.note-title {
+		font-size: 18px;
+		text-align: left;
+	}
+
+	.note-excerpt {
+		font-size: 15px;
+	}
+
+	.note-tags {
+		font-size: 13px;
+	}
+}
+
+/* === RESPONSIVE: TABLET === */
+@media (min-width: 769px) and (max-width: 1024px) {
+	.note-card .note-image {
+		height: auto; /* возвращаем авто-высоту */
+		max-height: 250px; /* ставим лимит */
+		object-fit: contain; /* чтобы не обрезало контент */
+	}
 }
 
 /***************  MARK: CONTACT ME *********************/

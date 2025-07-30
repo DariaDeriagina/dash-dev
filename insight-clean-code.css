@@ -1,0 +1,353 @@
+/* === RESET & BASE === */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+	background: #f9f9f9;
+	color: #111;
+	line-height: 1.7;
+	padding: 2rem;
+}
+
+/* === CONTAINER === */
+.article-container {
+	max-width: 750px;
+	margin: auto;
+	padding-bottom: 1rem;
+}
+
+/* === HEADER === */
+.article-header {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.header-row-fixed {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0rem 1rem;
+	text-align: center;
+}
+
+.logo-fixed {
+	position: absolute;
+	left: 0;
+	top: 20%;
+	transform: translateY(-50%);
+	width: 140px;
+	height: auto;
+}
+
+/* Multi-line title */
+.multi-line-title {
+	font-family: "Playfair Display", serif;
+	font-size: 2.4rem;
+	font-weight: 700;
+	color: #2c2c2c;
+	line-height: 1.2;
+	text-align: center;
+	margin-top: 1rem;
+}
+
+.gradient-text {
+	background: linear-gradient(90deg, #ff7c5c, #ff3c91);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+	animation: gradientGlow 3s ease-in-out infinite alternate;
+}
+
+/* Subheadline */
+.subheadline {
+	margin-top: 0.6rem;
+	font-size: 1.2rem;
+	color: #666;
+}
+
+/* === ARTICLE CONTENT === */
+.article-content p {
+	margin: 1.2rem 0;
+	font-size: 1.1rem;
+}
+
+h2 {
+	font-family: "Playfair Display", serif;
+	font-size: 1.7rem;
+	margin-top: 2.5rem;
+	color: #3b2e2e;
+}
+
+ul {
+	margin: 1rem 0 1rem 1.5rem;
+}
+
+ul li::marker {
+	color: #ff3c91;
+}
+
+/* === FIGURES === */
+figure {
+	margin: 2rem 0;
+	text-align: center;
+}
+
+figure img {
+	max-width: 100%;
+	border-radius: 14px;
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+	transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+figure img:hover {
+	transform: scale(1.05) rotate(-0.5deg);
+	box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+figcaption {
+	font-size: 0.9rem;
+	color: #777;
+	margin-top: 0.5rem;
+}
+
+/* === BLOCKQUOTE === */
+blockquote {
+	font-style: italic;
+	padding: 18px 20px;
+	margin: 30px 0;
+	background: #fff5f8;
+	border-left: 6px solid transparent;
+	border-image: linear-gradient(180deg, #ff7c5c, #ff3c91);
+	border-image-slice: 1;
+	border-radius: 8px;
+	color: #333;
+	animation: fadeInUp 1s ease forwards;
+	opacity: 0;
+	transform: translateY(20px);
+}
+
+/* === ABOUT AUTHOR BLOCK === */
+.about-author {
+	text-align: center;
+	margin: 2.5rem auto 1.5rem;
+	max-width: 420px;
+	opacity: 0.9;
+}
+
+.about-author img.author-photo {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	margin-bottom: 0.6rem;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+	transition: transform 0.3s ease;
+}
+
+.about-author img.author-photo:hover {
+	transform: scale(1.04);
+}
+
+.about-author p {
+	font-size: 0.9rem;
+	line-height: 1.4;
+	color: #777;
+	margin: 0 auto;
+	padding: 0 8px;
+}
+
+/* === CTA BUTTON === */
+.cta-wrapper {
+	text-align: center;
+	margin-top: 2.5rem;
+}
+
+.cta-button {
+	display: inline-block;
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
+	background: linear-gradient(to right, #ff7c5c, #ff3c91);
+	color: white;
+	text-decoration: none;
+	padding: 1rem 2.5rem;
+	border-radius: 40px;
+	font-weight: 600;
+	font-size: 1.1rem;
+	box-shadow: 0 4px 15px rgba(255, 60, 145, 0.4);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	white-space: nowrap;
+	text-align: center;
+	animation: pulseAnimation 2.5s infinite;
+}
+
+.cta-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(255, 60, 145, 0.5);
+}
+
+/* === FOOTER === */
+.footer p {
+	margin: 0.3rem 0;
+}
+
+.sources-line {
+	font-size: 0.9rem;
+	color: #666;
+}
+
+.footer {
+	margin-top: 2rem;
+	margin-bottom: 0;
+	text-align: center;
+	font-size: 0.95rem;
+	color: #999;
+	border-top: 1px solid #eee;
+	padding-top: 2rem;
+	padding-bottom: 1rem;
+}
+
+.footer a {
+	color: #ff3c91;
+	text-decoration: none;
+}
+
+.footer a:hover {
+	text-decoration: underline;
+}
+
+.footer a.dashdev-link {
+	color: #ff3c91;
+	font-weight: 600;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.footer a.dashdev-link:hover {
+	color: #ff7c5c;
+	text-decoration: underline;
+}
+
+/* === MODERN ANIMATIONS 2025 === */
+
+/* Smooth fade-in for basic elements */
+.fade-in {
+	animation: fadeIn 1s ease forwards;
+	opacity: 0;
+}
+
+.fade-in-delayed {
+	animation: fadeIn 1s ease 0.4s forwards;
+	opacity: 0;
+}
+
+/* Smooth fade-in with a slight upward slide */
+.fade-in-up {
+	animation: fadeInUp 0.9s ease forwards;
+	opacity: 0;
+	transform: translateY(20px);
+}
+
+/* Soft zoom-in for images */
+.zoom-in {
+	animation: smoothZoom 1s ease forwards;
+	opacity: 0;
+	transform: scale(0.98);
+}
+
+/* Pulse for CTA button */
+@keyframes pulseAnimation {
+	0% {
+		transform: scale(1);
+		box-shadow: 0 4px 15px rgba(255, 60, 145, 0.4);
+	}
+	50% {
+		transform: scale(1.03);
+		box-shadow: 0 6px 20px rgba(255, 60, 145, 0.5);
+	}
+	100% {
+		transform: scale(1);
+		box-shadow: 0 4px 15px rgba(255, 60, 145, 0.4);
+	}
+}
+
+/* Glow effect for gradient text */
+@keyframes gradientGlow {
+	0% {
+		text-shadow: 0 0 5px rgba(255, 124, 92, 0.3),
+			0 0 10px rgba(255, 60, 145, 0.2);
+	}
+	100% {
+		text-shadow: 0 0 8px rgba(255, 124, 92, 0.5),
+			0 0 16px rgba(255, 60, 145, 0.4);
+	}
+}
+
+/* Fade-in for static elements */
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
+
+/* Fade-in with upward motion */
+@keyframes fadeInUp {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Smooth zoom for images */
+@keyframes smoothZoom {
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+	.header-row-fixed {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 1rem;
+		padding-top: 1rem;
+	}
+	.logo-fixed {
+		position: static;
+		transform: none;
+		width: 140px;
+		margin-bottom: 0.5rem;
+	}
+	.cta-button {
+		width: 90%;
+		padding: 1rem 1rem;
+		font-size: 1rem;
+		text-align: center;
+	}
+	.multi-line-title {
+		margin-top: 0.6rem;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+	.header-row-fixed {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 1rem;
+		padding-top: 1rem;
+	}
+	.logo-fixed {
+		position: static;
+		transform: none;
+		width: 130px;
+		margin-bottom: 0.3rem;
+	}
+}
