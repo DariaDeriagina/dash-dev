@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>
+			Chasing Green Circles: How I Hit 91/98/100/100 on Lighthouse with
+			WordPress
+		</title>
+
+		<!-- ✅ SEO Meta Tags -->
+		<meta
+			name="description"
+			content="How I optimized a custom WordPress build to score 91 Performance, 98 Accessibility, 100 Best Practices, and 100 SEO on Lighthouse. Clean code, Yoast SEO, ACF, and happy green circles."
+		/>
+		<meta
+			name="keywords"
+			content="WordPress, Lighthouse, SEO, performance, accessibility, best practices, clean code, ACF, Yoast SEO"
+		/>
+		<meta name="author" content="DashDev" />
+
+		<!-- ✅ Open Graph -->
+		<meta
+			property="og:title"
+			content="Chasing Green Circles: How I Hit 91/98/100/100 on Lighthouse with WordPress"
+		/>
+		<meta
+			property="og:description"
+			content="How I optimized a WordPress site with clean code, ACF, and Yoast SEO to hit almost perfect Lighthouse scores."
+		/>
+		<meta
+			property="og:image"
+			content="https://dash-dev.net/images/insightsImages/LighthouseCover.png"
+		/>
+		<meta
+			property="og:url"
+			content="https://dash-dev.net/insights/lighthouse-scores"
+		/>
+		<meta property="og:type" content="article" />
+
+		<!-- ✅ Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:title"
+			content="Chasing Green Circles: How I Hit 91/98/100/100 on Lighthouse with WordPress"
+		/>
+		<meta
+			name="twitter:description"
+			content="Optimizing WordPress for speed, SEO, and accessibility until Lighthouse turns green."
+		/>
+		<meta
+			name="twitter:image"
+			content="https://dash-dev.net/images/insightsImages/LighthouseCover.png"
+		/>
+
+		<!-- ✅ Fonts + CSS -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="insight-lighthouse.css" />
+	</head>
+	<body>
+		<!-- 🔗 HEADER -->
+		<header class="article-header fade-in">
+			<div class="header-row-fixed">
+				<a href="https://dash-dev.net" target="_blank" rel="noopener">
+					<img
+						src="images/Footer/LogoFooter.png"
+						alt="DashDev Logo"
+						class="logo-fixed"
+					/>
+				</a>
+				<h1 class="multi-line-title fade-in-up">
+					Chasing <span class="gradient-text">Green Circles</span> <br />
+					Why Lighthouse Scores Make Developers <br />
+					A Little Happier
+				</h1>
+			</div>
+			<p class="subheadline fade-in-up">
+				91 / 98 / 100 / 100 — the story behind those green numbers 🌿
+			</p>
+		</header>
+
+		<!-- 📄 MAIN CONTENT -->
+		<main class="article-container">
+			<section class="article-content fade-in-delayed">
+				<p class="fade-in-up">
+					<strong
+						>There’s a quiet happiness in seeing Lighthouse turn green.</strong
+					>
+					It’s not about perfection — it’s about proof that every little detail
+					you cared about in the code actually mattered.
+				</p>
+
+				<h2 class="fade-in-up">📊 The Moment of Truth</h2>
+				<p class="fade-in-up">
+					On <em>The Lancer Method</em> website, I ran the audit and saw:
+					<br />✅ Performance: 91 <br />✅ Accessibility: 98 <br />✅ Best
+					Practices: 100 <br />✅ SEO: 100
+				</p>
+
+				<!-- IMAGE 1 -->
+				<figure class="zoom-in">
+					<img
+						src="images/insightsImages/LighthouseResults.png"
+						alt="Lighthouse score screenshot"
+					/>
+					<figcaption class="fade-in-up">
+						4 green circles = 1 happy developer 🟢
+					</figcaption>
+				</figure>
+
+				<h2 class="fade-in-up">🛠️ What Made the Difference</h2>
+				<ul class="fade-in-up">
+					<li>
+						Enqueueing scripts the clean way with
+						<code>wp_enqueue_scripts</code>
+					</li>
+					<li>
+						Optimized images in <code>.webp</code> + <code>loading="lazy"</code>
+					</li>
+					<li>Yoast SEO configured with custom titles + descriptions</li>
+					<li>ARIA labels for buttons & icons → Accessibility boost</li>
+					<li>HTTPS enforced in <code>.htaccess</code></li>
+				</ul>
+
+				<!-- IMAGE 2 -->
+				<figure class="zoom-in">
+					<img
+						src="images/insightsImages/YoastSetup.png"
+						alt="Yoast SEO meta box screenshot"
+					/>
+					<figcaption class="fade-in-up">
+						Yoast SEO: hand-written titles + descriptions, no AI filler ✍️
+					</figcaption>
+				</figure>
+
+				<h2 class="fade-in-up">💻 Code That Counts</h2>
+				<pre><code class="language-php">
+function lancer_enqueue_scripts() {
+  wp_enqueue_style('lancer-style', get_stylesheet_uri(), [], '1.0', 'all');
+  wp_enqueue_script('lancer-custom',
+    get_template_directory_uri() . '/assets/js/custom.js',
+    ['jquery'], '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'lancer_enqueue_scripts');
+</code></pre>
+
+				<h2 class="fade-in-up">🌱 Why It Matters</h2>
+				<p class="fade-in-up">
+					Lighthouse doesn’t just measure speed. It measures <em>care</em>:
+				</p>
+				<ul class="fade-in-up">
+					<li>
+						<strong>Accessibility</strong> → real people can use the site.
+					</li>
+					<li>
+						<strong>Performance</strong> → no one leaves because it loads too
+						slow.
+					</li>
+					<li><strong>SEO</strong> → the right audience actually finds you.</li>
+					<li>
+						<strong>Best Practices</strong> → a clean, future-proof foundation.
+					</li>
+				</ul>
+
+				<!-- IMAGE 3 -->
+				<figure class="zoom-in">
+					<img
+						src="images/insightsImages/AriaLabel.png"
+						alt="Code snippet with aria-label"
+					/>
+					<figcaption class="fade-in-up">
+						Even small ARIA labels add up to a better score — and a better site
+						💡
+					</figcaption>
+				</figure>
+
+				<blockquote class="quote-pop">
+					“Performance is not just about speed; it’s about respect for your
+					users’ time.” –
+					<a href="https://web.dev/performance-scoring/" target="_blank"
+						>Google Web.Dev</a
+					>
+				</blockquote>
+
+				<h2 class="fade-in-up">😌 Happiness in Green</h2>
+				<p class="fade-in-up">
+					Developers celebrate commits, passing tests, and bug fixes. But
+					there’s a special kind of joy in seeing four green circles in
+					Lighthouse. It’s proof that the invisible work — meta tags, ARIA
+					labels, lazy-loaded images —
+					<em>actually matters</em>.
+				</p>
+
+				<!-- CTA BUTTON -->
+				<div class="cta-wrapper fade-in-up">
+					<a
+						class="cta-button pulse"
+						href="https://dash-dev.net/contact/contact.html"
+						target="_blank"
+					>
+						💡 Let’s Build Something Green
+					</a>
+				</div>
+			</section>
+
+			<!-- 👩🏻‍💻 ABOUT AUTHOR -->
+			<div class="about-author fade-in-delayed">
+				<img
+					src="images/insightsImages/DashaDeveloper.png"
+					alt="Dasha – Designer & Developer"
+					class="author-photo"
+				/>
+				<p>
+					Hi! I’m Dasha, a designer & developer who believes that code should be
+					as clean as the design it delivers. 🌿
+				</p>
+			</div>
+
+			<!-- 📎 FOOTER -->
+			<footer class="footer fade-in-up">
+				<p>
+					© 2025 Made with 🫶🏼 by
+					<a
+						href="https://dash-dev.net"
+						target="_blank"
+						rel="noopener"
+						class="dashdev-link"
+						>DashDev</a
+					>
+				</p>
+				<p class="sources-line">
+					Sources:
+					<a
+						href="https://www.semrush.com/blog/google-lighthouse/?g_network=x&g_adtype=none&g_keyword=&g_campaign=WW_SRCH_PMAX_Social_Toolkit_EN&g_keywordid=&g_adid=&g_campaignid=22915427214&g_acctid=851-605-1869&g_adgroupid=&kw=&cmp=WW_SRCH_PMAX_Social_Toolkit_EN&label=Social_Toolkit&Network=x&Device=c&utm_content=&kwid=&cmpid=22915427214&agpid=&BU=Social_Toolkit&extid=&adpos=&gad_source=1&gad_campaignid=22921200188&gbraid=0AAAAADiv3HRJYYNQK8k7J-edPTaPvaWLE&gclid=Cj0KCQjwwsrFBhD6ARIsAPnUFD3_av4f2tkApkVIsG8WBlh9EnY4yk1pZgnkIhMDhHf0cm7ezTHSpU4aApLlEALw_wcB"
+						target="_blank"
+						>Google Lighthouse Docs</a
+					>,
+					<a href="https://yoast.com/wordpress-seo/" target="_blank"
+						>Yoast SEO</a
+					>
+				</p>
+			</footer>
+		</main>
+	</body>
+</html>

@@ -575,7 +575,7 @@ p.subtitle {
 .project-image:hover {
 	transform: scale(1.05);
 }
-/*-- === MARK: NOTES=== */
+
 /* === MARK: NOTES === */
 #notes {
 	scroll-margin-top: 100px; /* ensures smooth scroll stops below navbar */
@@ -700,6 +700,197 @@ p.subtitle {
 
 .read-more:hover {
 	color: #ff6c63;
+}
+
+:root {
+	--lh-green: #0cce6b;
+} /* Lighthouse-ish green */
+
+.green-circles {
+	color: var(--lh-green);
+	position: relative;
+	font-weight: 700;
+	text-shadow: 0 0 0.2em rgba(12, 206, 107, 0.35);
+}
+
+/* Tiny sparkle */
+.green-circles::after {
+	content: "";
+	position: absolute;
+	top: -0.35em;
+	right: -1em;
+	width: 1.1em;
+	height: 1.1em;
+	-webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2l2.3 5.7L20 10l-5.7 2.3L12 18l-2.3-5.7L4 10l5.7-2.3L12 2z'/></svg>")
+		center/contain no-repeat;
+	mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2l2.3 5.7L20 10l-5.7 2.3L12 18l-2.3-5.7L4 10l5.7-2.3L12 2z'/></svg>")
+		center/contain no-repeat;
+	background: radial-gradient(circle, #fff 0 35%, transparent 36%),
+		radial-gradient(circle, var(--lh-green) 0 60%, transparent 61%);
+	filter: drop-shadow(0 0 0.35em rgba(12, 206, 107, 0.6));
+	animation: sparkle 2.2s ease-in-out infinite;
+	pointer-events: none;
+}
+
+/* Soft shimmer across the letters */
+.green-circles::before {
+	content: "";
+	position: absolute;
+	left: -10%;
+	top: 0;
+	bottom: 0;
+	width: 0;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.65),
+		transparent
+	);
+	transform: skewX(-20deg);
+	animation: sweep 2.6s ease-in-out infinite 0.4s;
+	pointer-events: none;
+}
+
+@keyframes sparkle {
+	0%,
+	100% {
+		transform: scale(0.85) rotate(0);
+		opacity: 0.85;
+	}
+	50% {
+		transform: scale(1.15) rotate(15deg);
+		opacity: 1;
+	}
+}
+@keyframes sweep {
+	0% {
+		left: -10%;
+		width: 0;
+		opacity: 0;
+	}
+	30% {
+		left: 30%;
+		width: 14%;
+		opacity: 0.8;
+	}
+	60% {
+		left: 90%;
+		width: 0;
+		opacity: 0;
+	}
+	100% {
+		left: 110%;
+		width: 0;
+		opacity: 0;
+	}
+}
+
+/* Optional: tint the tag line on that card */
+.lh-tags {
+	color: var(--lh-green);
+}
+
+/* Motion respect */
+@media (prefers-reduced-motion: reduce) {
+	.green-circles::before,
+	.green-circles::after {
+		animation: none;
+	}
+}
+:root {
+	--lh-green: #0cce6b;
+} /* Lighthouse-ish green */
+
+.green-circles {
+	color: var(--lh-green);
+	position: relative;
+	font-weight: 700;
+	text-shadow: 0 0 0.2em rgba(12, 206, 107, 0.35);
+}
+
+/* Tiny sparkle */
+.green-circles::after {
+	content: "";
+	position: absolute;
+	top: -0.35em;
+	right: -1em;
+	width: 1.1em;
+	height: 1.1em;
+	-webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2l2.3 5.7L20 10l-5.7 2.3L12 18l-2.3-5.7L4 10l5.7-2.3L12 2z'/></svg>")
+		center/contain no-repeat;
+	mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2l2.3 5.7L20 10l-5.7 2.3L12 18l-2.3-5.7L4 10l5.7-2.3L12 2z'/></svg>")
+		center/contain no-repeat;
+	background: radial-gradient(circle, #fff 0 35%, transparent 36%),
+		radial-gradient(circle, var(--lh-green) 0 60%, transparent 61%);
+	filter: drop-shadow(0 0 0.35em rgba(12, 206, 107, 0.6));
+	animation: sparkle 2.2s ease-in-out infinite;
+	pointer-events: none;
+}
+
+/* Soft shimmer across the letters */
+.green-circles::before {
+	content: "";
+	position: absolute;
+	left: -10%;
+	top: 0;
+	bottom: 0;
+	width: 0;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.65),
+		transparent
+	);
+	transform: skewX(-20deg);
+	animation: sweep 2.6s ease-in-out infinite 0.4s;
+	pointer-events: none;
+}
+
+@keyframes sparkle {
+	0%,
+	100% {
+		transform: scale(0.85) rotate(0);
+		opacity: 0.85;
+	}
+	50% {
+		transform: scale(1.15) rotate(15deg);
+		opacity: 1;
+	}
+}
+@keyframes sweep {
+	0% {
+		left: -10%;
+		width: 0;
+		opacity: 0;
+	}
+	30% {
+		left: 30%;
+		width: 14%;
+		opacity: 0.8;
+	}
+	60% {
+		left: 90%;
+		width: 0;
+		opacity: 0;
+	}
+	100% {
+		left: 110%;
+		width: 0;
+		opacity: 0;
+	}
+}
+
+/* Optional: tint the tag line on that card */
+.lh-tags {
+	color: var(--lh-green);
+}
+
+/* Motion respect */
+@media (prefers-reduced-motion: reduce) {
+	.green-circles::before,
+	.green-circles::after {
+		animation: none;
+	}
 }
 
 /* === RESPONSIVE: MOBILE === */
