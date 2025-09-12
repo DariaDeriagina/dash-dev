@@ -575,6 +575,38 @@ p.subtitle {
 .project-image:hover {
 	transform: scale(1.05);
 }
+/* clickable title link */
+.project-link-title {
+	position: relative;
+	display: inline-block;
+	color: inherit; /* keep same color as text */
+	text-decoration: none; /* remove default underline */
+	transition: transform 0.25s ease, color 0.25s ease;
+	cursor: pointer;
+}
+
+/* animated gradient underline */
+.project-link-title::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	width: 0%;
+	height: 2px;
+	background: linear-gradient(90deg, #ff7c5c, #ff3c91);
+	transition: width 0.3s ease;
+	border-radius: 2px;
+}
+
+/* hover: lift + underline reveal */
+.project-link-title:hover {
+	transform: translateY(-3px);
+	color: #ff3c91; /* optional accent shift */
+}
+
+.project-link-title:hover::after {
+	width: 100%;
+}
 
 /* === MARK: NOTES === */
 #notes {
