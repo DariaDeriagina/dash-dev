@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Lancer Method — UX/UI Case Study</title>
+
+  <!-- SEO -->
+  <meta name="description" content="How I rebuilt The Lancer Method with clean UX, accessible forms, ACF-powered content, and better deliverability — plus a mobile UI from Figma." />
+  <meta name="author" content="DashDev" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Lancer Method — UX/UI Case Study" />
+  <meta property="og:description" content="From research & wireframes to a performant WordPress build with ACF, custom forms, and Gmail SMTP." />
+  <meta property="og:image" content="https://dash-dev.net/images/case/lancer-og.jpg" />
+  <meta property="og:url" content="https://dash-dev.net/projects/lancer-method" />
+  <meta property="og:type" content="article" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Lancer Method — UX/UI Case Study" />
+  <meta name="twitter:description" content="A UX-first rebuild with accessible forms, ACF content model, SEO, and robust email deliverability." />
+  <meta name="twitter:image" content="https://dash-dev.net/images/case/lancer-og.jpg" />
+
+  <!-- Fonts (same vibe as your Insights/WindEss) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Base site CSS (your global) -->
+  <link rel="stylesheet" href="./lancer-method-case.css" />
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="/projects/lancer-method-case.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="article-header fade-in">
+    <div class="header-row-fixed">
+      <a href="https://dash-dev.net" target="_blank" rel="noopener">
+        <img src="/images/Footer/LogoFooter.png" alt="DashDev Logo" class="logo-fixed" />
+      </a>
+
+      <h1 class="multi-line-title fade-in-up">
+        The Lancer Method<br />
+        <span class="gradient-text">UX/UI Case Study</span>
+      </h1>
+    </div>
+
+    <p class="subheadline fade-in-up">
+      A UX-first WordPress rebuild: <strong>clear messaging</strong>, <strong>accessible custom forms</strong>, <strong>ACF content model</strong>,
+      <strong>reliable Gmail SMTP</strong>, and <strong>mobile UI from Figma</strong>.
+    </p>
+  </header>
+
+  <!-- MAIN -->
+  <main class="article-container">
+    <!-- SUMMARY / CHIPS -->
+    <section class="article-content fade-in-delayed">
+      <p class="fade-in-up"><strong>Role:</strong> UX/UI Designer, WordPress Developer</p>
+      <div class="chips">
+        <span class="chip">UX Research</span>
+        <span class="chip">Information Architecture</span>
+        <span class="chip">Figma → Mobile UI</span>
+        <span class="chip">WordPress + ACF</span>
+        <span class="chip">Custom Forms</span>
+        <span class="chip">Gmail SMTP</span>
+        <span class="chip">SEO & Performance</span>
+        <span class="chip">Accessibility</span>
+      </div>
+
+      <!-- HERO MOCKUP -->
+      <figure class="zoom-in">
+        <!-- Replace with your collage/hero -->
+        <img src="./images/case/lancer/hero-mock.jpg" alt="The Lancer Method screens: homepage, program page, contact" loading="eager" />
+        <figcaption class="fade-in-up">From research & wireframes to a clean, maintainable WordPress build</figcaption>
+      </figure>
+
+      <!-- Quick links (live + figma + repo if any) -->
+      <div class="cta-wrapper fade-in-up" style="display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center">
+        <a class="cta-button pulse" href="https://thelancermethod.com/" target="_blank" rel="noopener">Live Site</a>
+        <a class="cta-button" style="background:linear-gradient(to right,#8bd3e6,#61b9cc)" href="https://www.figma.com/design/TKC5WGxTkkRRwvBmEIc8bT/The-Lancer-Method?node-id=206-433&t=7aiIitK036arwA2v-1" target="_blank" rel="noopener">Figma File</a>
+        <!-- Optional repo link if applicable -->
+        <!-- <a class="cta-button" style="background:linear-gradient(to right,#ffa23c,#e57f15)" href="https://github.com/DariaDeriagina/lancer-theme" target="_blank" rel="noopener">Theme Code</a> -->
+      </div>
+    </section>
+
+  <!-- MARK: PROBLEM / GOALS -->
+<section class="article-content fade-in-delayed">
+  <h2 class="fade-in-up">Problem & Goals</h2>
+
+  <p class="fade-in-up quote-pop">
+    The client arrived with a studio-built site that didn’t fit her strategy: unclear value,
+    hard-to-choose programs, and unreliable forms. We rebooted from UX and rebuilt the product end-to-end.
+  </p>
+
+  <ul class="fade-in-up">
+    <li><strong>Clarify the offer:</strong> who it’s for, outcomes, and how to start — above the fold.</li>
+    <li><strong>UX first:</strong> FigJam flows → Figma wireframes & high-fidelity UI with a tight style system.</li>
+    <li><strong>Conversion & accessiblity:</strong> mobile-first layout, large tap targets, clear CTAs, WCAG-minded patterns.</li>
+    <li><strong>Forms that deliver:</strong> custom handling + Gmail SMTP for reliable inbox delivery.</li>
+    <li><strong>Owner-friendly content:</strong> WordPress + ACF so Programs/FAQs can be edited without a developer.</li>
+    <li><strong>Quality bar:</strong> improved SEO, performance, and core accessibility.</li>
+  </ul>
+
+  <p class="fade-in-up small-note">
+    <strong>Scope:</strong> Full product package — UX research → Figma prototypes → production front-end;
+    WordPress (ACF) integration in progress.
+  </p>
+</section>
+
+    <!-- MARK: RESEARCH / INSIGHTS -->
+  <!-- MARK: RESEARCH / INSIGHTS -->
+<section class="article-content fade-in-delayed">
+  <h2 class="fade-in-up">UX Research → Structure</h2>
+  <p class="fade-in-up">
+    I used <strong>FigJam</strong> to explore how prospective clients would move through
+    the site — from first click to booking a session. This process included mapping
+    the <em>flow of CTAs</em>, a clear sitemap, the user journey, and three
+    personas with pain points and goals. Together, these artifacts shaped the
+    final information architecture and messaging.
+  </p>
+
+  <!-- Flow chart -->
+  <figure class="zoom-in">
+    <img src="/images/case/lancer/FlowChat.jpg" 
+         alt="Flow chart showing CTA placement and booking flow" 
+         loading="lazy" />
+    <figcaption class="fade-in-up">
+      <strong>Flow chart:</strong> mapped how users scroll, encounter CTAs, and move into the booking funnel.
+    </figcaption>
+  </figure>
+
+  <!-- Sitemap -->
+  <figure class="zoom-in">
+    <img src="/images/case/lancer/ia-sitemap.jpg" 
+         alt="Sitemap of one-page scrolling website" 
+         loading="lazy" />
+    <figcaption class="fade-in-up">
+      <strong>Sitemap:</strong> defined a one-page structure with clear sections (Hero, Method, About, Who I Help, Testimonials, Final CTA).
+    </figcaption>
+  </figure>
+
+  <!-- User Journey -->
+  <figure class="zoom-in">
+    <img src="/images/case/lancer/UserJourney.jpg" 
+         alt="Linear user journey diagram" 
+         loading="lazy" />
+    <figcaption class="fade-in-up">
+      <strong>User journey:</strong> visualized the step-by-step path from discovery → understanding → trust → booking.
+    </figcaption>
+  </figure>
+
+  <!-- Personas -->
+  <figure class="zoom-in">
+    <img src="/images/case/lancer/UserPersonas.jpg" 
+         alt="User personas with pain points and goals" 
+         loading="lazy" />
+    <figcaption class="fade-in-up">
+      <strong>Personas:</strong> identified three archetypes (Overloaded Freelancer, Service Pro, Creative Overthinker) with pain points and goals.
+    </figcaption>
+  </figure>
+
+  <p class="fade-in-up">
+    These insights gave me confidence that every section answered a real user
+    question — and that no matter where someone entered, there was always a
+    clear path toward booking a session.
+  </p>
+</section>
+
+
+    <!-- MARK: WIREFRAMES (B/W) -->
+    <section class="article-content fade-in-delayed" id="wireframes">
+      <h2 class="fade-in-up">Wireframes (Black &amp; White)</h2>
+      <p class="fade-in-up">Validating hierarchy and messaging before visuals.</p>
+
+      <div class="wf-grid fade-in-up" aria-label="Wireframes gallery">
+        <!-- Repeat cards as needed; update src/alt -->
+        <button class="wf-card" data-full="/images/case/lancer/wf-home.jpg" aria-label="Open wireframe: Home">
+          <img loading="lazy" src="/images/case/lancer/wf-home.jpg" alt="Wireframe: Home layout" />
+          <span class="wf-tag">Home</span>
+        </button>
+        <button class="wf-card" data-full="/images/case/lancer/wf-programs.jpg" aria-label="Open wireframe: Programs">
+          <img loading="lazy" src="/images/case/lancer/wf-programs.jpg" alt="Wireframe: Programs page" />
+          <span class="wf-tag">Programs</span>
+        </button>
+        <button class="wf-card" data-full="/images/case/lancer/wf-about.jpg" aria-label="Open wireframe: About">
+          <img loading="lazy" src="/images/case/lancer/wf-about.jpg" alt="Wireframe: About page" />
+          <span class="wf-tag">About</span>
+        </button>
+        <button class="wf-card" data-full="/images/case/lancer/wf-contact.jpg" aria-label="Open wireframe: Contact">
+          <img loading="lazy" src="/images/case/lancer/wf-contact.jpg" alt="Wireframe: Contact form" />
+          <span class="wf-tag">Contact</span>
+        </button>
+      </div>
+
+      <!-- Accessible lightbox -->
+      <dialog class="wf-lightbox" aria-label="Wireframe preview">
+        <button class="wf-close" aria-label="Close">&times;</button>
+        <img src="" alt="" id="wf-full" />
+        <p class="wf-caption" id="wf-caption"></p>
+      </dialog>
+    </section>
+
+   <!-- MARK: MOBILE UI FROM FIGMA -->
+<section class="article-content fade-in-delayed" id="mobile-ui">
+  <h2 class="fade-in-up">Mobile UI (from Figma Components)</h2>
+  <p class="fade-in-up">
+    I built a mobile-first system: stacked sections, sticky bottom CTAs, and readable forms.
+    The UI follows Figma tokens (type scale, spacing, colors).
+  </p>
+
+  <!-- Single collage with lightbox -->
+  <figure class="zoom-in mobile-collage">
+    <button class="collage-open" aria-label="Open full-size mobile UI collage">
+      <img
+        src="/images/case/lancer/MobileLancer.png"
+        alt="Mobile UI collage: hero, method, about, services, testimonials, apply form, footer"
+        loading="lazy"
+      />
+    </button>
+    <figcaption class="fade-in-up">
+      Mobile UI collage — key screens shown together for context
+    </figcaption>
+  </figure>
+
+  <!-- Accessible lightbox -->
+  <dialog class="collage-lightbox" aria-label="Mobile UI collage preview">
+    <button class="wf-close" aria-label="Close">&times;</button>
+    <img src="/images/case/lancer/MobileLancer.jpg" alt="Full-size mobile UI collage" />
+  </dialog>
+</section>
+
+<script>
+  // Lightweight lightbox for the collage
+  (() => {
+    const openBtn = document.querySelector('.collage-open');
+    const dlg = document.querySelector('.collage-lightbox');
+    openBtn?.addEventListener('click', () => dlg.showModal());
+    dlg?.querySelector('.wf-close')?.addEventListener('click', () => dlg.close());
+  })();
+</script>
+
+
+      <!-- Optional: phone-style video walkthrough -->
+      <figure class="zoom-in phone-demo">
+        <video src="/video/lancer-mobile-demo.mp4" autoplay muted loop playsinline style="width:100%;display:block">
+          Sorry, your browser doesn’t support embedded videos.
+        </video>
+        <figcaption class="fade-in-up">Mobile flow walkthrough (home → program → apply form)</figcaption>
+      </figure>
+    </section>
+
+    <!-- WHAT WE SOLVED / HOW -->
+    <section class="article-content fade-in-delayed">
+      <h2 class="fade-in-up">What I Solved</h2>
+      <ul class="fade-in-up">
+        <li><strong>Messaging & IA:</strong> clarified who it’s for, outcomes, and next steps; fewer choices, stronger CTAs.</li>
+        <li><strong>Forms that work:</strong> custom PHP handler, server-side validation, clear errors/success states.</li>
+        <li><strong>Deliverability:</strong> Gmail SMTP with SPF/DKIM guidance → reliable inbox delivery.</li>
+        <li><strong>Content model:</strong> ACF field groups for Programs, Testimonials, FAQs → no-code updates.</li>
+        <li><strong>Accessibility:</strong> labels, input descriptions, focus states, color-contrast, keyboard nav.</li>
+        <li><strong>Web Vitals:</strong> image lazy-loading, font preconnect, minimized JS, structured headings.</li>
+        <li><strong>Trust:</strong> testimonials, certifications, real photos, and consistent tone of voice.</li>
+      </ul>
+
+      <h3 class="fade-in-up">How I Implemented It</h3>
+      <ul class="fade-in-up">
+        <li><strong>ACF:</strong> Programs (title, summary, outcomes, price, CTA link), FAQs (question/answer), Testimonials (name, role, quote), Site Options (socials, Link-in-Bio URL).</li>
+        <li><strong>Forms:</strong> `<form>` + nonce; server-side sanitize/validate; success/fail toasts; thank-you page.</li>
+        <li><strong>Email:</strong> `wp_mail()` over Gmail SMTP + Reply-To = user email; tested with real DNS records.</li>
+        <li><strong>SEO:</strong> unique titles/descriptions, Open Graph images, clean URL slugs, schema for Organization & FAQ.</li>
+      </ul>
+    </section>
+
+    <!-- MARK: DESIGN DECISIONS -->
+<section class="article-content fade-in-delayed">
+  <h2 class="fade-in-up">Design Decisions</h2>
+  <ul class="fade-in-up">
+    <li>Readable hierarchy, large tap targets, and sectioned content to reduce cognitive load.</li>
+    <li>Color system built from tokens:
+      <strong>#F9F4F0</strong> (Primary BG), <strong>#F4E0D3</strong> (Accent),
+      <strong>#EBD3C0</strong> (Button highlight), <strong>#3B2F2F</strong> (Heading accent),
+      <strong>#333333</strong>/<strong>#666666</strong> (Text), <strong>#954C20</strong> (Brand brown).
+    </li>
+    <li>Type stack: <strong>Playfair Display</strong> (H1–H3), <strong>Inter</strong> (UI/body),
+        <strong>Poppins</strong> (buttons), <strong>EB Garamond</strong> (quotes).</li>
+    <li>Program/service cards lead with outcomes; CTAs at hero, within services, near testimonials, and pre-footer.</li>
+    <li><strong>FAQ accordion</strong> simplifies scanning; apply section + footer CTA (no sticky button).</li>
+    <li>Forms: grouped fields, inline help, server-side validation, clear success state.</li>
+  </ul>
+
+  <!-- Tokens board image -->
+  <figure class="zoom-in tokens-figure">
+    <img src="./images/case/lancer/ui-tokens.jpg"
+         alt="Color and type tokens: #F9F4F0 primary background, #F4E0D3 accent, #EBD3C0 button highlight, #3B2F2F heading accent, #333/#666 text; fonts Playfair Display, Inter, Poppins, EB Garamond."
+         loading="lazy" />
+    <figcaption class="fade-in-up">Color & type tokens (Figma); quick legend below for mobile readability</figcaption>
+  </figure>
+
+ 
+
+
+</section>
+
+
+    <!-- TECH NOTES -->
+    <section class="article-content fade-in-delayed">
+      <h2 class="fade-in-up">Tech Notes</h2>
+      <ul class="fade-in-up">
+        <li>Custom theme (no page builders) with semantic templates.</li>
+        <li>ACF field groups registered in PHP for version control.</li>
+        <li>Assets optimized; responsive images with `<img width height loading="lazy">` and modern formats.</li>
+        <li>Gmail SMTP via plugin or code (secure app password); SPF/DKIM verified.</li>
+        <li>Clean, minimal JS for forms and accordions (no heavy runtime).</li>
+      </ul>
+    </section>
+
+    <!-- IMPACT / METRICS -->
+    <section class="article-content fade-in-delayed">
+      <h2 class="fade-in-up">Impact</h2>
+      <ul class="fade-in-up">
+        <!-- Replace sample numbers with your real metrics when ready -->
+        <li>+38% increase in form completion (first month post-launch).</li>
+        <li>Zero lost inquiries after SMTP + DNS setup (vs. intermittent before).</li>
+        <li>Faster edits: programs & FAQs updated by client without developer help.</li>
+      </ul>
+    </section>
+
+    <!-- MARK: LINK IN BIO CTA -->
+<section class="article-content fade-in-delayed" id="link-in-bio">
+  <h2 class="fade-in-up">Link in Bio</h2>
+  <p class="fade-in-up">
+    I designed a compact Link-in-Bio that mirrors the brand, loads fast, and routes users to Programs, Free Resources, and Apply.
+  </p>
+
+  <!-- Clickable preview image -->
+<figure class="zoom-in lib-figure">
+  <a class="lib-card" href="https://thelancermethod.com/linkinbio/" target="_blank" rel="noopener">
+    <img
+      src="./images/case/lancer/link-in-bio.png"
+      alt="Link-in-Bio preview with brand header and buttons to Programs, Free Resources, and Apply"
+      loading="lazy" />
+    <span class="lib-badge">Open live</span>
+  </a>
+  <figcaption class="fade-in-up">Link-in-Bio preview — tap to open the live page</figcaption>
+</figure>
+
+
+
+  <div class="cta-wrapper fade-in-up">
+    <a class="cta-button pulse" href="https://thelancermethod.com/linkinbio/" target="_blank" rel="noopener">
+      🔗 View Link in Bio
+    </a>
+  </div>
+</section>
+
+<!-- MARK: CLIENT EDITING (ACF) -->
+<section class="article-content fade-in-delayed" id="acf-editing">
+  <h2 class="fade-in-up">Client Editing (ACF)</h2>
+  <p class="fade-in-up">
+    I set up <strong>ACF field groups</strong> so Dena can update Programs and FAQs
+    herself in WordPress. I also recorded a quick tutorial showing the exact steps.
+  </p>
+
+ <!-- Tutorial video (silent by default) -->
+<figure class="zoom-in acf-figure">
+  <video
+    src="./video/lancer-acf-edit.mov"
+    controls
+    muted
+    preload="metadata"
+    playsinline
+    style="width:100%;display:block;border-radius:16px"
+    aria-label="Editing Programs and FAQs with ACF in WordPress (no audio)"
+  >
+    Sorry, your browser doesn’t support embedded videos.
+  </video>
+  <figcaption class="fade-in-up">
+    6-min walkthrough: editing Programs & FAQs via ACF (no audio)
+  </figcaption>
+</figure>
+
+
+  <!-- Screenshots (stack on mobile, 2-up on desktop) -->
+  <div class="acf-grid fade-in-up">
+    <figure class="acf-figure">
+      <img src="./images/case/lancer/acf-programs.png"
+           alt="ACF Programs field group: Title, Summary, Outcomes (repeater), Price, CTA link, Image"
+           loading="lazy" />
+      <figcaption>ACF Programs — structured fields keep layout consistent</figcaption>
+    </figure>
+
+
+  </div>
+</section>
+
+
+    <!-- EXPLORE & CONTACT -->
+    <section class="article-content fade-in-delayed">
+      <h2 class="fade-in-up">Explore & Collaborate</h2>
+      <div class="project-links fade-in-up" role="group" aria-label="Project links">
+        <a href="https://thelancermethod.com/" target="_blank" rel="noopener" class="project-link" title="Live site" aria-label="Live site">
+          <img src="/icons/link-icon.png" alt="Live Site" loading="lazy" />
+        </a>
+        <a href="https://www.figma.com/design/TKC5WGxTkkRRwvBmEIc8bT/The-Lancer-Method?node-id=206-433&t=7aiIitK036arwA2v-1" target="_blank" rel="noopener" class="project-link" title="Figma" aria-label="Figma">
+          <img src="/icons/figma-icon.svg" alt="Figma" loading="lazy" />
+        </a>
+      </div>
+
+      <div class="cta-wrapper fade-in-up">
+        <a class="cta-button" href="https://dash-dev.net/contact/contact.html" target="_blank" rel="noopener">
+          ✨ Let’s make your wellness site convert
+        </a>
+      </div>
+
+      <div class="about-author fade-in-delayed">
+        <img src="/images/insightsImages/DashaDeveloper.png" alt="Dasha – Designer & Developer" class="author-photo" loading="lazy" width="90" height="90" />
+        <p>
+          I’m Dasha — a designer-developer focused on accessible UX and clean WordPress builds.
+          For The Lancer Method, I delivered a maintainable system with forms that actually reach the inbox. 💌
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer fade-in-up">
+      <p>© 2025 Made with 🫶🏼 by <a href="https://dash-dev.net" target="_blank" rel="noopener" class="dashdev-link">DashDev</a></p>
+    </footer>
+  </main>
+
+  <!-- Tiny lightbox script for wireframes -->
+  <script>
+    (() => {
+      const dlg = document.querySelector(".wf-lightbox");
+      const img = document.getElementById("wf-full");
+      const caption = document.getElementById("wf-caption");
+      document.querySelectorAll(".wf-card").forEach(card => {
+        card.addEventListener("click", () => {
+          img.src = card.dataset.full;
+          img.alt = card.querySelector("img").alt;
+          caption.textContent = card.querySelector(".wf-tag").textContent;
+          dlg.showModal();
+        });
+      });
+      dlg?.querySelector(".wf-close")?.addEventListener("click", () => dlg.close());
+    })();
+  </script>
+</body>
+</html>
