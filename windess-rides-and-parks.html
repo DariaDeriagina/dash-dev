@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>WindEss Rides & Parks — UX/UI Case Study</title>
+
+		<!-- SEO -->
+		<meta
+			name="description"
+			content="Mobile-first Windsor–Essex cycling & parks explorer. Figma wireframes → React prototype with OpenStreetMap/OSRM routing."
+		/>
+		<meta name="author" content="DashDev" />
+
+		<!-- Open Graph -->
+		<meta
+			property="og:title"
+			content="WindEss Rides & Parks — UX/UI Case Study"
+		/>
+		<meta
+			property="og:description"
+			content="From UX wireframes to a working React prototype with OSM maps and OSRM routing."
+		/>
+		<meta
+			property="og:image"
+			content="https://dash-dev.net/images/case/windess-og.jpg"
+		/>
+		<meta property="og:url" content="https://dash-dev.net/projects/windess" />
+		<meta property="og:type" content="article" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:title"
+			content="WindEss Rides & Parks — UX/UI Case Study"
+		/>
+		<meta
+			name="twitter:description"
+			content="Mobile-first Windsor–Essex cycling & parks explorer prototype."
+		/>
+		<meta
+			name="twitter:image"
+			content="https://dash-dev.net/images/case/windess-og.jpg"
+		/>
+
+		<!-- Fonts (same as insights) -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@500;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Your main insights CSS -->
+		<link rel="stylesheet" href="./insight-clean-code.css" />
+
+		<!-- Minimal add-ons for this page -->
+		<link rel="stylesheet" href="/projects/windess-extra.css" />
+	</head>
+	<body>
+		<!-- HEADER (same structure/classes as your insights) -->
+		<header class="article-header fade-in">
+			<div class="header-row-fixed">
+				<a href="https://dash-dev.net" target="_blank" rel="noopener">
+					<img
+						src="/images/Footer/LogoFooter.png"
+						alt="DashDev Logo"
+						class="logo-fixed"
+					/>
+				</a>
+
+				<h1 class="multi-line-title fade-in-up">
+					WindEss Rides &amp; Parks<br />
+					<span class="gradient-text">UX/UI Case Study</span>
+				</h1>
+			</div>
+
+			<p class="subheadline fade-in-up">
+				A Windsor–Essex cycling &amp; parks explorer — from Figma wireframes to
+				a React prototype with OpenStreetMap routing.
+			</p>
+		</header>
+
+		<!-- MAIN -->
+		<main class="article-container">
+			<!-- SUMMARY -->
+			<section class="article-content fade-in-delayed">
+				<p class="fade-in-up">
+					<strong>Role:</strong> UX/UI Designer, Front-end Prototyper
+				</p>
+				<div class="chips">
+					<span class="chip">Figma Wireframes</span>
+					<span class="chip">UI Design</span>
+					<span class="chip">React Prototype</span>
+					<span class="chip">OpenStreetMap</span>
+					<span class="chip">OSRM Routing</span>
+					<span class="chip">Mobile-first</span>
+				</div>
+
+				<h2 class="fade-in-up">Project Overview</h2>
+				<p class="fade-in-up">
+					WindEss helps people discover Windsor–Essex parks and plan
+					bike-friendly routes. I designed the flow in Figma (8 core screens)
+					and implemented a working prototype in React: search → park detail →
+					route planner → route results with an interactive map and turn-by-turn
+					steps.
+				</p>
+
+				<!-- HERO MOCKUP -->
+				<figure class="zoom-in">
+					<img
+						src="/images/case/windess/hero-mock.jpg"
+						alt="WindEss screen collage"
+					/>
+					<figcaption class="fade-in-up">
+						From low-fi wireframes to a functional React prototype
+					</figcaption>
+				</figure>
+
+				<!-- LINKS -->
+				<div
+					class="cta-wrapper fade-in-up"
+					style="
+						gap: 0.6rem;
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: center;
+					"
+				>
+					<a
+						class="cta-button pulse"
+						href="https://your-live-demo-url"
+						target="_blank"
+						>Live Demo</a
+					>
+					<a
+						class="cta-button"
+						style="background: linear-gradient(to right, #ffa23c, #e57f15)"
+						href="https://github.com/DariaDeriagina/WindEss"
+						target="_blank"
+						>View Code</a
+					>
+					<a
+						class="cta-button"
+						style="background: linear-gradient(to right, #8bd3e6, #61b9cc)"
+						href="https://www.figma.com/file/yourfigma"
+						target="_blank"
+						>Figma File</a
+					>
+				</div>
+			</section>
+
+			<!-- PROBLEM & GOALS -->
+			<section class="article-content fade-in-delayed">
+				<h2 class="fade-in-up">Problem & Goals</h2>
+				<p class="fade-in-up quote-pop">
+					Cyclists and families want safe, bike-friendly routes to local parks
+					with clear amenities and a simple, tap-friendly mobile UI.
+				</p>
+				<ul class="fade-in-up">
+					<li>
+						Search parks by features (Bike-friendly, Waterfront, Picnic,
+						Playground).
+					</li>
+					<li>See essentials fast: hero image, tags, hours, mini-map.</li>
+					<li>
+						Plan a route with “Use my location” and get clean turn-by-turn
+						steps.
+					</li>
+				</ul>
+			</section>
+			<!-- WIREFRAMES (BLACK & WHITE) -->
+			<section class="article-content fade-in-delayed" id="wireframes">
+				<h2 class="fade-in-up">Wireframes (Black &amp; White)</h2>
+				<p class="fade-in-up">
+					Early mobile-first wireframes used to validate flow and hierarchy
+					before committing to UI polish.
+				</p>
+
+				<div class="wf-grid fade-in-up" aria-label="Wireframes gallery">
+					<!-- Card 1 -->
+					<button
+						class="wf-card"
+						data-full="/images/case/windess/wireframes/wf-01.jpg"
+						aria-label="Open wireframe 1"
+					>
+						<img
+							loading="lazy"
+							src="/images/case/windess/wireframes/wf-01.jpg"
+							alt="Wireframe 1: Landing / Entry"
+						/>
+						<span class="wf-tag">Landing</span>
+					</button>
+
+					<!-- Card 2 -->
+					<button
+						class="wf-card"
+						data-full="/images/case/windess/wireframes/wf-02.jpg"
+						aria-label="Open wireframe 2"
+					>
+						<img
+							loading="lazy"
+							src="/images/case/windess/wireframes/wf-02.jpg"
+							alt="Wireframe 2: Search"
+						/>
+						<span class="wf-tag">Search</span>
+					</button>
+
+					<!-- Card 3 -->
+					<button
+						class="wf-card"
+						data-full="/images/case/windess/wireframes/wf-03.jpg"
+						aria-label="Open wireframe 3"
+					>
+						<img
+							loading="lazy"
+							src="/images/case/windess/wireframes/wf-03.jpg"
+							alt="Wireframe 3: Park Detail"
+						/>
+						<span class="wf-tag">Park Detail</span>
+					</button>
+
+					<!-- Card 4 -->
+					<button
+						class="wf-card"
+						data-full="/images/case/windess/wireframes/wf-04.jpg"
+						aria-label="Open wireframe 4"
+					>
+						<img
+							loading="lazy"
+							src="/images/case/windess/wireframes/wf-04.jpg"
+							alt="Wireframe 4: Route Planner"
+						/>
+						<span class="wf-tag">Planner</span>
+					</button>
+
+					<!-- Card 5 -->
+					<button
+						class="wf-card"
+						data-full="/images/case/windess/wireframes/wf-05.jpg"
+						aria-label="Open wireframe 5"
+					>
+						<img
+							loading="lazy"
+							src="/images/case/windess/wireframes/wf-05.jpg"
+							alt="Wireframe 5: Route Results"
+						/>
+						<span class="wf-tag">Results</span>
+					</button>
+
+					<!-- Card 6 -->
+					<button
+						class="wf-card"
+						data-full="/images/case/windess/wireframes/wf-06.jpg"
+						aria-label="Open wireframe 6"
+					>
+						<img
+							loading="lazy"
+							src="/images/case/windess/wireframes/wf-06.jpg"
+							alt="Wireframe 6: Empty/Error"
+						/>
+						<span class="wf-tag">Empty</span>
+					</button>
+
+					<!-- Card 7 -->
+					<button
+						class="wf-card"
+						data-full="/images/case/windess/wireframes/wf-07.jpg"
+						aria-label="Open wireframe 7"
+					>
+						<img
+							loading="lazy"
+							src="/images/case/windess/wireframes/wf-07.jpg"
+							alt="Wireframe 7: Favorites"
+						/>
+						<span class="wf-tag">Favorites</span>
+					</button>
+
+					<!-- Card 8 -->
+					<button
+						class="wf-card"
+						data-full="/images/case/windess/wireframes/wf-08.jpg"
+						aria-label="Open wireframe 8"
+					>
+						<img
+							loading="lazy"
+							src="/images/case/windess/wireframes/wf-08.jpg"
+							alt="Wireframe 8: About"
+						/>
+						<span class="wf-tag">About</span>
+					</button>
+				</div>
+
+				<!-- Accessible lightbox -->
+				<dialog class="wf-lightbox" aria-label="Wireframe preview">
+					<button class="wf-close" aria-label="Close">&times;</button>
+					<img src="" alt="" id="wf-full" />
+					<p class="wf-caption" id="wf-caption"></p>
+				</dialog>
+			</section>
+
+			<!-- FLOW GALLERY -->
+			<section class="article-content fade-in-delayed">
+				<h2 class="fade-in-up">User Flow (8 Screens)</h2>
+				<div class="thumbs">
+					<div class="thumb">
+						<img src="/images/case/windess/01-landing.jpg" alt="Landing" />
+					</div>
+					<div class="thumb">
+						<img src="/images/case/windess/02-search.jpg" alt="Park search" />
+					</div>
+					<div class="thumb">
+						<img src="/images/case/windess/03-detail.jpg" alt="Park detail" />
+					</div>
+					<div class="thumb">
+						<img
+							src="/images/case/windess/04-planner.jpg"
+							alt="Route planner"
+						/>
+					</div>
+					<div class="thumb">
+						<img
+							src="/images/case/windess/05-results.jpg"
+							alt="Route results"
+						/>
+					</div>
+					<div class="thumb">
+						<img src="/images/case/windess/06-empty.jpg" alt="Empty/error" />
+					</div>
+					<!-- <div class="thumb">
+						<img
+							src="/images/case/windess/07-favorites.jpg"
+							alt="Favorites (optional)"
+						/>
+					</div>
+					<div class="thumb">
+						<img
+							src="/images/case/windess/08-about.jpg"
+							alt="About (optional)"
+						/>
+					</div> -->
+				</div>
+			</section>
+
+			<!-- VIDEO -->
+			<section class="article-content fade-in-delayed">
+				<h2 class="fade-in-up">Prototype Walkthrough</h2>
+				<p class="fade-in-up">
+					Short demo of the React prototype: search → detail → planner → results
+					(OSM map + polyline + steps).
+				</p>
+
+				<!-- Use either YouTube embed or a local mp4 -->
+				<div class="media" style="aspect-ratio: 16/9">
+					<iframe
+						src="https://www.youtube.com/embed/XXXXXXXXX"
+						title="WindEss demo"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen
+					></iframe>
+				</div>
+			</section>
+
+			<!-- DESIGN DETAILS -->
+			<section class="article-content fade-in-delayed">
+				<h2 class="fade-in-up">Design Decisions</h2>
+				<ul class="fade-in-up">
+					<li>
+						Readable hierarchy, large tap targets, and chip filters to reduce
+						cognitive load.
+					</li>
+					<li>
+						Calm outdoor palette (teal/amber/neutrals) with accessible contrast.
+					</li>
+					<li>
+						Generated consistent color scales & shadows using the
+						<em>Color Levels Generator</em> Figma plugin — ensuring reusable
+						tokens across components.
+					</li>
+					<li>
+						Nav pattern: keep bottom nav on lists; focused back arrow on detail.
+					</li>
+				</ul>
+
+				<figure class="zoom-in">
+					<img
+						src="/images/case/windess/ui-colors.jpg"
+						alt="Color palette and components"
+					/>
+					<figcaption class="fade-in-up">
+						Palette & component tokens, extended via Color Levels Generator
+					</figcaption>
+				</figure>
+			</section>
+
+			<!-- TECH NOTES -->
+			<section class="article-content fade-in-delayed">
+				<h2 class="fade-in-up">Tech Notes</h2>
+				<ul class="fade-in-up">
+					<li>React components with inline styles for quick iteration.</li>
+					<li>
+						OpenStreetMap tiles (embed + React-Leaflet for interactive map).
+					</li>
+					<li>
+						OSRM public endpoint for bike routing; parsed steps for readable
+						turn-by-turn.
+					</li>
+					<li>
+						Accessibility: semantic labels, keyboard focus, consistent contrast.
+					</li>
+					<li>Scope: prototype only (client-side photo upload, no auth).</li>
+				</ul>
+			</section>
+
+			<!-- IMPACT & ROADMAP -->
+			<section class="article-content fade-in-delayed">
+				<h2 class="fade-in-up">Impact</h2>
+				<ul class="fade-in-up">
+					<li>
+						Validated a full mobile-first flow — from park discovery to
+						turn-by-turn cycling routes — in a functional prototype.
+					</li>
+					<li>
+						Demonstrated how Figma design decisions translate directly into
+						React components and map integrations.
+					</li>
+					<li>
+						Established a reusable design system (palette, components, tokens)
+						suitable for future scaling.
+					</li>
+				</ul>
+
+				<h2 class="fade-in-up" style="margin-top: 2rem">Next Opportunities</h2>
+				<ul class="fade-in-up">
+					<li>
+						Enhance routing logic with heuristics (protected lanes, slope,
+						traffic safety).
+					</li>
+					<li>
+						Extend offline capabilities: tile caching, GPX export, and
+						lightweight moderation for user-added photos.
+					</li>
+					<li>
+						Integrate open municipal data for real-time park amenities and
+						status updates.
+					</li>
+				</ul>
+			</section>
+
+			<!-- FINAL SHOWCASE -->
+			<section class="article-content fade-in-delayed">
+				<h2 class="fade-in-up">Final Showcase</h2>
+				<p class="fade-in-up">
+					The design and prototype brought to life on real-device mockups,
+					highlighting the mobile-first experience.
+				</p>
+
+				<figure class="zoom-in final-mock">
+					<img
+						src="./images/case/windess/phones-hero.png"
+						alt="WindEss app shown on iPhone mockups"
+						loading="lazy"
+						width="1600"
+						height="1080"
+					/>
+					<figcaption class="fade-in-up">
+						Mobile-first: landing + park list on device
+					</figcaption>
+				</figure>
+			</section>
+
+			<!-- FOOTER (same style as insights) -->
+			<footer class="footer fade-in-up">
+				<p>
+					© 2025 Made with 🫶🏼 by
+					<a
+						href="https://dash-dev.net"
+						target="_blank"
+						rel="noopener"
+						class="dashdev-link"
+						>DashDev</a
+					>
+				</p>
+			</footer>
+		</main>
+	</body>
+</html>

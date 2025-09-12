@@ -53,3 +53,49 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 });
+(() => {
+	const grid = document.querySelector(".wf-grid");
+	const dlg = document.querySelector(".wf-lightbox");
+	const img = document.getElementById("wf-full");
+	const cap = document.getElementById("wf-caption");
+	const closeBtn = dlg?.querySelector(".wf-close");
+
+	if (!grid || !dlg) return;
+
+	grid.addEventListener("click", (e) => {
+		const btn = e.target.closest(".wf-card");
+		if (!btn) return;
+
+		const full = btn.getAttribute("data-full");
+		const imageEl = btn.querySelector("img");
+		const alt = imageEl?.getAttribute("alt") || "Wireframe";
+		img.src = full;
+		img.alt = alt;
+		cap.textContent = alt;
+		dlg.showModal();
+
+		// Trap focus
+		closeBtn?.focus();
+	});
+
+	closeBtn?.addEventListener("click", () => dlg.close());
+
+	dlg.addEventListener("click", (e) => {
+		// click outside image = close
+		const rect = img.getBoundingClientRect();
+		if (
+			!(
+				e.clientX >= rect.left &&
+				e.clientX <= rect.right &&
+				e.clientY >= rect.top &&
+				e.clientY <= rect.bottom
+			)
+		) {
+			dlg.close();
+		}
+	});
+
+	document.addEventListener("keydown", (e) => {
+		if (e.key === "Escape" && dlg.open) dlg.close();
+	});
+})();
