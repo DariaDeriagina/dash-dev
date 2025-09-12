@@ -498,3 +498,18 @@ blockquote {
 	height: auto;
 	margin: 0 auto;
 }
+
+/* Phone-style container for demo video */
+.phone-demo {
+	max-width: 400px; /* keeps it phone-like */
+	margin: 0 auto 2rem; /* center on page */
+	border: 12px solid #111; /* phone frame */
+	border-radius: 40px; /* rounded phone corners */
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+	overflow: hidden;
+}
+.phone-demo video {
+	display: block;
+	width: 100%;
+	height: auto;
+}
