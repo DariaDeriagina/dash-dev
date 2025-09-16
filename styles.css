@@ -149,11 +149,12 @@ a.navbar-brand .logo {
 
 /*Title*/
 .hero-title-line {
-	font-size: 4.5rem;
+	font-size: 3.5rem;
 	font-weight: 600;
-	line-height: 48px;
+	line-height: 28px;
 	margin: 0 0 10px;
 	color: #141313;
+	letter-spacing: -1.9px;
 	font-family: "IBM Plex Sans", sans-serif;
 }
 
@@ -179,7 +180,7 @@ p.subtitle {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-family: "IBM Plex Sans", sans-serif;
-	font-size: 72px;
+	font-size: 3.5rem;
 	font-style: normal;
 	font-weight: 900;
 	line-height: 80px;
@@ -215,7 +216,7 @@ p.subtitle {
 	color: #ff6c63;
 }
 #typed-text {
-	font-size: 2.2rem;
+	font-size: 1.2rem;
 	font-weight: 500;
 	color: #333;
 	letter-spacing: -1.44px;
@@ -229,6 +230,13 @@ p.subtitle {
 #typed-text-desktop {
 	display: inline;
 }
+#typed-text-desktop::after,
+#typed-text-mobile::after {
+	content: "|";
+	animation: blink 0.7s infinite;
+	color: #ff6c63;
+}
+
 @keyframes blink {
 	0%,
 	100% {
@@ -236,6 +244,34 @@ p.subtitle {
 	}
 	50% {
 		opacity: 0;
+	}
+}
+.studio-quote {
+	font-size: 1.2rem;
+	font-weight: 400;
+	color: #555;
+	margin-top: 12px;
+	text-align: left;
+	max-width: 520px;
+	line-height: 1.5;
+}
+/* By default, no break on desktop */
+.mobile-break {
+	display: none;
+}
+
+/* On mobile: show the break */
+@media (max-width: 768px) {
+	.mobile-break {
+		display: inline;
+	}
+}
+
+@media (max-width: 768px) {
+	.studio-quote {
+		text-align: center;
+		font-size: 1rem;
+		padding: 0 15px;
 	}
 }
 
@@ -352,6 +388,54 @@ p.subtitle {
 .insta-fade-in.show {
 	opacity: 1;
 }
+/* Hidden by default (desktop/tablet) */
+.hero-mobile-stack {
+	display: none;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+	/* Use the new mobile block */
+	.hero-mobile-stack {
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin-top: 8px;
+		padding: 0 16px;
+	}
+
+	/* Hide the original desktop subtitle on mobile */
+	.hero-left .subtitle {
+		display: none !important;
+	}
+
+	/* Smaller, tighter typed lines on mobile */
+	.subtitle-mobile {
+		font-size: 1.05rem;
+		line-height: 1.35;
+		margin-top: 10px;
+		color: #333;
+		letter-spacing: -0.2px;
+	}
+
+	/* Keep your mobile quote styling consistent */
+	.studio-quote-mobile {
+		font-size: 1rem;
+		margin-top: 10px;
+	}
+
+	/* Center the hero image — remove offset */
+	.hero-right img {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	.hero-right {
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+}
 
 /*************************** MARK: About Me Section *******************************************/
 
@@ -439,11 +523,11 @@ p.subtitle {
 	-webkit-text-fill-color: transparent;
 	text-align: center;
 	font-family: "IBM Plex Sans", sans-serif;
-	font-size: 28px;
+	font-size: 22px;
 	font-style: normal;
 	font-weight: 700;
 	line-height: 48px;
-	letter-spacing: -2.4px;
+	letter-spacing: -1.2px;
 	text-transform: uppercase;
 }
 
@@ -1231,7 +1315,7 @@ p.subtitle {
 		width: 100%;
 		display: flex;
 		justify-content: center;
-		margin-top: 20px;
+		margin-top: 10px;
 	}
 }
 
@@ -1240,8 +1324,7 @@ p.subtitle {
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: flex-start;
-		padding: 40px 20px 0;
-		margin-top: 80px;
+		padding: 20px 20px 0;
 	}
 
 	.hero-left {
@@ -1252,7 +1335,12 @@ p.subtitle {
 	.hero-right {
 		text-align: center;
 		width: 100%;
-		margin-top: 20px;
+		margin-top: 10px;
+		margin-bottom: 40px;
+	}
+
+	.hero-right img {
+		margin-left: 60px;
 	}
 
 	.hero-photo-combined {
@@ -1271,14 +1359,16 @@ p.subtitle {
 	}
 
 	.hero-container {
-		margin-top: 10px;
-		padding-top: 40px;
+		margin-top: 0px;
+		padding-top: 80px;
 	}
 	#typed-text-desktop {
 		display: none;
 	}
 	#typed-text-mobile {
 		display: inline;
+		font-size: 24px;
+		white-space: nowrap; /* ✅ prevents breaks, ignores <br> */
 	}
 }
 @media (max-width: 480px) {
