@@ -570,6 +570,18 @@ p.subtitle {
 	text-align: right;
 	color: #ccc;
 }
+/* Mobile fix for headings */
+@media (max-width: 768px) {
+	.about-details h3 {
+		line-height: 1.3; /* tighter spacing */
+		font-size: 16px; /* smaller size if needed */
+	}
+
+	.gradient-text {
+		line-height: 1.2; /* reduce from 48px */
+		font-size: 16px;
+	}
+}
 
 /******************** MARK: Video Section ********************/
 .video-section {
