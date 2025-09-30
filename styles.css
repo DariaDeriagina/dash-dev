@@ -1469,3 +1469,369 @@ p.subtitle {
 #notes {
 	scroll-margin-top: 10px;
 }
+/* ===== CV polish (styles-only) ===== */
+.cv-section {
+	padding: 3rem 0;
+	background: linear-gradient(to bottom right, #fff, #fff7f1);
+}
+.cv-card {
+	background: #fff;
+	border-radius: 14px;
+	padding: 20px;
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+	height: 100%;
+}
+.cv-title {
+	font-size: 1.125rem;
+	color: #333;
+	margin: 0.25rem 0 0.1rem;
+	font-weight: 800;
+}
+.cv-meta {
+	color: #666;
+	margin: 0 0 0.5rem;
+}
+.cv-text {
+	margin: 10px 0 14px;
+	color: #555;
+}
+
+.cv-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	justify-content: center;
+}
+.cv-links a {
+	color: #000;
+	text-decoration: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cv-links a:hover {
+	color: #ff6c63;
+	border-bottom-color: #ff6c63;
+}
+.cv-dot {
+	color: #aaa;
+}
+
+.cv-badges {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+.cv-badge {
+	font-size: 12px;
+	font-weight: 600;
+	padding: 6px 10px;
+	border-radius: 999px;
+	background: linear-gradient(90deg, #ffdf8c33, #ff6c6333);
+	border: 1px solid #ffd2c5;
+}
+
+.cv-skill-group {
+	margin-top: 10px;
+}
+.cv-skill-group h4 {
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	margin: 8px 0 4px;
+	color: #141313;
+}
+
+.project-title {
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 8px;
+}
+.project-list {
+	padding-left: 18px;
+	margin: 0;
+	color: #555;
+}
+.project-list li {
+	margin-bottom: 6px;
+}
+
+.project-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-top: 10px;
+}
+.project-tags span {
+	font-size: 12px;
+	padding: 4px 8px;
+	border-radius: 999px;
+	background: #f7f7f7;
+	border: 1px solid #eee;
+}
+
+.exp-header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+.exp-header h4 {
+	font-size: 18px;
+	margin: 0;
+}
+.exp-meta {
+	color: #777;
+	font-size: 14px;
+}
+.exp-list {
+	padding-left: 18px;
+	margin: 8px 0 0;
+	color: #555;
+}
+.exp-list li {
+	margin-bottom: 6px;
+}
+
+.edu-list,
+.links-list {
+	padding-left: 18px;
+	margin: 8px 0 0;
+	color: #555;
+}
+.links-list a {
+	color: #000;
+	text-decoration: none;
+}
+.links-list a:hover {
+	color: #ff6c63;
+}
+
+/* compact mobile spacing */
+@media (max-width: 768px) {
+	.cv-section {
+		padding: 2rem 0;
+	}
+	.section-title {
+		text-align: center;
+	}
+	.cv-title {
+		line-height: 1.25;
+	}
+	.cv-meta,
+	.cv-text,
+	.project-list li,
+	.exp-list li,
+	.edu-list li {
+		line-height: 1.4;
+	}
+}
+
+/* ===== gradient CTA button you liked ===== */
+.btn.cv-gradient {
+	background: linear-gradient(90deg, #c054c7, #ff6c63, #ffc733);
+	color: #fff !important;
+	font-weight: 700;
+	padding: 12px 28px;
+	border: none;
+	border-radius: 40px;
+	text-decoration: none;
+	font-size: 16px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.btn.cv-gradient:hover {
+	transform: scale(1.05);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.btn.cv-gradient .btn-arrow {
+	width: 18px;
+	height: 18px;
+	vertical-align: middle;
+}
+/* ===== CV polish (styles-only) ===== */
+.cv-section {
+	padding: 3rem 0;
+	background: linear-gradient(to bottom right, #fff, #fff7f1);
+}
+.cv-card {
+	background: #fff;
+	border-radius: 14px;
+	padding: 20px;
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+	height: 100%;
+}
+.cv-title {
+	font-size: 1.125rem;
+	color: #333;
+	margin: 0.25rem 0 0.1rem;
+	font-weight: 800;
+}
+.cv-meta {
+	color: #666;
+	margin: 0 0 0.5rem;
+}
+.cv-text {
+	margin: 10px 0 14px;
+	color: #555;
+}
+
+.cv-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	justify-content: center;
+}
+.cv-links a {
+	color: #000;
+	text-decoration: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cv-links a:hover {
+	color: #ff6c63;
+	border-bottom-color: #ff6c63;
+}
+.cv-dot {
+	color: #aaa;
+}
+
+.cv-badges {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+.cv-badge {
+	font-size: 12px;
+	font-weight: 600;
+	padding: 6px 10px;
+	border-radius: 999px;
+	background: linear-gradient(90deg, #ffdf8c33, #ff6c6333);
+	border: 1px solid #ffd2c5;
+}
+
+.cv-skill-group {
+	margin-top: 10px;
+}
+.cv-skill-group h4 {
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	margin: 8px 0 4px;
+	color: #141313;
+}
+
+.project-title {
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 8px;
+}
+.project-list {
+	padding-left: 18px;
+	margin: 0;
+	color: #555;
+}
+.project-list li {
+	margin-bottom: 6px;
+}
+
+.project-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-top: 10px;
+}
+.project-tags span {
+	font-size: 12px;
+	padding: 4px 8px;
+	border-radius: 999px;
+	background: #f7f7f7;
+	border: 1px solid #eee;
+}
+
+.exp-header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+.exp-header h4 {
+	font-size: 18px;
+	margin: 0;
+}
+.exp-meta {
+	color: #777;
+	font-size: 14px;
+}
+.exp-list {
+	padding-left: 18px;
+	margin: 8px 0 0;
+	color: #555;
+}
+.exp-list li {
+	margin-bottom: 6px;
+}
+
+.edu-list,
+.links-list {
+	padding-left: 18px;
+	margin: 8px 0 0;
+	color: #555;
+}
+.links-list a {
+	color: #000;
+	text-decoration: none;
+}
+.links-list a:hover {
+	color: #ff6c63;
+}
+
+/* compact mobile spacing */
+@media (max-width: 768px) {
+	.cv-section {
+		padding: 2rem 0;
+	}
+	.section-title {
+		text-align: center;
+	}
+	.cv-title {
+		line-height: 1.25;
+	}
+	.cv-meta,
+	.cv-text,
+	.project-list li,
+	.exp-list li,
+	.edu-list li {
+		line-height: 1.4;
+	}
+}
+
+/* ===== gradient CTA button you liked ===== */
+.btn.cv-gradient {
+	background: linear-gradient(90deg, #c054c7, #ff6c63, #ffc733);
+	color: #fff !important;
+	font-weight: 700;
+	padding: 12px 28px;
+	border: none;
+	border-radius: 40px;
+	text-decoration: none;
+	font-size: 16px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.btn.cv-gradient:hover {
+	transform: scale(1.05);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.btn.cv-gradient .btn-arrow {
+	width: 18px;
+	height: 18px;
+	vertical-align: middle;
+}
