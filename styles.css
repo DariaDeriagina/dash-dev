@@ -1835,3 +1835,55 @@ p.subtitle {
 	height: 18px;
 	vertical-align: middle;
 }
+/* ---- Tighten the Projects section spacing ---- */
+#projects.projects-section {
+	padding-top: 40px; /* was likely larger */
+	padding-bottom: 40px;
+}
+
+/* Reduce the big header gap (Bootstrap .mb-5 = 3rem) */
+#projects .row.mb-5 {
+	margin-bottom: 1.5rem !important;
+}
+
+/* Make each project card compact */
+#projects .project-item {
+	display: flex;
+	flex-direction: column; /* text then image */
+	gap: 12px; /* small, consistent spacing */
+}
+
+/* Kill extra margins inside the text block */
+#projects .project-info {
+	margin: 0;
+}
+#projects .project-info .project-type {
+	margin: 0 0 0.25rem;
+}
+#projects .project-info .project-title {
+	margin: 0 0 0.35rem;
+}
+#projects .project-info .project-description {
+	margin: 0;
+}
+
+/* Ensure the image doesn’t add extra space */
+#projects .project-image {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0; /* override any card img margin */
+	border: 0;
+}
+
+/* Safety: hide any accidental empty <p> left by edits */
+#projects .project-item p:empty {
+	display: none;
+}
+
+/* Optional: smaller row gaps on mobile */
+@media (max-width: 767.98px) {
+	#projects .row.g-4 {
+		--bs-gutter-y: 1rem;
+	}
+}

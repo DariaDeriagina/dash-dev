@@ -1,0 +1,322 @@
+/* ========== TOKENS ========== */
+:root {
+	--c-indigo: #4f46e5;
+	--c-cyan: #06b6d4;
+	--c-navy: #111827;
+	--c-bg: #f9fafb;
+	--c-text: #111;
+	--r-16: 16px;
+	--shadow-1: 0 6px 24px rgba(0, 0, 0, 0.08);
+	--shadow-2: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* ========== RESET ========== */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+img {
+	max-width: 100%;
+	display: block;
+}
+body {
+	font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+		sans-serif;
+	background: var(--c-bg);
+	color: var(--c-text);
+	line-height: 1.7;
+	padding: 2rem;
+}
+
+/* ========== CONTAINER ========== */
+.article-container {
+	max-width: 780px;
+	margin: auto;
+	padding-bottom: 1rem;
+}
+
+/* ========== HEADER ========== */
+.article-header {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+.header-row-fixed {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.brand-link {
+	display: inline-flex;
+}
+.logo-fixed {
+	position: absolute;
+	left: 0;
+	top: 18%;
+	transform: translateY(-50%);
+	width: 140px;
+	height: auto;
+}
+.multi-line-title {
+	font-family: "Playfair Display", serif;
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: #2c2c2c;
+	line-height: 1.2;
+	margin-top: 1rem;
+}
+.gradient-text {
+	background: linear-gradient(90deg, var(--c-indigo), var(--c-cyan));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+}
+.subheadline {
+	margin-top: 0.6rem;
+	font-size: 1.08rem;
+	color: #666;
+}
+
+/* ========== CONTENT ========== */
+.article-content p {
+	margin: 1.2rem 0;
+	font-size: 1.05rem;
+}
+h2 {
+	font-family: "Playfair Display", serif;
+	font-size: 1.7rem;
+	margin-top: 2.2rem;
+	color: #2c2c2c;
+}
+ul {
+	margin: 1rem 0 1rem 1.2rem;
+}
+ul li::marker {
+	color: var(--c-indigo);
+}
+
+/* ========== CHIPS ========== */
+.chips {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	margin: 0.6rem 0 1rem;
+}
+.chip {
+	background: #f1f5f9;
+	color: #111;
+	padding: 0.35rem 0.6rem;
+	border-radius: 999px;
+	font-weight: 600;
+	font-size: 0.85rem;
+	border: 1px solid #e7edf3;
+}
+
+/* ========== FIGURES ========== */
+figure {
+	margin: 2rem 0;
+	text-align: center;
+}
+figure img {
+	border-radius: 14px;
+	box-shadow: var(--shadow-1);
+	transition: 0.3s;
+}
+figure img:hover {
+	transform: scale(1.02);
+	box-shadow: var(--shadow-2);
+}
+figcaption {
+	font-size: 0.9rem;
+	color: #777;
+	margin-top: 0.5rem;
+}
+
+/* ========== CTAs ========== */
+.cta-wrapper {
+	text-align: center;
+	margin-top: 1.2rem;
+	display: flex;
+	gap: 0.6rem;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.cta-button {
+	display: inline-block;
+	background: linear-gradient(90deg, var(--c-indigo), #8b7bff);
+	color: #fff;
+	text-decoration: none;
+	padding: 0.9rem 1.4rem;
+	border-radius: 40px;
+	font-weight: 600;
+	font-size: 1.02rem;
+	box-shadow: 0 4px 16px rgba(79, 70, 229, 0.35);
+	transition: 0.18s;
+	white-space: nowrap;
+}
+.cta-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 24px rgba(6, 182, 212, 0.35);
+}
+.pulse {
+	animation: pulseAnim 2.4s infinite;
+}
+@keyframes pulseAnim {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.03);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* ========== PALETTE BOARD ========== */
+.palette {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	gap: 12px;
+	margin: 12px 0 4px;
+}
+.palette .chip {
+	background: var(--c);
+	border: 1px solid rgba(0, 0, 0, 0.06);
+	border-radius: 12px;
+	padding: 14px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	color: #fff;
+}
+.palette .chip em {
+	font-style: normal;
+	opacity: 0.9;
+}
+
+/* ========== AUTHOR ========== */
+.about-author {
+	text-align: center;
+	margin: 2rem auto 1.4rem;
+	max-width: 440px;
+	opacity: 0.95;
+}
+.author-photo {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	margin: 0 auto 0.6rem;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ========== FOOTER ========== */
+.footer {
+	margin-top: 2rem;
+	text-align: center;
+	font-size: 0.95rem;
+	color: #999;
+	border-top: 1px solid #eee;
+	padding: 2rem 0 1rem;
+}
+.footer a {
+	color: var(--c-indigo);
+	text-decoration: none;
+}
+.footer a:hover {
+	text-decoration: underline;
+}
+
+/* ========== ANIMATIONS ========== */
+.fade-in {
+	animation: fadeIn 0.9s ease forwards;
+	opacity: 0;
+}
+.fade-in-delayed {
+	animation: fadeIn 1s 0.25s ease forwards;
+	opacity: 0;
+}
+.fade-in-up {
+	animation: fadeUp 0.8s ease forwards;
+	opacity: 0;
+	transform: translateY(16px);
+}
+.zoom-in {
+	animation: zoomIn 0.8s ease forwards;
+	opacity: 0;
+	transform: scale(0.98);
+}
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeUp {
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes zoomIn {
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 820px) {
+	.header-row-fixed {
+		flex-direction: column;
+		gap: 1rem;
+		padding-top: 1rem;
+	}
+	.logo-fixed {
+		position: static;
+		transform: none;
+		width: 132px;
+	}
+	.cta-button {
+		width: 100%;
+	}
+}
+/* ===== FINAL COLOR SAFETY OVERRIDES (place at end) ===== */
+
+/* Global page: default is black text on white */
+html,
+body {
+	background: #ffffff !important;
+	color: #111111 !important;
+}
+
+/* Figures, captions, paragraphs inherit readable color */
+figure,
+figcaption,
+.article-content,
+.article-content p {
+	color: #111111 !important;
+}
+
+/* Palette chips:
+   - Any chip that is NOT .dark gets black text
+   - .dark chips (e.g., Dark Navy) keep white text */
+.palette .chip:not(.dark),
+.palette .chip:not(.dark) * {
+	color: #111111 !important;
+}
+
+/* Explicit white text only for .dark chips */
+.palette .chip.dark,
+.palette .chip.dark * {
+	color: #ffffff !important;
+}
+
+/* If some components shipped with inline colors, neutralize them */
+[style*="color: rgb(255"],
+[style*="color:#fff"],
+[style*="color: #fff"] {
+	color: #111111 !important;
+}
