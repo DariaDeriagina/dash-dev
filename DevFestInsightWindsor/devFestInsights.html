@@ -1,0 +1,574 @@
+<!-- devfest-insight.html (single file) -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Join GDG DevFest Windsor — A Note from DashDev</title>
+
+		<!-- SEO/OpenGraph (optional) -->
+		<meta
+			name="description"
+			content="Dasha (DashDev): why students should attend DevFest Windsor, how to prepare, and how to make the most of it—sessions, speakers, sponsors, and registering."
+		/>
+		<meta
+			property="og:title"
+			content="Join GDG DevFest Windsor — A Note from DashDev"
+		/>
+		<meta
+			property="og:description"
+			content="From student to founder: how DevFest Windsor helped shape my path. Tips to prepare and make the most of it."
+		/>
+		<meta property="og:type" content="article" />
+
+		<!-- Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Instrument+Sans:wght@600;800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<style>
+			/* --------------------------
+       DevFest Windsor — Single File
+       by DashDev Studio
+    --------------------------- */
+			:root {
+				--bg: #0b0c10;
+				--panel: #111218;
+				--text: #e9f1ff;
+				--muted: #9fb0d0;
+				--brand: #4f46e5;
+				--brand-2: #06b6d4;
+				--accent: #16a34a;
+				--radius: 22px;
+			}
+			* {
+				box-sizing: border-box;
+			}
+			html,
+			body {
+				height: 100%;
+			}
+			body {
+				margin: 0;
+				font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+					Helvetica, Arial, sans-serif;
+				line-height: 1.6;
+				color: var(--text);
+				background: radial-gradient(
+						1200px 600px at 10% 0%,
+						rgba(6, 182, 212, 0.08),
+						transparent 50%
+					),
+					radial-gradient(
+						900px 500px at 100% 10%,
+						rgba(79, 70, 229, 0.12),
+						transparent 60%
+					),
+					var(--bg);
+			}
+			a {
+				color: var(--brand-2);
+				text-decoration: none;
+			}
+
+			/* Layout */
+			.wrap {
+				max-width: 1050px;
+				margin: 0 auto;
+				padding: 28px 18px 40px;
+			}
+			header.hero {
+				position: relative;
+				overflow: hidden;
+				border-radius: var(--radius);
+				padding: 48px 22px;
+				background: linear-gradient(
+					180deg,
+					rgba(255, 255, 255, 0.06),
+					rgba(255, 255, 255, 0.03)
+				);
+				border: 1px solid rgba(255, 255, 255, 0.08);
+				box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
+			}
+			.kicker {
+				display: inline-flex;
+				gap: 10px;
+				align-items: center;
+				padding: 6px 12px;
+				border-radius: 999px;
+				border: 1px solid rgba(255, 255, 255, 0.18);
+				background: rgba(255, 255, 255, 0.05);
+				font-size: 12px;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: var(--muted);
+			}
+			h1.title {
+				font-family: "Instrument Sans", Inter, sans-serif;
+				font-weight: 800;
+				margin: 14px 0 8px;
+				font-size: clamp(28px, 4.5vw, 54px);
+				line-height: 1.05;
+			}
+			p.lead {
+				max-width: 75ch;
+				font-size: clamp(16px, 2.1vw, 20px);
+				color: var(--muted);
+			}
+
+			/* --- Logo stage (unchanged) --- */
+			.logo-stage {
+				position: absolute;
+				inset: auto 0 0 0;
+				height: 120px;
+				pointer-events: none;
+			}
+
+			/* Default logo layout (3 parts). We’ll override when .two-parts is present. */
+			.logo {
+				position: absolute;
+				left: 12px;
+				bottom: 8px;
+				width: min(280px, 45vw);
+				height: 110px;
+			}
+			.logo img {
+				position: absolute;
+				width: 33%;
+				will-change: transform;
+			}
+			.p1 {
+				left: 0;
+			}
+			.p3 {
+				left: 66%;
+			} /* default when 3 parts exist */
+
+			/* Two-parts variant: push p1 to left edge and p3 to right edge with safe widths */
+			.logo.two-parts {
+				width: min(360px, 60vw);
+			} /* a bit wider since we have a gap */
+			.logo.two-parts .p1 {
+				left: 0;
+				width: 48%;
+				z-index: 2;
+			} /* occupy left half */
+			.logo.two-parts .p3 {
+				top: -30px;
+				right: 200px;
+				left: auto;
+				width: 20%;
+				z-index: 1;
+			} /* occupy right half */
+
+			/* Only part3 bounces */
+			.logo .p3 {
+				animation: wallBounce 2.4s ease-in-out infinite alternate;
+			}
+			@keyframes wallBounce {
+				0% {
+					transform: translateY(0);
+				}
+				50% {
+					transform: translateY(-8px);
+				}
+				100% {
+					transform: translateY(0);
+				}
+			}
+
+			/* Mobile: ensure the two parts don’t overlap and scale nicely */
+			@media (max-width: 880px) {
+				.logo.two-parts {
+					width: min(300px, 70vw);
+					height: 100px;
+				}
+				.logo.two-parts .p1,
+				.logo.two-parts .p3 {
+					width: 49%;
+				}
+			}
+
+			/* Content grid */
+			.grid {
+				display: grid;
+				gap: 18px;
+				grid-template-columns: 1.2fr 0.8fr;
+				margin-top: 30px;
+			}
+			.card {
+				background: linear-gradient(
+					180deg,
+					rgba(255, 255, 255, 0.06),
+					rgba(255, 255, 255, 0.03)
+				);
+				border: 1px solid rgba(255, 255, 255, 0.08);
+				border-radius: var(--radius);
+				padding: 22px;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+			}
+			.card h2 {
+				margin: 0 0 8px;
+				font-family: "Instrument Sans";
+				font-weight: 800;
+				font-size: clamp(20px, 2.4vw, 30px);
+			}
+			.card p {
+				color: var(--muted);
+			}
+			.steps {
+				display: grid;
+				gap: 12px;
+				counter-reset: step;
+			}
+			.steps li {
+				list-style: none;
+				position: relative;
+				padding: 14px 14px 14px 56px;
+				background: rgba(255, 255, 255, 0.03);
+				border: 1px solid rgba(255, 255, 255, 0.07);
+				border-radius: 16px;
+			}
+			.steps li::before {
+				counter-increment: step;
+				content: counter(step);
+				position: absolute;
+				left: 14px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 28px;
+				height: 28px;
+				display: grid;
+				place-items: center;
+				border-radius: 10px;
+				color: white;
+				background: linear-gradient(135deg, var(--brand), var(--brand-2));
+			}
+
+			/* Buttons */
+			.cta {
+				margin-top: 18px;
+				display: flex;
+				gap: 12px;
+				flex-wrap: wrap;
+			}
+			.btn {
+				display: inline-flex;
+				align-items: center;
+				gap: 10px;
+				padding: 14px 18px;
+				border-radius: 14px;
+				font-weight: 700;
+				letter-spacing: 0.02em;
+				background: linear-gradient(135deg, var(--brand), var(--brand-2));
+				color: white;
+				border: none;
+				cursor: pointer;
+				text-decoration: none;
+				box-shadow: 0 8px 24px rgba(79, 70, 229, 0.35);
+			}
+			.btn--ghost {
+				background: transparent;
+				border: 1px solid rgba(255, 255, 255, 0.22);
+				color: var(--text);
+			}
+
+			/* Media block */
+			.media {
+				display: grid;
+				gap: 12px;
+				grid-template-columns: 1fr;
+				align-content: start;
+			}
+			.media figure {
+				margin: 0;
+				border-radius: 14px;
+				overflow: hidden;
+				border: 1px solid rgba(255, 255, 255, 0.08);
+			}
+			.media img,
+			.media video {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+			.caption {
+				padding: 10px 12px;
+				background: rgba(255, 255, 255, 0.03);
+				color: var(--muted);
+			}
+
+			/* Sponsors */
+			.sponsors {
+				margin-top: 28px;
+			}
+			.sponsors .wall {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+				gap: 20px;
+				align-items: center;
+			}
+			.sponsors .tile {
+				background: rgba(255, 255, 255, 0.03);
+				border: 1px solid rgba(255, 255, 255, 0.08);
+				border-radius: 12px;
+				padding: 16px;
+				filter: saturate(0.96);
+				transition: transform 0.2s ease, filter 0.2s ease;
+			}
+			.sponsors .tile:hover {
+				transform: translateY(-2px);
+				filter: saturate(1.1);
+			}
+
+			/* Reveal-on-scroll */
+			.reveal {
+				opacity: 0;
+				transform: translateY(14px);
+				transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+			}
+			.reveal.is-visible {
+				opacity: 1;
+				transform: none;
+			}
+
+			/* Insights-style footer */
+			.article-container {
+				max-width: 1050px;
+				margin: 0 auto;
+				padding: 0 18px;
+			}
+			.footer {
+				margin-top: 44px;
+				color: var(--muted);
+				text-align: center;
+				border-top: 1px solid rgba(255, 255, 255, 0.08);
+				padding: 22px 0 40px;
+			}
+			.footer .dashdev-link {
+				background: linear-gradient(135deg, var(--brand), var(--brand-2));
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+				font-weight: 700;
+			}
+			.footer .sources-line {
+				margin-top: 8px;
+				font-size: 0.95rem;
+			}
+			.footer .sources-line a {
+				color: var(--muted);
+				text-decoration: underline;
+			}
+
+			/* Responsive */
+			@media (max-width: 880px) {
+				.grid {
+					grid-template-columns: 1fr;
+				}
+				.logo {
+					width: min(220px, 60vw);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<header class="hero">
+				<span class="kicker">GDG Windsor · DevFest 2025</span>
+				<h1 class="title">
+					Hey, Windsor Students & New Devs — Come to DevFest with me ✨
+				</h1>
+				<p class="lead">
+					I’m Dasha — a <strong>developer</strong> and former
+					<strong>Computer Programming</strong> student at
+					<strong>St. Clair College</strong>. Last year I attended DevFest as a
+					student; this year I’m proud to return representing my small,
+					passionate studio, <strong>#dashDev</strong>. So much of who I am
+					today started with inspiration from
+					<strong>Google GDG Windsor DevFest</strong> — I’m grateful to this
+					festival.
+				</p>
+
+				<!-- 3-part DashDev logo (now only 2 parts, spaced apart; only part3 bounces) -->
+				<div class="logo-stage" aria-hidden="true">
+					<div class="logo two-parts" title="DashDev logo animation">
+						<img
+							class="p1"
+							src="/images/insightsImages/GoogleGDGArticle/Part1dashdev.png"
+							alt="DashDev logo part 1"
+						/>
+						<img
+							class="p3"
+							src="/images/insightsImages/GoogleGDGArticle/Part3dashdev.png"
+							alt="DashDev logo part 3"
+						/>
+					</div>
+				</div>
+			</header>
+
+			<section class="grid">
+				<article class="card reveal">
+					<h2>How to get the most out of DevFest (quick plan)</h2>
+					<ul class="steps">
+						<li>
+							Go to <strong>wedevfest.com</strong> → open the
+							<em>Sessions</em> section. Pick 2–3 talks you don’t want to miss
+							(Cloud, AI, Full-Stack, Cybersecurity, Entrepreneurship).
+						</li>
+						<li>
+							Open each session → check the speaker. If they’re a Googler or
+							local leader, add them on LinkedIn with a note: “Hi, I’m attending
+							DevFest Windsor. Excited for your talk on …”
+						</li>
+						<li>
+							Bring your <strong>CV / portfolio link</strong>. After a session,
+							introduce yourself in one sentence:
+							<em
+								>“I’m a UX/UI & Web dev focused on clean, accessible
+								interfaces.”</em
+							>
+						</li>
+						<li>
+							Check the sponsors wall below — you might meet your future
+							employer, client, or startup partner.
+						</li>
+						<li>
+							Charge your phone/laptop, wear something comfy, and stay for
+							hallway conversations — that’s where magic happens.
+						</li>
+					</ul>
+					<div class="cta">
+						<a
+							class="btn"
+							href="https://www.eventbrite.ca/e/windsor-essex-gdg-devfest-2025-tickets-1553059565969"
+							target="_blank"
+							rel="noopener"
+							>👉 REGISTER NOW — Save your seat</a
+						>
+						<a
+							class="btn btn--ghost"
+							href="https://wedevfest.com"
+							target="_blank"
+							rel="noopener"
+							>Explore sessions</a
+						>
+					</div>
+				</article>
+
+				<aside class="media card reveal" aria-labelledby="mediaLabel">
+					<h2 id="mediaLabel">Sneak peek</h2>
+					<figure>
+						<!-- Replace with your screenshot -->
+						<img src="./devfest-sponsors.jpg" alt="Sponsors & Partners wall" />
+						<figcaption class="caption">
+							Sponsors & partners — spot potential employers or collaborators.
+						</figcaption>
+					</figure>
+					<figure>
+						<!-- Replace with your teaser mp4 -->
+						<video
+							src="./devfest-teaser.mp4"
+							controls
+							preload="metadata"
+						></video>
+						<figcaption class="caption">
+							Short teaser from the site — pick your sessions first!
+						</figcaption>
+					</figure>
+				</aside>
+			</section>
+
+			<section class="card sponsors reveal" aria-labelledby="sLabel">
+				<h2 id="sLabel">Check the sponsors — meet your future team</h2>
+				<p>
+					Look for names that match your interests. Say hi, be polite, and ask
+					what they’re building.
+				</p>
+				<div class="wall" id="sponsorWall" aria-live="polite">
+					<!-- Replace with real logos or keep as placeholders -->
+					<div class="tile"><img src="./logos/google.svg" alt="Google" /></div>
+					<div class="tile"><img src="./logos/deepl.svg" alt="DeepL" /></div>
+					<div class="tile">
+						<img src="./logos/wetech.svg" alt="WEtech Alliance" />
+					</div>
+					<div class="tile"><img src="./logos/packt.svg" alt="Packt" /></div>
+					<div class="tile">
+						<img src="./logos/gdg-detroit.svg" alt="GDG Detroit" />
+					</div>
+					<div class="tile">
+						<img src="./logos/ieee.svg" alt="IEEE Windsor Section" />
+					</div>
+				</div>
+			</section>
+
+			<section class="card reveal" aria-labelledby="fromDasha">
+				<h2 id="fromDasha">From Dasha (DashDev) 💬</h2>
+				<p>
+					I’ll be there and would love to meet you. Especially girls who are new
+					in the field — don’t be afraid to come! Let’s support each other and
+					grow our Windsor tech community.
+				</p>
+				<div class="cta">
+					<a
+						class="btn"
+						href="https://dash-dev.net/links/linkInBio.html"
+						target="_blank"
+						rel="noopener"
+					>
+						🌐 Find Me Online
+					</a>
+				</div>
+			</section>
+
+			<!-- 📎 FOOTER (Insights-style) -->
+			<main class="article-container">
+				<footer class="footer">
+					<p>
+						© <span id="year"></span> Made with 🫶🏼 by
+						<a
+							href="https://dash-dev.net"
+							target="_blank"
+							rel="noopener"
+							class="dashdev-link"
+							>DashDev</a
+						>
+					</p>
+					<p class="sources-line">
+						Sources:
+						<a href="https://wedevfest.com" target="_blank" rel="noopener"
+							>WeDevFest</a
+						>,
+						<a
+							href="https://www.eventbrite.ca/e/windsor-essex-gdg-devfest-2025-tickets-1553059565969"
+							target="_blank"
+							rel="noopener"
+							>Eventbrite</a
+						>
+					</p>
+				</footer>
+			</main>
+		</div>
+
+		<script>
+			// Reveal-on-scroll
+			const revealEls = document.querySelectorAll(".reveal");
+			const io = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add("is-visible");
+							io.unobserve(entry.target);
+						}
+					});
+				},
+				{ threshold: 0.12 }
+			);
+			revealEls.forEach((el) => io.observe(el));
+
+			// Year
+			document.getElementById("year").textContent = new Date().getFullYear();
+		</script>
+	</body>
+</html>

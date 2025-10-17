@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>KNM Finance — UX/UI Case (3-Day Launch)</title>
+
+		<!-- SEO / Social -->
+		<meta
+			name="description"
+			content="Full package in 3 days: QR calling card ➜ Link-in-Bio ➜ website, plus SEO and a short walkthrough video for KNM Finance."
+		/>
+		<meta name="author" content="DashDev" />
+		<meta
+			property="og:title"
+			content="KNM Finance — UX/UI Case (3-Day Launch)"
+		/>
+		<meta
+			property="og:description"
+			content="Step 1: scan the QR. Step 2: Link-in-Bio. Step 3: explore the website. Fully shipped in 3 business days."
+		/>
+		<meta property="og:image" content="./images/case/knm/mobilemainknm.jpg" />
+		<meta property="og:url" content="https://dash-dev.net/knm-finance" />
+		<meta property="og:type" content="article" />
+		<meta name="twitter:card" content="summary_large_image" />
+
+		<!-- Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- NOTE: capital K -->
+		<link rel="stylesheet" href="Knm-finance-case.css" />
+		<link rel="icon" href="/favicon_io/favicon.ico" />
+	</head>
+	<body>
+		<!-- MARK: Header -->
+		<header class="site-header">
+			<img src="/images/Footer/LogoFooter.png" alt="DashDev" class="brand" />
+			<h1>
+				KNM Finance<br />
+				<span class="accent">Full Package (3-Day)</span>
+			</h1>
+			<p class="subhead">
+				QR Calling Card • Link-in-Bio • Website • SEO • Video
+			</p>
+
+			<div class="cta-row">
+				<a
+					class="btn"
+					href="https://www.knmfinance.ca"
+					target="_blank"
+					rel="noopener"
+					>Live Website</a
+				>
+				<a
+					class="btn ghost"
+					href="https://knmfinance.ca/linkInbio/knm-link-in-bio.html"
+					target="_blank"
+					rel="noopener"
+					>Link-in-Bio</a
+				>
+				<a class="btn ghost" href="#videos">Intro Video</a>
+			</div>
+		</header>
+
+		<main class="container">
+			<!-- Compact Step strip -->
+			<section class="steps-gallery">
+				<div class="step fade-step">
+					<img src="./images/case/knm/step1.png" alt="Step 1 – Scan QR card" />
+					<p><b>1.</b> Get the calling card and scan the QR — instant entry.</p>
+				</div>
+				<div class="step fade-step delay1">
+					<img src="./images/case/knm/step2.png" alt="Step 2 – Link-in-Bio" />
+					<p><b>2.</b> Land on a clean Link-in-Bio with focused CTAs.</p>
+				</div>
+				<div class="step fade-step delay2">
+					<img
+						src="./images/case/knm/step3.png"
+						alt="Step 3 – Explore website"
+					/>
+					<p>
+						<b>3.</b> Explore the website — sticky email/phone on mobile for
+						quick contact.
+					</p>
+				</div>
+			</section>
+
+			<!-- MARK:  Desktop hero -->
+			<section>
+				<h2 class="center">Desktop Hero</h2>
+				<figure class="media">
+					<img
+						src="./images/case/knm/desktophero.png"
+						alt="Desktop hero: headline, CTA, and hero image"
+					/>
+					<figcaption>
+						Primary landing section with strong headline and CTA.
+					</figcaption>
+				</figure>
+				<p class="note">
+					The client specifically asked for a minimalist layout with no
+					distractions — every element serves a purpose. Notice the subtle
+					sticky bar below the hero: it keeps the <strong>phone</strong> and
+					<strong>email</strong> icons visible as the user scrolls, ensuring
+					there’s always an opportunity for action without cluttering the
+					interface.
+				</p>
+			</section>
+
+			<!-- Mobile + sticky icons -->
+			<section id="mobile-hero">
+				<h2 class="center">Mobile Hero &amp; Sticky Contact</h2>
+				<figure class="media phone">
+					<img
+						src="./images/case/knm/mobilemainknm.jpg"
+						alt="Mobile homepage with CTA and sticky contact icons"
+					/>
+					<figcaption>
+						Bottom-edge sticky icons: <strong>Email</strong> (left) and
+						<strong>Call</strong> (right). They remain visible while scrolling
+						so users can reach out anytime.
+					</figcaption>
+				</figure>
+			</section>
+
+			<!-- QR → Link-in-Bio → Business Card -->
+			<section>
+				<h2 class="center">QR → Link-in-Bio → Business Card</h2>
+				<div class="card-grid">
+					<button
+						class="card"
+						data-full="./images/case/knm/handphone.png"
+						aria-label="Open Link-in-Bio mockup"
+					>
+						<img
+							src="./images/case/knm/handphone.png"
+							alt="Link-in-Bio on a phone in hand"
+						/>
+						<span class="tag">Link-in-Bio</span>
+					</button>
+					<button
+						class="card"
+						data-full="./images/case/knm/realisticbusinesscard.png"
+						aria-label="Open business card render"
+					>
+						<img
+							src="./images/case/knm/realisticbusinesscard.png"
+							alt="Business card render on concrete blocks"
+						/>
+						<span class="tag">Business Card</span>
+					</button>
+					<button
+						class="card"
+						data-full="./images/case/knm/businesscardknm.png"
+						aria-label="Open QR variant"
+					>
+						<img
+							src="./images/case/knm/businesscardknm.png"
+							alt="Business card with large QR and clip"
+						/>
+						<span class="tag">QR Variant</span>
+					</button>
+				</div>
+
+				<!-- Lightbox -->
+				<dialog class="lightbox" aria-label="Preview">
+					<button class="lb-close" aria-label="Close">×</button>
+					<img src="" alt="" id="lb-img" />
+				</dialog>
+			</section>
+
+			<!-- MARK: SEO / Lighthouse -->
+			<section>
+				<h2 class="center accent-text">SEO & Lighthouse</h2>
+				<figure class="seo-fig">
+					<img
+						src="./images/case/knm/seoknm.png"
+						alt="Lighthouse: Perf 99, A11y 95, Best Practices 100, SEO 100"
+					/>
+					<figcaption>
+						KNM Finance reached near-perfect mobile scores —
+						<strong>99 Performance</strong>, <strong>95 Accessibility</strong>,
+						<strong>100 Best Practices</strong>, and <strong>100 SEO</strong>.
+						The clean, semantic structure, optimized assets, and OG tags helped
+						the site load fast and rank properly from day one.
+					</figcaption>
+				</figure>
+			</section>
+
+			<!-- MARK: Walkthrough Video -->
+			<section id="videos">
+				<h2 class="center accent-text">Walkthrough Video</h2>
+				<p class="intro center">
+					Short, vertical walkthroughs are a <strong>2025 trend</strong> for
+					product sites — fast to digest, clean in presentation, and perfect for
+					mobile.
+				</p>
+
+				<div class="video-center">
+					<figure class="phone-frame">
+						<video
+							src="./video/KNMPresentation.mov"
+							controls
+							preload="metadata"
+							playsinline
+							muted
+							aria-label="KNM Card → Link-in-Bio → Website walkthrough"
+						></video>
+						<figcaption>Card → Link-in-Bio → Website</figcaption>
+					</figure>
+				</div>
+			</section>
+
+			<!-- Closing CTA -->
+			<section class="center">
+				<h2>Want a Full Package Like This?</h2>
+				<p class="lead">
+					Card with QR + Link-in-Bio + Website + SEO + Video — shipped fast with
+					clean, accessible code.
+				</p>
+				<div class="cta-row">
+					<a
+						class="btn"
+						href="https://dash-dev.net/contact/contact.html"
+						target="_blank"
+						rel="noopener"
+						>Work with #dashDev</a
+					>
+				</div>
+			</section>
+
+			<!-- Footer (gradient link like header accent) -->
+			<footer class="footer">
+				<img src="/images/Footer/LogoFooter.png" alt="DashDev" />
+				<p>
+					© 2025 Made with 🫶🏼 by
+					<a
+						class="dashdev-link"
+						href="https://dash-dev.net"
+						target="_blank"
+						rel="noopener"
+						>#dashDev</a
+					>
+				</p>
+			</footer>
+		</main>
+
+		<!-- Lightbox script + smooth anchor -->
+		<script>
+			(() => {
+				// Lightbox
+				const dlg = document.querySelector(".lightbox");
+				const img = document.getElementById("lb-img");
+				document.querySelectorAll(".card").forEach((btn) => {
+					btn.addEventListener("click", () => {
+						img.src = btn.dataset.full;
+						img.alt = btn.querySelector("img").alt;
+						dlg.showModal();
+					});
+				});
+				dlg
+					?.querySelector(".lb-close")
+					?.addEventListener("click", () => dlg.close());
+
+				// Smooth scroll for any #anchor links
+				document.querySelectorAll('a[href^="#"]').forEach((a) => {
+					a.addEventListener("click", (e) => {
+						const id = a.getAttribute("href");
+						if (id.length > 1 && document.querySelector(id)) {
+							e.preventDefault();
+							document
+								.querySelector(id)
+								.scrollIntoView({ behavior: "smooth", block: "start" });
+						}
+					});
+				});
+			})();
+		</script>
+	</body>
+</html>
