@@ -9,7 +9,7 @@
 		<!-- SEO/OpenGraph (optional) -->
 		<meta
 			name="description"
-			content="Dasha (DashDev): why students should attend DevFest Windsor, how to prepare, and how to make the most of it—sessions, speakers, sponsors, and registering."
+			content="Dasha (#dashDev): why students should attend DevFest Windsor, how to prepare, and how to make the most of it—sessions, speakers, sponsors, and registering."
 		/>
 		<meta
 			property="og:title"
@@ -371,6 +371,95 @@
 					width: min(220px, 60vw);
 				}
 			}
+			/* Desktop: nudge the DashDev logo lower */
+			@media (min-width: 992px) {
+				header.hero {
+					/* add space so the lowered logo doesn't get clipped */
+					padding-bottom: 110px;
+				}
+				.logo-stage {
+					/* move the whole logo strip down below the header edge */
+					bottom: -42px; /* tweak this value to taste (-20…-60px) */
+					height: 140px; /* a touch taller so it breathes */
+				}
+				.logo.two-parts .p3 {
+					top: -18px; /* keep the bounce visible after shifting */
+				}
+			}
+			@media (min-width: 992px) {
+				.logo-stage {
+					bottom: -36px;
+				}
+				header.hero {
+					padding-bottom: 96px;
+				}
+			}
+			/* Mobile optimization for DashDev circle/logo */
+			@media (max-width: 600px) {
+				.logo-stage {
+					bottom: -10px; /* slightly visible but not intrusive */
+					height: 80px; /* reduce size so it doesn't cover text */
+				}
+
+				.logo.two-parts {
+					width: 200px; /* smaller logo width */
+					height: 80px;
+				}
+
+				.logo.two-parts .p1,
+				.logo.two-parts .p3 {
+					width: 46%; /* proportionally smaller parts */
+				}
+
+				.logo.two-parts .p3 {
+					top: -12px; /* reduce upward bounce distance */
+				}
+			}
+
+			/* Mobile optimization for DashDev circle/logo */
+			@media (max-width: 600px) {
+				.logo-stage {
+					bottom: -10px; /* slightly visible but not intrusive */
+					height: 80px; /* reduce size so it doesn't cover text */
+				}
+
+				.logo.two-parts {
+					width: 200px; /* smaller logo width */
+					height: 80px;
+				}
+
+				.logo.two-parts .p1,
+				.logo.two-parts .p3 {
+					width: 46%; /* proportionally smaller parts */
+				}
+
+				.logo.two-parts .p3 {
+					top: -12px; /* reduce upward bounce distance */
+				}
+			}
+
+			/* Mobile optimization for DashDev circle/logo — balanced placement */
+			@media (max-width: 600px) {
+				.logo-stage {
+					bottom: -32px; /* keeps logo lower under text */
+					height: 85px;
+				}
+
+				.logo.two-parts {
+					width: 225px;
+					height: 85px;
+				}
+
+				.logo.two-parts .p1 {
+					width: 48%;
+				}
+
+				.logo.two-parts .p3 {
+					top: 0px; /* moved lower */
+					left: 20%; /* keep balanced horizontally */
+					width: 22%; /* same size */
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -378,8 +467,11 @@
 			<header class="hero">
 				<span class="kicker">GDG Windsor · DevFest 2025</span>
 				<h1 class="title">
-					Hey, Windsor Students & New Devs — Come to DevFest with me ✨
+					Hey,<br />
+					Windsor Students & New Devs —<br />
+					Come to DevFest with me ✨
 				</h1>
+
 				<p class="lead">
 					I’m Dasha — a <strong>developer</strong> and former
 					<strong>Computer Programming</strong> student at
@@ -461,7 +553,10 @@
 					<h2 id="mediaLabel">Sneak peek</h2>
 					<figure>
 						<!-- Replace with your screenshot -->
-						<img src="./devfest-sponsors.jpg" alt="Sponsors & Partners wall" />
+						<img
+							src="/images/insightsImages/GoogleGDGArticle/devfest-sponsors.png"
+							alt="Sponsors & Partners wall"
+						/>
 						<figcaption class="caption">
 							Sponsors & partners — spot potential employers or collaborators.
 						</figcaption>
@@ -504,7 +599,7 @@
 			</section>
 
 			<section class="card reveal" aria-labelledby="fromDasha">
-				<h2 id="fromDasha">From Dasha (DashDev) 💬</h2>
+				<h2 id="fromDasha">From Dasha (#dashDev) 💬</h2>
 				<p>
 					I’ll be there and would love to meet you. Especially girls who are new
 					in the field — don’t be afraid to come! Let’s support each other and
@@ -532,7 +627,7 @@
 							target="_blank"
 							rel="noopener"
 							class="dashdev-link"
-							>DashDev</a
+							>#dashDev</a
 						>
 					</p>
 					<p class="sources-line">
