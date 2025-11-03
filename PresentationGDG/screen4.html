@@ -52,10 +52,10 @@
 			}
 
 			.wrap {
-				height: 100%;
+				min-height: 100svh;
 				display: grid;
-				place-items: center;
-				padding: 6vmin;
+				place-content: center; /* centers grid *within* container */
+				padding: clamp(16px, 6vmin, 6vmin, 40px);
 			}
 			.card {
 				width: min(1220px, 94vw);
@@ -299,7 +299,7 @@
 				{ src: "assets/WEtechlogomain.png", url: "" },
 				{ src: "assets/uwindsorLogo.png", url: "" }, // Odette School (UWin)
 				{ src: "assets/RocketInnovation.png", url: "" },
-				{ src: "assets/solasLogo.png", url: "" },
+				{ src: "assets/Image_Picsume.png", url: "" },
 				{ src: "assets/HackforgeLogoInverted.png", url: "" },
 				{ src: "assets/Packt.svg", url: "" },
 			];
