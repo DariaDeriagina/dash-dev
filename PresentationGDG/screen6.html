@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>DevFest Windsor 2025 — Final</title>
+
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			type="module"
+			src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
+		></script>
+
+		<style>
+			:root {
+				--bg: #f7ebef;
+				--paper: #fff9;
+				--ink: #0b1220;
+				--muted: #4b5563;
+				--ring: rgba(2, 6, 23, 0.12);
+				--pill: #cfead6;
+				--accent: #1e6f3d;
+				--pad: clamp(8px, 4vmin, 32px);
+			}
+			* {
+				box-sizing: border-box;
+			}
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+			}
+			body {
+				min-height: 100dvh;
+				display: grid;
+				grid-template-rows: 1fr auto;
+				align-items: start;
+				justify-items: center;
+				padding: var(--pad);
+				background: var(--bg);
+				color: var(--ink);
+				font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+					Helvetica, Arial;
+			}
+
+			/* Card */
+			main.stage {
+				width: min(100%, 640px);
+				margin-inline: auto;
+				background: var(--paper);
+				border: 1px solid var(--ring);
+				border-radius: 28px;
+				box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+				backdrop-filter: blur(8px);
+				padding: clamp(16px, 4vmin, 44px);
+				display: grid;
+				justify-items: center;
+				text-align: center;
+				gap: clamp(16px, 3.5vmin, 32px);
+				animation: fadeIn 0.7s ease forwards;
+			}
+			@keyframes fadeIn {
+				from {
+					transform: scale(0.98);
+					opacity: 0;
+				}
+				to {
+					transform: scale(1);
+					opacity: 1;
+				}
+			}
+
+			h1 {
+				font-family: Poppins, Inter;
+				font-weight: 800;
+				font-size: clamp(26px, 8vw, 48px);
+				margin: 0;
+				letter-spacing: -0.02em;
+			}
+			.meta {
+				font-weight: 800;
+				font-size: clamp(14px, 3.8vw, 22px);
+			}
+			.meta small {
+				display: block;
+				color: var(--muted);
+				font-weight: 600;
+				font-size: clamp(12px, 3.6vw, 18px);
+			}
+
+			.lottie-card {
+				width: min(280px, 70vw);
+				aspect-ratio: 1/1;
+				border-radius: 28px;
+				background: linear-gradient(160deg, #eaf4ff 0%, #ffffff 60%);
+				border: 1px solid var(--ring);
+				box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+				display: grid;
+				place-items: center;
+			}
+
+			.lottie-caption {
+				color: #0b3d1f;
+				font-weight: 800;
+				font-size: clamp(12px, 3.4vw, 16px);
+				opacity: 0.9;
+			}
+
+			.arrow {
+				width: clamp(34px, 9vw, 56px);
+				animation: bob 2.6s ease-in-out infinite;
+				filter: drop-shadow(0 4px 10px rgba(2, 6, 23, 0.18));
+			}
+			@keyframes bob {
+				0%,
+				100% {
+					transform: translateY(0);
+				}
+				50% {
+					transform: translateY(8px);
+				}
+			}
+
+			.cta-note {
+				color: var(--accent);
+				font-weight: 800;
+				font-size: clamp(14px, 3.6vw, 20px);
+				margin-top: -4px;
+				letter-spacing: 0.02em;
+			}
+
+			.pill {
+				display: inline-grid;
+				place-items: center;
+				padding: 0.9rem 1.6rem;
+				border-radius: 999px;
+				border: 2px solid rgba(2, 6, 23, 0.25);
+				background: var(--pill);
+				color: #0b3d1f;
+				font-weight: 900;
+				font-size: clamp(16px, 4.8vw, 28px);
+				text-decoration: none;
+				box-shadow: 0 14px 30px rgba(2, 6, 23, 0.18);
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+			}
+			.pill:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 18px 36px rgba(2, 6, 23, 0.22);
+			}
+
+			/* Footer */
+			.site-footer {
+				text-align: center;
+				padding: 18px 0 12px;
+				font-size: 14px;
+				color: var(--muted);
+			}
+			.site-footer a {
+				font-weight: 700;
+				text-decoration: none;
+				background: linear-gradient(90deg, #4285f4, #34a853);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				transition: opacity 0.25s ease;
+			}
+			.site-footer a:hover {
+				opacity: 0.85;
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				.arrow {
+					animation: none;
+				}
+				main.stage {
+					animation: none;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<main class="stage">
+			<h1>Your journey starts here</h1>
+			<div class="meta">
+				<small>Odette School of Business, Windsor, Ontario</small>
+			</div>
+
+			<div class="lottie-card">
+				<dotlottie-wc
+					src="https://lottie.host/b18ff6a9-795e-4137-b995-3b7e581f9bcf/cT2gWtAUOL.lottie"
+					autoplay
+					loop
+					style="width: 85%; height: 85%"
+				></dotlottie-wc>
+			</div>
+
+			<div class="lottie-caption">Heading to Google DevFest Windsor</div>
+
+			<svg
+				class="arrow"
+				viewBox="0 0 64 64"
+				fill="none"
+				stroke="#1e6f3d"
+				stroke-width="3"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				aria-hidden="true"
+			>
+				<path d="M32 6v36" />
+				<path d="M18 34l14 16 14-16" />
+			</svg>
+
+			<p class="cta-note">See you there — November 8th!</p>
+
+			<a
+				class="pill"
+				href="https://wedevfest.com"
+				target="_blank"
+				rel="noopener"
+				>wedevfest.com</a
+			>
+		</main>
+
+		<!-- Footer -->
+		<footer class="site-footer" role="contentinfo">
+			<p>
+				Designed &amp; developed by
+				<a href="https://dash-dev.net/" target="_blank" rel="noopener"
+					>#dashDev Studio</a
+				>
+			</p>
+		</footer>
+	</body>
+</html>

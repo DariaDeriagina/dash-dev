@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>DevFest Windsor 2025 — Speakers</title>
+
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@700;800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- dotlottie web component -->
+		<script
+			src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
+			type="module"
+		></script>
+
+		<style>
+			:root {
+				--ink: #0b1220;
+				--muted: #4b5563;
+				--ring: rgba(2, 6, 23, 0.12);
+				--g-blue: #4285f4;
+				--g-yellow: #fbbc04;
+				--g-green: #34a853;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+			html,
+			/* REPLACE your existing body{} with this */
+body {
+				font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+					Helvetica, Arial;
+				color: var(--ink);
+				background: linear-gradient(
+					120deg,
+					#f6f7fb 0%,
+					#eef7ff 60%,
+					#f7fff6 100%
+				);
+				overflow-x: hidden;
+				overflow-y: auto;
+
+				/* new: 2-row layout -> main + footer */
+				display: grid;
+				grid-template-rows: 1fr auto;
+				min-height: 100svh;
+				margin: 0;
+				padding: 0;
+			}
+
+			.wrap {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: clamp(16px, 4vw, 40px);
+			}
+
+			.card {
+				width: min(1100px, 92vw);
+				background: rgba(255, 255, 255, 0.75);
+				backdrop-filter: blur(8px);
+				border: 1px solid var(--ring);
+				border-radius: 28px;
+				box-shadow: 0 20px 60px rgba(15, 23, 42, 0.16);
+				padding: clamp(20px, 5vw, 48px);
+				transform: translateY(10px) scale(0.985);
+				opacity: 0;
+				animation: cardIn 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s forwards;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+
+			@keyframes cardIn {
+				to {
+					transform: translateY(0) scale(1);
+					opacity: 1;
+				}
+			}
+
+			.grid {
+				display: grid;
+				gap: clamp(14px, 2vw, 22px);
+				grid-template-columns: 1fr;
+				grid-template-areas:
+					"lottie"
+					"title"
+					"steps"
+					"video"
+					"button";
+				align-items: center;
+				justify-items: center;
+			}
+
+			@media (min-width: 960px) {
+				.grid {
+					grid-template-columns: 1.05fr 0.95fr;
+					grid-template-areas:
+						"lottie video"
+						"title  video"
+						"steps  video"
+						"button video";
+					align-items: center;
+					justify-items: start;
+				}
+			}
+
+			/* Lottie (new animation, above & slightly left) */
+			.lottie-wrap {
+				grid-area: lottie;
+				display: flex;
+				justify-content: flex-start;
+				align-items: flex-start;
+				width: 100%;
+				margin: -10px 0 10px -15px;
+			}
+
+			.lottie-wrap dotlottie-wc {
+				width: clamp(140px, 18vw, 200px);
+				height: auto;
+			}
+
+			@media (max-width: 959px) {
+				.lottie-wrap {
+					justify-content: flex-start;
+					margin: 0 0 10px -10px;
+					width: 100%;
+				}
+				.lottie-wrap dotlottie-wc {
+					width: clamp(160px, 55vw, 220px);
+				}
+			}
+
+			h1 {
+				grid-area: title;
+				font-family: Poppins, Inter, ui-sans-serif;
+				font-weight: 800;
+				letter-spacing: -0.02em;
+				line-height: 1.08;
+				font-size: clamp(34px, 5.6vw, 70px);
+				margin: 0;
+				text-align: left;
+				width: 100%;
+			}
+
+			/* Steps */
+			.steps {
+				grid-area: steps;
+				margin: clamp(10px, 1.8vw, 18px) 0;
+				padding: 0;
+				list-style: none;
+				display: grid;
+				gap: clamp(12px, 1.8vw, 16px);
+				font-size: clamp(22px, 2.6vw, 30px);
+				font-weight: 700;
+				color: var(--ink);
+				width: 100%;
+				max-width: 46ch;
+			}
+
+			.steps li {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				opacity: 0;
+				transform: translateY(16px);
+				animation: stepIn 1.4s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+				padding-left: 14px;
+				border-left: 6px solid transparent;
+			}
+
+			.steps li:nth-child(1) {
+				animation-delay: 0.6s;
+				border-left-color: var(--g-blue);
+			}
+			.steps li:nth-child(2) {
+				animation-delay: 2s;
+				border-left-color: var(--g-yellow);
+			}
+			.steps li:nth-child(3) {
+				animation-delay: 3.4s;
+				border-left-color: var(--g-green);
+			}
+
+			@keyframes stepIn {
+				0% {
+					opacity: 0;
+					transform: translateY(18px);
+				}
+				65% {
+					opacity: 0.75;
+					transform: translateY(6px);
+				}
+				100% {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.video-wrap {
+				grid-area: video;
+				width: min(560px, 76vw);
+				aspect-ratio: 3/4;
+				border-radius: 24px;
+				overflow: hidden;
+				border: 1px solid var(--ring);
+				background: #000;
+				box-shadow: 0 14px 40px rgba(15, 23, 42, 0.18);
+				opacity: 0;
+				transform: translateY(8px) scale(0.985);
+				animation: vidIn 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.25s forwards;
+				position: relative;
+				justify-self: center;
+			}
+
+			@keyframes vidIn {
+				to {
+					opacity: 1;
+					transform: translateY(0) scale(1);
+				}
+			}
+
+			.video-wrap video {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+
+			.speak-actions {
+				grid-area: button;
+				display: flex;
+				justify-content: center;
+				margin-top: clamp(12px, 2vmin, 18px);
+				width: 100%;
+			}
+
+			.speak-btn {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				gap: 0.7ch;
+				padding: 1rem 1.35rem;
+				border-radius: 999px;
+				border: 0;
+				font-weight: 800;
+				font-size: clamp(17px, 3.2vw, 19px);
+				color: #0b1220;
+				background: linear-gradient(135deg, var(--g-blue), var(--g-green));
+				box-shadow: 0 16px 36px rgba(26, 115, 232, 0.35);
+				cursor: pointer;
+				transition: transform 0.18s ease, box-shadow 0.18s ease,
+					filter 0.18s ease;
+				width: 100%;
+				max-width: 360px;
+			}
+
+			.speak-btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 20px 42px rgba(26, 115, 232, 0.45);
+				filter: brightness(1.03);
+			}
+
+			.speak-btn:active {
+				transform: translateY(0);
+				filter: brightness(0.98);
+			}
+
+			.fade-out {
+				animation: fade 0.45s ease forwards;
+			}
+			@keyframes fade {
+				to {
+					opacity: 0;
+					transform: translateY(-6px) scale(0.995);
+				}
+			}
+
+			@media (prefers-reduced-motion: reduce) {
+				* {
+					animation-duration: 0s !important;
+					transition-duration: 0s !important;
+				}
+			}
+			/* Extra breathing space for small mobile screens like Galaxy S8+ */
+			@media (max-width: 420px) {
+				.card {
+					margin-top: 24px; /* adjust between 16–32px depending on your test */
+				}
+			}
+
+			/* Footer */
+			.site-footer {
+				text-align: center;
+				padding: 18px 0 12px;
+				font-size: 14px;
+				color: var(--muted);
+			}
+
+			.site-footer a {
+				font-weight: 700;
+				text-decoration: none;
+				background: linear-gradient(90deg, var(--g-blue), var(--g-green));
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				transition: opacity 0.25s ease;
+			}
+			.site-footer a:hover {
+				opacity: 0.85;
+			}
+		</style>
+	</head>
+
+	<body>
+		<main class="wrap">
+			<section class="card" id="screen3" aria-label="Speakers guidance">
+				<div class="grid">
+					<!-- Lottie (new animation) -->
+					<div class="lottie-wrap">
+						<dotlottie-wc
+							src="https://lottie.host/607a77a8-1ac3-4846-8c97-26f0934c08ce/qazQdaZwSb.lottie"
+							autoplay
+							loop
+						></dotlottie-wc>
+					</div>
+
+					<!-- Title -->
+					<h1>See who’s speaking</h1>
+
+					<!-- Steps -->
+					<ol class="steps" aria-label="How to prep your speakers list">
+						<li>1. Open <strong>Speakers</strong> section.</li>
+						<li>2. Read bios.</li>
+						<li>3. Add them on LinkedIn.</li>
+					</ol>
+
+					<!-- Video -->
+					<div class="video-wrap" id="videoWrap">
+						<video
+							id="speakersVid"
+							src="assets/SpeakersIntro.mp4"
+							poster="assets/SpeakersPic.png"
+							preload="auto"
+							muted
+							playsinline
+							autoplay
+							loop
+							aria-label="Speakers and community highlights"
+						></video>
+					</div>
+
+					<!-- Button -->
+					<div class="speak-actions">
+						<button
+							class="speak-btn"
+							type="button"
+							aria-label="Next tip"
+							onclick="goNext()"
+						>
+							Next tip
+							<svg
+								viewBox="0 0 24 24"
+								width="18"
+								height="18"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								aria-hidden="true"
+							>
+								<path d="M5 12h14" />
+								<path d="M12 5l7 7-7 7" />
+							</svg>
+						</button>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="site-footer" role="contentinfo">
+			<p>
+				Designed &amp; developed by
+				<a href="https://dash-dev.net/" target="_blank" rel="noopener"
+					>#dashDev Studio</a
+				>
+			</p>
+		</footer>
+
+		<script>
+			function goNext() {
+				const s2 = document.getElementById("screen3");
+				s2.classList.add("fade-out");
+				setTimeout(() => (location.href = "screen4.html"), 450);
+			}
+
+			const vid = document.getElementById("speakersVid");
+			if (vid) {
+				vid.muted = true;
+				const tryPlay = () => vid.play().catch(() => {});
+				if (vid.readyState >= 2) tryPlay();
+				else vid.addEventListener("canplay", tryPlay, { once: true });
+			}
+
+			const prefersReduce = window.matchMedia(
+				"(prefers-reduced-motion: reduce)"
+			).matches;
+			const lottie = document.querySelector(".lottie-wrap dotlottie-wc");
+			if (prefersReduce && lottie && lottie.pause) {
+				lottie.pause();
+			}
+		</script>
+	</body>
+</html>
