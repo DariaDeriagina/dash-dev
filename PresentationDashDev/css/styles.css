@@ -1021,3 +1021,125 @@ dotlottie-wc {
 	font-size: 0.85rem;
 	opacity: 0.85;
 }
+/* === Mobile-first centering + responsiveness polish === */
+:root {
+	--page-pad: clamp(12px, 4vw, 24px);
+}
+
+/* Smooth container padding */
+section {
+	padding-left: var(--page-pad);
+	padding-right: var(--page-pad);
+}
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Keep long mock URL from overflowing */
+#s3 .browser-bar .url {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Portrait sizing on small screens */
+.portrait-wrap {
+	max-width: 520px;
+	margin-inline: auto;
+}
+
+/* Footer already centered — just a bit tighter on phones */
+#siteFooter {
+	gap: 6px;
+	padding: 1.75rem var(--page-pad) 1.5rem;
+}
+
+/* Q&A cards hover should not "jump" on touch */
+@media (hover: none) {
+	.qa-card:hover {
+		transform: none;
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+	}
+}
+
+/* ===== Mobile layout rules ===== */
+@media (max-width: 640px) {
+	/* Header: stack & center */
+	header .mx-auto {
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+	header a[aria-label="DashDev home"] {
+		margin-inline: auto;
+	}
+	header nav {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	/* Global text centering for key sections */
+	#s1 .max-w-5xl,
+	#s2 .s2-copy,
+	#s3 .max-w-6xl,
+	#s4 .max-w-6xl,
+	#s5 .max-w-6xl,
+	#s7 .max-w-6xl,
+	#s8 .max-w-5xl {
+		text-align: center;
+		margin-inline: auto;
+	}
+
+	/* Grids collapse to one column (Tailwind is mobile-first, but ensure custom boxes behave) */
+	#s2 .max-w-6xl {
+		display: grid;
+		grid-template-columns: 1fr !important;
+	}
+	#s3 .max-w-6xl {
+		display: grid;
+		grid-template-columns: 1fr !important;
+	}
+
+	/* Chips row → centered */
+	#s2 [role="group"] {
+		justify-content: center;
+	}
+
+	/* Demo cards spacing */
+	#s3 .demo-box + .demo-box {
+		margin-top: 0.5rem;
+	}
+
+	/* Compare slider label spacing */
+	#s7 .compare-frame {
+		margin-inline: auto;
+	}
+
+	/* Q&A cards centered */
+	#qaShow {
+		text-align: center;
+	}
+	.qa-card h3 {
+		margin-bottom: 0.35rem;
+	}
+
+	/* Mock browser bar: hide long url on tiny screens */
+	#s3 .browser-bar .url {
+		display: none;
+	}
+
+	/* Footer visuals a bit smaller on phones */
+	#siteFooter img[alt*="Dasha"] {
+		height: 84px;
+		margin-bottom: 0.25rem;
+	}
+	#siteFooter > a img {
+		height: 48px;
+	}
+	.footer-quote {
+		font-size: 0.85rem;
+	}
+}
