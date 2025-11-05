@@ -1,23 +1,26 @@
-// --- Reveal on view ---
+/* ---- Helpers ---- */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const prefersReduce = () =>
+	matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---- Section reveals (GSAP optional) ---- */
 function fadeIn(el) {
+	if (!window.gsap) return;
 	gsap.fromTo(
 		el,
-		{ autoAlpha: 0, y: 20 },
-		{ autoAlpha: 1, y: 0, duration: 0.8, ease: "power2.out" }
+		{ autoAlpha: 0, y: 16 },
+		{ autoAlpha: 1, y: 0, duration: 0.7, ease: "power2.out" }
 	);
 }
-const sections = Array.from(document.querySelectorAll("section"));
+const sections = $$(".section");
 const io = new IntersectionObserver(
-	(ents) => {
-		ents.forEach((e) => {
-			if (e.isIntersecting) fadeIn(e.target);
-		});
-	},
+	(ents) => ents.forEach((e) => e.isIntersecting && fadeIn(e.target)),
 	{ threshold: 0.25 }
 );
 sections.forEach((s) => io.observe(s));
 
-// --- Keyboard nav + click-to-progress ---
+/* ---- Keyboard & click-to-progress (presentation mode) ---- */
 let idx = 0;
 function go(i) {
 	idx = Math.max(0, Math.min(sections.length - 1, i));
@@ -45,22 +48,20 @@ window.addEventListener("click", (e) => {
 			"dotlottie-wc",
 			"pre",
 			"code",
+			"svg",
 		].includes(tag)
 	)
 		return;
 	go(idx + 1);
 });
 
-// --- Glow trail state & controls ---
-const isMobile = matchMedia("(max-width: 640px)").matches;
-const toggleBtn = document.getElementById("glowToggle");
-
-let glowEnabled = !isMobile && localStorage.getItem("glowEnabled") !== "false";
+/* ---- Glow trail (OFF by default) ---- */
+const toggleBtn = $("#glowToggle");
+let glowEnabled = localStorage.getItem("glowEnabled") === "true" ? true : false;
 updateGlowUI();
-
 let throttle = false;
 function pointerTrail(e) {
-	if (!glowEnabled) return;
+	if (!glowEnabled || prefersReduce()) return;
 	if (throttle) return;
 	throttle = true;
 	setTimeout(() => (throttle = false), 12);
@@ -72,56 +73,32 @@ function pointerTrail(e) {
 	setTimeout(() => dot.remove(), 620);
 }
 window.addEventListener("pointermove", pointerTrail, { passive: true });
-
-function updateGlowUI() {
-	if (toggleBtn) {
-		toggleBtn.textContent = `Glow: ${glowEnabled ? "On" : "Off"}`;
-		toggleBtn.setAttribute("aria-pressed", String(glowEnabled));
-	}
-}
 toggleBtn?.addEventListener("click", () => {
 	glowEnabled = !glowEnabled;
 	localStorage.setItem("glowEnabled", glowEnabled ? "true" : "false");
 	updateGlowUI();
 });
+function updateGlowUI() {
+	if (!toggleBtn) return;
+	toggleBtn.textContent = `Glow: ${glowEnabled ? "On" : "Off"}`;
+	toggleBtn.setAttribute("aria-pressed", String(glowEnabled));
+}
 
-// --- S2: chips highlighting + avatar parallax ---
-const $ = (s, r = document) => r.querySelector(s);
-const palette = $("#paletteCard");
+/* ---- S2 chips + avatar parallax ---- */
+const paletteCard = $("#paletteCard");
 const typeCard = $("#typeCard");
-const spacing = $("#spacingCard");
-
-function addHL(el) {
-	el && el.classList.add("hl");
+const spacingCard = $("#spacingCard");
+function setHL(target) {
+	[paletteCard, typeCard, spacingCard].forEach((el) =>
+		el?.classList.remove("hl")
+	);
+	target?.classList.add("hl");
 }
-function rmHL(el) {
-	el && el.classList.remove("hl");
-}
+$("#chip-color")?.addEventListener("click", () => setHL(paletteCard));
+$("#chip-type")?.addEventListener("click", () => setHL(typeCard));
+$("#chip-grid")?.addEventListener("click", () => setHL(spacingCard));
+$("#chip-spacing")?.addEventListener("click", () => setHL(spacingCard));
 
-$("#chip-color")?.addEventListener("click", () => {
-	[typeCard, spacing].forEach(rmHL);
-	addHL(palette);
-});
-$("#chip-type")?.addEventListener("click", () => {
-	[palette, spacing].forEach(rmHL);
-	addHL(typeCard);
-});
-["#chip-grid", "#chip-spacing"].forEach((sel) => {
-	$(sel)?.addEventListener("click", () => {
-		[palette, typeCard].forEach(rmHL);
-		addHL(spacing);
-	});
-});
-
-// motion reduce for sparkle
-try {
-	if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-		const sparkle = $("#sparkle");
-		if (sparkle) sparkle.style.animation = "none";
-	}
-} catch {}
-
-// avatar parallax
 const avatar = $("#dashaPersona");
 const wrap = avatar?.closest(".portrait-wrap");
 if (wrap && avatar) {
@@ -134,232 +111,115 @@ if (wrap && avatar) {
 	wrap.addEventListener("mouseleave", () => {
 		avatar.style.transform = "translate(0,0)";
 	});
+	if (prefersReduce()) avatar.style.transition = "none";
 }
 
-// --- S3: toggle plugin vs clean code ---
-const pluginCodeEl = document.querySelector("#pluginCode");
-const cleanCodeEl = document.querySelector("#cleanCode");
-const toggleBtnCode = document.querySelector("#toggleCode");
-toggleBtnCode?.addEventListener("click", () => {
+/* ---- S3 code toggle ---- */
+const pluginCodeEl = $("#pluginCode");
+const cleanCodeEl = $("#cleanCode");
+$("#toggleCode")?.addEventListener("click", () => {
 	const pluginShown = !pluginCodeEl.classList.contains("hidden");
 	pluginCodeEl.classList.toggle("hidden", pluginShown);
 	cleanCodeEl.classList.toggle("hidden", !pluginShown);
-	toggleBtnCode.textContent = pluginShown
+	$("#toggleCode").textContent = pluginShown
 		? "← Back to plugin code"
 		: "Switch to clean code →";
 });
-// --- S4: Myth Break interactions ---
-(function MythBreak() {
-	const s4 = document.querySelector("#s4");
-	if (!s4) return;
 
-	// reveal pieces on enter (lightweight – fade/slide)
-	const poster = s4.querySelector(".poster-wrap");
-	const bugs = Array.from(s4.querySelectorAll(".bug-card"));
-
-	// GSAP reveal
-	if (window.gsap) {
-		const tl = gsap.timeline({
-			paused: true,
-			defaults: { ease: "power2.out" },
-		});
-		tl.fromTo(
-			poster,
-			{ autoAlpha: 0, y: 20 },
-			{ autoAlpha: 1, y: 0, duration: 0.6 }
-		);
-		tl.fromTo(
-			bugs,
-			{ autoAlpha: 0, y: 14 },
-			{ autoAlpha: 1, y: 0, duration: 0.4, stagger: 0.12 },
-			"-=.2"
-		);
-
-		// play when section comes into view
-		const obs = new IntersectionObserver(
-			(ents) => {
-				ents.forEach((e) => {
-					if (e.isIntersecting) {
-						tl.play();
-						obs.disconnect();
-					}
-				});
-			},
-			{ threshold: 0.35 }
-		);
-		obs.observe(s4);
-	}
-
-	// toggle buttons: swap from "broken" -> "fixed"
-	s4.querySelectorAll(".bug-toggle").forEach((btn) => {
+/* ---- S4 Myth Break toggles ---- */
+$("#s4")
+	?.querySelectorAll(".bug-toggle")
+	.forEach((btn) => {
 		btn.addEventListener("click", () => {
 			const card = btn.closest(".bug-card");
 			const type = card?.dataset.bug;
 
 			if (type === "button") {
 				const c = card.querySelector(".btn-ghost");
-				const isBroken = c.classList.contains("misaligned");
-				c.classList.toggle("misaligned", !isBroken);
-				c.classList.toggle("aligned", isBroken);
+				const broken = c.classList.contains("misaligned");
+				c.classList.toggle("misaligned", !broken);
+				c.classList.toggle("aligned", broken);
 			}
-
 			if (type === "text") {
 				const p = card.querySelector(".truncate-bad, .truncate-good");
-				const isBad = p.classList.contains("truncate-bad");
-				p.classList.toggle("truncate-bad", !isBad);
-				p.classList.toggle("truncate-good", isBad);
+				const bad = p.classList.contains("truncate-bad");
+				p.classList.toggle("truncate-bad", !bad);
+				p.classList.toggle("truncate-good", bad);
 			}
-
 			if (type === "logo") {
 				const logo = card.querySelector(".logo-img");
-				const isOff = logo.classList.contains("offcenter");
-				logo.classList.toggle("offcenter", !isOff);
-				logo.classList.toggle("centered", isOff);
+				const off = logo.classList.contains("offcenter");
+				logo.classList.toggle("offcenter", !off);
+				logo.classList.toggle("centered", off);
 			}
 
-			// button label + a11y
 			const pressed = btn.getAttribute("aria-pressed") === "true";
 			btn.setAttribute("aria-pressed", String(!pressed));
 			btn.textContent = pressed ? "Fix it →" : "← Undo fix";
 		});
 	});
-})();
-// ---MARK: S5: Prompt copy + refine toggle ---
-(function ToolsAI() {
-	const s5 = document.querySelector("#s5");
-	if (!s5) return;
 
-	// Copy prompt
-	const copyBtn = s5.querySelector("#copyPrompt");
-	const copyOK = s5.querySelector("#copyOK");
-	const textEl = s5.querySelector("#promptText");
+/* ---- S5 copy + refine toggle ---- */
+(function toolsAI() {
+	const s5 = $("#s5");
+	if (!s5) return;
+	const copyBtn = $("#copyPrompt");
+	const copyOK = $("#copyOK");
+	const textEl = $("#promptText");
 	copyBtn?.addEventListener("click", async () => {
 		try {
 			await navigator.clipboard.writeText(textEl.value);
-			if (copyOK) {
-				copyOK.hidden = false;
-				setTimeout(() => (copyOK.hidden = true), 1400);
-			}
 		} catch {
-			// fallback
 			textEl.select();
 			document.execCommand("copy");
-			if (copyOK) {
-				copyOK.hidden = false;
-				setTimeout(() => (copyOK.hidden = true), 1400);
-			}
+		}
+		if (copyOK) {
+			copyOK.hidden = false;
+			setTimeout(() => (copyOK.hidden = true), 1200);
 		}
 	});
 
-	// Refine toggle
-	const toggle = s5.querySelector("#refineToggle");
-	const ai = s5.querySelector("#aiDraft");
-	const ref = s5.querySelector("#refinedCode");
+	const toggle = $("#refineToggle");
+	const ai = $("#aiDraft");
+	const ref = $("#refinedCode");
 	toggle?.addEventListener("click", () => {
-		const showRefined = ref.classList.contains("hidden");
-		ref.classList.toggle("hidden", !showRefined);
-		ai.classList.toggle("hidden", showRefined);
-		toggle.textContent = showRefined ? "← Show AI draft" : "Show refined →";
+		const showRef = ref.classList.contains("hidden");
+		ref.classList.toggle("hidden", !showRef);
+		ai.classList.toggle("hidden", showRef);
+		toggle.textContent = showRef ? "← Show AI draft" : "Show refined →";
 	});
-
-	// Reveal animation
-	if (window.gsap) {
-		const cards = s5.querySelectorAll(
-			".tool-card, .prompt-card, .refine, .flow-pill, .flow-arrow"
-		);
-		const tl = gsap.timeline({
-			paused: true,
-			defaults: { ease: "power2.out" },
-		});
-		tl.fromTo(
-			cards,
-			{ autoAlpha: 0, y: 16 },
-			{ autoAlpha: 1, y: 0, duration: 0.45, stagger: 0.06 }
-		);
-
-		const obs = new IntersectionObserver(
-			(ents) => {
-				ents.forEach((e) => {
-					if (e.isIntersecting) {
-						tl.play();
-						obs.disconnect();
-					}
-				});
-			},
-			{ threshold: 0.3 }
-		);
-		obs.observe(s5);
-	}
 })();
-// s6 fade-in on scroll
-const s6 = document.querySelector("#s6");
-if (s6) {
+
+/* ---- S6 simple reveal (if GSAP present) ---- */
+(function s6Reveal() {
+	const s6 = $("#s6");
+	if (!s6 || !window.gsap) return;
 	gsap.fromTo(
 		s6.querySelector("dotlottie-wc"),
-		{ y: 40, autoAlpha: 0 },
-		{
-			y: 0,
-			autoAlpha: 1,
-			duration: 1.2,
-			ease: "power3.out",
-			scrollTrigger: { trigger: s6, start: "top 80%" },
-		}
+		{ y: 32, autoAlpha: 0 },
+		{ y: 0, autoAlpha: 1, duration: 1, ease: "power3.out" }
 	);
-}
+})();
+
+/* ---- S7 compare slider ---- */
 (function s7Compare() {
-	const topImg = document.querySelector("#s7 #s7TopImg");
-	const slider = document.querySelector("#s7 #s7Slider");
+	const topImg = $("#s7TopImg");
+	const slider = $("#s7Slider");
 	if (!topImg || !slider) return;
 	const setClip = (v) => (topImg.style.clipPath = `inset(0 ${100 - v}% 0 0)`);
 	setClip(slider.value);
 	slider.addEventListener("input", (e) => setClip(e.target.value));
 })();
-// --- Live Q&A reveal animation ---
-if (window.gsap) {
-	const qas = document.querySelectorAll("#s8 .qa-card");
-	const tlQA = gsap.timeline({
-		scrollTrigger: { trigger: "#s8", start: "top 70%" },
-	});
-	tlQA.from(qas, {
+
+/* ---- S8 stagger in (if GSAP present) ---- */
+(function s8Reveal() {
+	if (!window.gsap) return;
+	const qas = $$("#s8 .qa-card");
+	gsap.from(qas, {
 		autoAlpha: 0,
-		y: 20,
+		y: 18,
 		duration: 0.6,
 		ease: "power2.out",
-		stagger: 0.15,
+		stagger: 0.12,
 	});
-}
-// Mobile toggle
-const navToggle = document.getElementById("navToggle");
-const drawer = document.getElementById("drawer");
-const mainNav = document.getElementById("mainNav");
-navToggle?.addEventListener("click", () => {
-	const open = drawer.classList.toggle("hidden") ? false : true;
-	navToggle.setAttribute("aria-expanded", String(open));
-});
-
-// Scrollspy: highlight link matching visible section
-const links = [...document.querySelectorAll("#mainNav .nav-pill")];
-const map = new Map(
-	links.map((a) => [a.getAttribute("href")?.replace("#", ""), a])
-);
-const spy = new IntersectionObserver(
-	(entries) => {
-		entries.forEach((e) => {
-			if (!e.isIntersecting) return;
-			const id = e.target.id;
-			links.forEach((l) => l.classList.remove("is-active"));
-			map.get(id)?.classList.add("is-active");
-		});
-	},
-	{ rootMargin: "-40% 0px -55% 0px", threshold: 0 }
-);
-
-document.querySelectorAll("section[id]").forEach((s) => spy.observe(s));
-
-// Close drawer after selecting a link (mobile)
-drawer?.addEventListener("click", (e) => {
-	if (e.target.matches('a[href^="#"]')) {
-		drawer.classList.add("hidden");
-		navToggle?.setAttribute("aria-expanded", "false");
-	}
-});
+})();
