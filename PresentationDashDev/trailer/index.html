@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Pixel Perfect Is Not Dead — DevFest Windsor 2025 Trailer</title>
+
+		<link rel="icon" type="image/png" href="/assets/favicon.png" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<script
+			type="module"
+			src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
+		></script>
+
+		<style>
+			:root {
+				--bg: #0a0a0a;
+				--ink: #e5e7eb;
+				--muted: #94a3b8;
+				--c1: #8b5cf6;
+				--c2: #ec4899;
+				--c3: #f59e0b;
+			}
+			body {
+				margin: 0;
+				color: var(--ink);
+				background: radial-gradient(
+					1000px 600px at 50% -10%,
+					#121212,
+					#090909,
+					#050505
+				);
+				font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				overflow: hidden;
+			}
+			.frame {
+				position: relative;
+				width: 100vw;
+				height: 100vh;
+				display: grid;
+				place-items: center;
+				overflow: hidden;
+				background: #000;
+				opacity: 0;
+				transition: opacity 1s ease;
+			}
+			.frame.ready {
+				opacity: 1;
+			}
+			.stage {
+				position: relative;
+				width: min(100vw, 180vh);
+				aspect-ratio: 21/9;
+				overflow: hidden;
+				isolation: isolate;
+			}
+			.bar {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 10vh;
+				background: #000;
+				z-index: 70;
+			}
+			.bar.top {
+				top: 0;
+			}
+			.bar.bottom {
+				bottom: 0;
+			}
+
+			/* background animation */
+			dotlottie-wc.bg {
+				position: absolute;
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0.35;
+				z-index: 1;
+			}
+
+			/* scene setup */
+			.scene {
+				position: absolute;
+				inset: 0;
+				opacity: 0;
+				transform: scale(1.02);
+				transition: opacity 0.6s ease, transform 0.6s ease;
+				z-index: 5;
+			}
+			.scene.active {
+				opacity: 1;
+				transform: scale(1);
+			}
+			.center {
+				position: absolute;
+				inset: 0;
+				display: grid;
+				place-items: center;
+				text-align: center;
+				padding: 5vw;
+			}
+			.wrap {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 4vw;
+			}
+
+			/* typography */
+			.h1 {
+				font-weight: 800;
+				letter-spacing: -0.02em;
+				line-height: 1.05;
+				font-size: clamp(3rem, 7vw, 6.5rem);
+			}
+			.h2 {
+				font-weight: 800;
+				letter-spacing: -0.015em;
+				line-height: 1.1;
+				font-size: clamp(2.2rem, 4.8vw, 4rem);
+			}
+			.sub {
+				margin-top: 0.4rem;
+				font-size: clamp(1rem, 2vw, 1.375rem);
+				color: var(--muted);
+			}
+			.tag {
+				font-size: clamp(0.8rem, 1.6vw, 1rem);
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				color: var(--muted);
+			}
+			.neon {
+				text-shadow: 0 0 6px rgba(255, 255, 255, 0.25), 0 0 18px var(--c1),
+					0 0 32px var(--c2), 0 0 48px var(--c3);
+			}
+
+			/* glass panels */
+			.panel {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				padding: 1rem 1.2rem;
+				border-radius: 16px;
+				backdrop-filter: blur(8px);
+				background: linear-gradient(
+					180deg,
+					rgba(10, 10, 10, 0.55),
+					rgba(10, 10, 10, 0.28)
+				);
+				border: 1px solid rgba(255, 255, 255, 0.08);
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+				max-width: min(52%, 680px);
+				text-align: left;
+			}
+			.panel.left {
+				left: 6%;
+			}
+			.panel.right {
+				right: 6%;
+			}
+			.panel-final {
+				left: 6%;
+				right: 44%;
+				bottom: max(6%, 24px + env(safe-area-inset-bottom));
+				top: auto;
+				transform: none;
+				max-width: min(56%, 720px);
+				padding: 1.1rem 1.25rem;
+			}
+
+			/* image positions */
+			.img {
+				position: absolute;
+				object-fit: contain;
+				filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.5));
+			}
+			.img.s1 {
+				right: 5%;
+				bottom: 6%;
+				width: 36%;
+				max-width: 700px;
+			}
+			.img.s2 {
+				left: 5%;
+				bottom: 4%;
+				width: 34%;
+				max-width: 640px;
+			}
+			.img.s4 {
+				right: 5%;
+				bottom: 2%;
+				width: 34%;
+				max-width: 620px;
+			}
+
+			/* meta info */
+			.meta {
+				display: flex;
+				align-items: center;
+				gap: 0.6rem;
+				font-weight: 700;
+				font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+			}
+			.meta svg {
+				width: 1.15em;
+				height: 1.15em;
+				opacity: 0.9;
+				flex: none;
+			}
+			.final-title {
+				font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+				font-weight: 800;
+				margin: 0.2rem 0 0.35rem;
+			}
+			.final-sub {
+				color: var(--muted);
+				margin-bottom: 0.7rem;
+			}
+			.final-sep {
+				opacity: 0.5;
+				margin: 0 0.4rem;
+			}
+
+			/* responsive */
+			@media (max-width: 980px) {
+				.panel-final {
+					right: 8%;
+					left: 6%;
+					bottom: 8%;
+				}
+				.img.s4 {
+					right: 3%;
+					width: 40%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="frame" id="frame">
+			<div class="bar top"></div>
+			<div class="bar bottom"></div>
+			<div class="stage">
+				<dotlottie-wc
+					class="bg"
+					src="https://lottie.host/47e44dff-0a82-4733-b2cf-47236e80c30c/Fq7S2UPooI.lottie"
+					autoplay
+					loop
+				></dotlottie-wc>
+
+				<!-- 1) Hook -->
+				<section class="scene active" id="s1">
+					<img class="img s1" src="/assets/angryDasha.png" alt="Dasha coding" />
+					<div class="panel left">
+						<div class="tag">This Fall · Google DevFest Windsor 2025</div>
+						<div class="h1 neon" style="margin: 0.2rem 0 0.3rem">
+							What if your site<br />looked like Figma?
+						</div>
+						<div class="sub">Every pixel. Every spacing. Every detail.</div>
+					</div>
+				</section>
+
+				<!-- 2) Book -->
+				<section class="scene" id="s2">
+					<img
+						class="img s2"
+						src="/assets/bookDasha.png"
+						alt="Pixel Perfect book"
+					/>
+					<div class="panel right">
+						<div class="h2">Design × Code</div>
+						<div class="sub" style="margin-top: 0.3rem">
+							From the designer & front-end dev of the DevFest Windsor website ·
+							Styles → Components → Production UI
+						</div>
+					</div>
+				</section>
+
+				<!-- 3) Title -->
+				<section class="scene" id="s3">
+					<div class="center">
+						<div class="wrap">
+							<div class="h1 neon">Pixel Perfect Is Not Dead</div>
+							<div class="sub">
+								How I build UI that matches the Figma design
+							</div>
+							<div class="sub" style="margin-top: 1.2rem; color: #a5f3fc">
+								Presented at Google DevFest Windsor 2025
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- 4) Final slate -->
+				<section class="scene" id="s5">
+					<img
+						class="img s4"
+						src="/assets/dashaPersona2.png"
+						alt="Daria waving"
+					/>
+					<div class="panel panel-final">
+						<div class="h1" style="margin: 0.05rem 0 0.25rem">
+							Daria Deriagina
+						</div>
+						<div class="final-sub">
+							Designer × Front-End Developer
+							<span class="final-sep">•</span> Room B14
+						</div>
+						<div class="final-title">
+							Pixel Perfect Is Not Dead: How I Build UI That Matches the Figma
+							Design
+						</div>
+						<div class="meta" style="margin-top: 0.45rem">
+							<svg viewBox="0 0 24 24" fill="currentColor">
+								<path
+									d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1V3a1 1 0 0 1 1-1Zm12 8H5v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8ZM6 8h12V6H6v2Z"
+								/>
+							</svg>
+							<span
+								>Saturday, November 8<sup>th</sup>, 2025 · 1:00 - 1:45 PM</span
+							>
+						</div>
+						<div class="meta" style="margin-top: 0.35rem">
+							<svg viewBox="0 0 24 24" fill="currentColor">
+								<path
+									d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7Zm0 9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
+								/>
+							</svg>
+							<span
+								>Odette School of Business, Windsor · Google DevFest 2025</span
+							>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script>
+			// --- delay before animation starts (in ms)
+			const startDelay = 1500; // 1.5 seconds pause for screen recording
+
+			const cuts = [
+				{ at: 0, id: "s1" },
+				{ at: 4800, id: "s2" },
+				{ at: 9200, id: "s3" },
+				{ at: 13800, id: "s5" },
+			];
+			const scenes = Object.fromEntries(
+				[...document.querySelectorAll(".scene")].map((s) => [s.id, s])
+			);
+
+			function show(id) {
+				Object.values(scenes).forEach((el) => el.classList.remove("active"));
+				scenes[id]?.classList.add("active");
+			}
+
+			window.addEventListener("DOMContentLoaded", () => {
+				const frame = document.getElementById("frame");
+				// fade in the stage, then start cuts
+				setTimeout(() => frame.classList.add("ready"), 400);
+				setTimeout(() => {
+					cuts.forEach(({ at, id }) => setTimeout(() => show(id), at));
+				}, startDelay);
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Make It Feel Right — DashDev</title>
+		<link rel="icon" type="image/png" href="/assets/favicon.png" />
+
+		<!-- Tailwind (utilities) -->
+		<script src="https://cdn.tailwindcss.com"></script>
+
+		<!-- Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Lottie -->
+		<script
+			type="module"
+			src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
+		></script>
+
+		<!-- App CSS -->
+		<link rel="stylesheet" href="/css/styles.css" />
+
+		<!-- GSAP -->
+		<script
+			defer
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+		></script>
+
+		<!-- App JS -->
+		<script defer src="/js/app.js"></script>
+	</head>
+
+	<body class="min-h-full antialiased theme-violet">
+		<!-- Navbar -->
+		<header
+			class="sticky top-0 z-40 border-b border-white/10 bg-black/40 backdrop-blur"
+		>
+			<div
+				class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between"
+			>
+				<a href="#s1" class="flex items-center gap-3" aria-label="DashDev home">
+					<img
+						src="/assets/logoDashDev.png"
+						alt="DashDev"
+						class="h-16 w-auto drop-shadow-lg"
+					/>
+				</a>
+
+				<nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+					<a class="hover:text-white transition" href="#s2">Principles</a>
+					<a class="hover:text-white transition" href="#s3">Showcase</a>
+					<a class="hover:text-white transition" href="#s4">Myth Break</a>
+					<a class="hover:text-white transition" href="#siteFooter">Contact</a>
+				</nav>
+
+				<div class="flex items-center gap-2">
+					<button
+						id="glowToggle"
+						class="rounded-xl border border-white/20 px-3 py-2 text-xs text-white hover:bg-white/10 transition"
+						aria-pressed="true"
+						aria-label="Toggle glow trail"
+					>
+						Glow: On
+					</button>
+				</div>
+			</div>
+		</header>
+
+		<!-- 0. Intro -->
+		<section
+			id="s0"
+			class="relative h-screen grid place-items-center overflow-hidden"
+		>
+			<dotlottie-wc
+				src="https://lottie.host/538eebff-442c-4c7c-ba1f-bba30262b602/zsMP4fWk7s.lottie"
+				style="
+					position: absolute;
+					inset: 0;
+					width: 100%;
+					height: 100%;
+					opacity: 0.35;
+					pointer-events: none;
+					z-index: 0;
+				"
+				autoplay
+				loop
+			></dotlottie-wc>
+
+			<div class="relative z-10 text-center select-none">
+				<img
+					id="introLogo"
+					src="/assets/logoDashDev.png"
+					alt="DashDev"
+					class="mx-auto h-24 w-auto drop-shadow-[0_0_35px_rgba(139,92,246,.45)] animate-pulseSoft"
+				/>
+				<dotlottie-wc
+					src="https://lottie.host/03ba8f5b-3af0-4d6f-a07c-b9453a667f9b/X97l3dfr4D.lottie"
+					style="width: 260px; height: 260px; margin: 0 auto"
+					autoplay
+					loop
+				></dotlottie-wc>
+				<p class="mt-5 text-muted text-lg tracking-wide">Make It Feel Right</p>
+			</div>
+		</section>
+
+		<!-- 1. Hero -->
+		<section id="s1" class="min-h-screen grid place-items-center px-4">
+			<div class="max-w-5xl text-center">
+				<h1
+					class="font-extrabold text-5xl md:text-7xl neon animate-flicker leading-tight"
+				>
+					Make It Feel Right
+				</h1>
+				<p class="mt-4 text-muted">
+					Design + code with care — so the interface feels exactly as intended.
+				</p>
+				<p class="mt-2 text-sm text-slate-400">
+					Daria Deriagina · #dashDev Studio
+				</p>
+
+				<div class="mt-10 flex items-center justify-center gap-6">
+					<div
+						class="h-3 w-3 rounded-full shadow-[0_0_20px_6px_rgba(139,92,246,.45)]"
+						style="background: var(--c1)"
+					></div>
+					<img
+						src="/assets/logoDashDev.png"
+						class="h-16 w-auto"
+						alt="DashDev logo"
+					/>
+					<div
+						class="h-3 w-3 rounded-full shadow-[0_0_20px_6px_rgba(236,72,153,.45)]"
+						style="background: var(--c2)"
+					></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 2. Meet Dasha -->
+		<section id="s2" class="min-h-screen grid place-items-center px-4 py-16">
+			<div class="max-w-6xl grid md:grid-cols-2 gap-10 items-center">
+				<!-- Portrait -->
+				<figure
+					class="portrait-wrap relative aspect-square rounded-3xl overflow-hidden ring-1 ring-white/10"
+				>
+					<div
+						class="absolute inset-0 grid place-items-center pointer-events-none"
+						aria-hidden="true"
+					>
+						<div
+							class="glow-circle w-[520px] h-[520px] rounded-full blur-3xl opacity-60"
+						></div>
+					</div>
+					<img
+						id="dashaPersona"
+						src="/assets/dashaconfident.png"
+						alt="Dasha — designer who codes"
+						class="relative z-10 w-full h-full object-contain transition-transform duration-700 will-change-transform"
+						loading="lazy"
+					/>
+					<span
+						id="sparkle"
+						class="sparkle absolute z-20 top-8 right-8"
+						aria-hidden="true"
+					></span>
+					<div class="absolute inset-0 pointer-events-none z-20">
+						<span class="absolute left-6 top-6 text-xl select-none">🎨</span>
+						<span class="absolute right-8 top-1/3 text-xl select-none">💻</span>
+						<span class="absolute left-10 bottom-10 text-xl select-none"
+							>🤖</span
+						>
+					</div>
+					<figcaption class="absolute bottom-3 inset-x-3 z-10">
+						<span
+							class="mx-auto w-fit px-3 py-1 rounded-full bg-black/40 border border-white/10 text-sm text-slate-200 backdrop-blur"
+						>
+							The Dreamer
+						</span>
+					</figcaption>
+				</figure>
+
+				<!-- Copy -->
+				<div class="s2-copy">
+					<h2 class="text-4xl md:text-5xl font-bold">Meet Dasha</h2>
+					<p class="mt-3 text-xl text-slate-300">
+						Hi! I’m Dasha — a designer who codes. I love clean layout, exact
+						colors, and small details that make users smile.
+					</p>
+					<p class="mt-3 text-slate-300">
+						I started in Figma, then learned HTML, CSS, and JS to bring designs
+						to life. In this talk I show how I mix design, code, and a bit of
+						magic.
+					</p>
+
+					<!-- Chips -->
+					<div
+						class="mt-5 flex flex-wrap gap-2"
+						role="group"
+						aria-label="Dasha’s focus areas"
+					>
+						<button
+							id="chip-color"
+							class="chip"
+							type="button"
+							aria-controls="paletteCard"
+						>
+							🎨 Color
+						</button>
+						<button
+							id="chip-grid"
+							class="chip"
+							type="button"
+							aria-controls="spacingCard"
+						>
+							🔲 Grid
+						</button>
+						<button
+							id="chip-type"
+							class="chip"
+							type="button"
+							aria-controls="typeCard"
+						>
+							🔤 Type
+						</button>
+						<button
+							id="chip-spacing"
+							class="chip"
+							type="button"
+							aria-controls="spacingCard"
+						>
+							↕ Spacing
+						</button>
+					</div>
+
+					<!-- Minis -->
+					<div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+						<div id="paletteCard" class="mini-card">
+							<div
+								id="paletteStrip"
+								class="palette-strip h-8 rounded mb-2"
+							></div>
+							<p class="text-sm text-slate-400">Favorite palette</p>
+						</div>
+						<div id="typeCard" class="mini-card">
+							<p class="type-h text-lg font-semibold">Heading</p>
+							<p class="type-b text-base text-slate-300">Body text</p>
+						</div>
+						<div id="spacingCard" class="mini-card">
+							<div
+								class="rounded-lg border border-white/10 p-3 flex flex-col gap-2"
+							>
+								<div class="h-3 rounded bg-white/10"></div>
+								<div class="h-3 rounded bg-white/10 w-2/3"></div>
+								<div class="h-3 rounded bg-white/10 w-1/2"></div>
+							</div>
+							<p class="text-sm text-slate-400 mt-2">Spacing demo</p>
+						</div>
+					</div>
+
+					<p class="mt-4 text-slate-300">
+						When designs go to code, the feeling can change. That’s where my
+						story continues.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- 3. From Design → Code → Result -->
+		<section id="s3" class="min-h-screen grid place-items-center px-4 py-16">
+			<div class="max-w-6xl w-full grid md:grid-cols-3 gap-6 items-start">
+				<div class="demo-box" id="figmaDemo">
+					<header class="demo-head">🎨 Figma Design</header>
+					<img
+						src="/assets/figma-sample.png"
+						alt="Figma layout preview"
+						class="demo-img"
+					/>
+					<p class="demo-caption">
+						The clean design — balanced grid, perfect spacing.
+					</p>
+				</div>
+
+				<div class="demo-box" id="codeDemo">
+					<header class="demo-head">💻 Code</header>
+					<pre class="demo-code" id="pluginCode">
+&lt;div&gt;&lt;div&gt;&lt;div&gt;... endless divs ...&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</pre
+					>
+					<pre class="demo-code hidden" id="cleanCode">
+&lt;section class="hero"&gt;
+  &lt;h1&gt;Make It Feel Right&lt;/h1&gt;
+  &lt;p&gt;Clean, semantic, easy to maintain.&lt;/p&gt;
+&lt;/section&gt;</pre
+					>
+					<p class="demo-caption">
+						First: plugin export → messy divs.<br />Then: hand-written semantic
+						code.
+					</p>
+					<button id="toggleCode" class="btn-small mt-3">
+						Switch to clean code →
+					</button>
+				</div>
+
+				<div class="demo-box" id="resultDemo">
+					<header class="demo-head">✨ Result</header>
+					<figure class="browser-mock">
+						<div class="browser-bar" aria-hidden="true">
+							<span class="dot red"></span><span class="dot yellow"></span
+							><span class="dot green"></span>
+							<span class="url">thelancermethod.com</span>
+						</div>
+						<img
+							src="/assets/result-desktop.png"
+							alt="Final site result — desktop view"
+							loading="lazy"
+						/>
+					</figure>
+					<p class="demo-caption">Final site matches Figma pixel by pixel.</p>
+				</div>
+			</div>
+
+			<p class="mt-10 text-center text-slate-300 max-w-3xl">
+				Pixel Perfect isn’t one click — it’s control, understanding, and respect
+				for design.
+			</p>
+		</section>
+
+		<!-- 4. Myth Break -->
+		<section id="s4" class="min-h-screen grid place-items-center px-4 py-16">
+			<div class="max-w-6xl w-full">
+				<div class="text-center mb-10">
+					<p class="text-sm uppercase tracking-wider text-slate-400">
+						Myth Break
+					</p>
+					<h2 class="mt-2 text-4xl md:text-5xl font-bold neon">
+						Details People Can Feel
+					</h2>
+					<p class="mt-3 text-slate-300 max-w-2xl mx-auto">
+						Small choices in color, spacing, and type have a big human effect.
+						Users feel them — even if they don’t name them.
+					</p>
+				</div>
+
+				<div class="mt-10 grid sm:grid-cols-3 gap-6">
+					<div class="bug-card card" data-bug="button">
+						<header class="bug-head">↔ Button 2px Off</header>
+						<div class="bug-demo">
+							<button class="btn-ghost misaligned">Primary</button>
+						</div>
+						<p class="bug-caption">Tiny misalignment → cheap feeling.</p>
+						<button class="bug-toggle btn-small mt-3" aria-pressed="false">
+							Fix it →
+						</button>
+					</div>
+
+					<div class="bug-card card" data-bug="text">
+						<header class="bug-head">📱 Text Cuts on Mobile</header>
+						<div class="bug-demo">
+							<p class="truncate-bad">
+								This headline is way too long for the container and it just…
+							</p>
+						</div>
+						<p class="bug-caption">Overflow or wrap? Choose with care.</p>
+						<button class="bug-toggle btn-small mt-3" aria-pressed="false">
+							Fix it →
+						</button>
+					</div>
+
+					<div class="bug-card card" data-bug="logo">
+						<header class="bug-head">🎯 Logo Off-Center</header>
+						<div class="bug-demo">
+							<div class="logo-area">
+								<img
+									src="/assets/logoDashDev.png"
+									alt="Logo"
+									class="logo-img offcenter"
+								/>
+							</div>
+						</div>
+						<p class="bug-caption">Center by math, not by eye.</p>
+						<button class="bug-toggle btn-small mt-3" aria-pressed="false">
+							Fix it →
+						</button>
+					</div>
+				</div>
+
+				<div class="mt-12 text-center">
+					<blockquote class="text-xl md:text-2xl text-slate-200">
+						“Close enough is not enough. Care is visible.”
+					</blockquote>
+					<p class="mt-3 text-slate-400">— Dasha / #dashDev</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- MARK: 5. AI + Tools — Fast but Controlled -->
+		<!-- MARK: 5. AI + Tools — Fast but Controlled -->
+		<section id="s5" class="min-h-screen grid place-items-center px-4 py-16">
+			<div class="max-w-6xl w-full">
+				<!-- Header -->
+				<div class="text-center mb-12">
+					<p class="text-sm uppercase tracking-wider text-slate-400">
+						Workflow
+					</p>
+					<h2 class="mt-2 text-4xl md:text-5xl font-bold neon">
+						AI + Tools — Fast but Controlled
+					</h2>
+					<p class="mt-3 text-slate-300 max-w-3xl mx-auto">
+						I use AI to go fast. I keep control to stay clean and true to the
+						design.
+					</p>
+				</div>
+
+				<!-- Tool cards (some on light background) -->
+				<div class="grid sm:grid-cols-3 gap-6">
+					<article class="tool-card card light-card">
+						<header class="tool-head">🤖 ChatGPT</header>
+						<p class="tool-sub">Drafts and help.</p>
+						<ul class="tool-list">
+							<li>First HTML/CSS/JS draft</li>
+							<li>Bug tips in simple words</li>
+							<li>Quick loops with rules</li>
+						</ul>
+					</article>
+
+					<article class="tool-card card">
+						<header class="tool-head">🎨 Figma</header>
+						<p class="tool-sub">Source of truth.</p>
+						<ul class="tool-list">
+							<li>Exact colors and type</li>
+							<li>Grid and spacing</li>
+							<li>Tokens for code</li>
+						</ul>
+					</article>
+
+					<article class="tool-card card light-card">
+						<header class="tool-head">🎞️ Lottie</header>
+						<p class="tool-sub">Light motion.</p>
+						<ul class="tool-list">
+							<li>Drop-in animations</li>
+							<li>Small files</li>
+							<li>Nice feedback</li>
+						</ul>
+					</article>
+
+					<article class="tool-card card">
+						<header class="tool-head">🧩 WordPress (PHP)</header>
+						<p class="tool-sub">When WP is needed.</p>
+						<ul class="tool-list">
+							<li>Static → PHP template</li>
+							<li>ACF for content</li>
+							<li>Semantic theme</li>
+						</ul>
+					</article>
+
+					<article class="tool-card card light-card">
+						<header class="tool-head">🪄 Webflow</header>
+						<p class="tool-sub">Fast builds.</p>
+						<ul class="tool-list">
+							<li>Clean classes</li>
+							<li>Custom code for polish</li>
+							<li>CMS for teams</li>
+						</ul>
+					</article>
+
+					<article class="tool-card card">
+						<header class="tool-head">🛍️ Shopify</header>
+						<p class="tool-sub">Liquid sections.</p>
+						<ul class="tool-list">
+							<li>Theme settings</li>
+							<li>Utility approach</li>
+							<li>Perf budgets</li>
+						</ul>
+					</article>
+				</div>
+
+				<!-- Split: Prompt + Refinement -->
+				<div class="mt-12 grid md:grid-cols-2 gap-6 items-start">
+					<!-- Prompt -->
+					<div class="prompt-card card light-card">
+						<header class="prompt-head">📝 Prompt I Use</header>
+						<p class="prompt-note text-slate-700 on-light">
+							Paste a JPEG from Figma. Ask for semantic HTML and utility
+							classes. No frameworks.
+						</p>
+						<textarea
+							id="promptText"
+							class="prompt-text on-light"
+							rows="10"
+							spellcheck="false"
+						>
+You are my front-end helper. I will paste a JPEG from Figma.
+
+Goal:
+- Write clean, semantic HTML with landmarks.
+- Use only utility classes. No CSS frameworks.
+- Keep my colors, type, and spacing.
+- Use header, main > section, h1–h3, nav, footer.
+- Add short comments on tricky layout.
+
+Constraints:
+- No extra wrappers. No "div soup".
+- Responsive 360–1440px with fluid widths and clamp().
+- Do not change text.
+
+I will paste: palette, font sizes, spacing scale. Return HTML only.</textarea
+						>
+						<div class="prompt-actions">
+							<button id="copyPrompt" class="btn-small">Copy prompt</button>
+							<span
+								id="copyOK"
+								class="copy-ok"
+								role="status"
+								aria-live="polite"
+								hidden
+								>Copied ✓</span
+							>
+						</div>
+					</div>
+
+					<!-- AI Draft → Refined -->
+					<div class="refine card">
+						<div class="refine-head">
+							<header class="demo-head">AI Draft → Refined Code</header>
+							<button id="refineToggle" class="btn-small">
+								Show refined →
+							</button>
+						</div>
+						<pre id="aiDraft" class="demo-code mt-2">
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="title"&gt;Hero Title&lt;/div&gt;
+    &lt;div class="desc"&gt;Some text lorem ipsum...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre
+						>
+						<pre id="refinedCode" class="demo-code mt-2 hidden">
+&lt;header class="px-6 py-8"&gt;
+  &lt;h1 class="text-balance text-4xl md:text-6xl font-extrabold"&gt;Make It Feel Right&lt;/h1&gt;
+  &lt;p class="mt-3 text-lg text-slate-400 max-w-prose"&gt;Clean, semantic, accessible.&lt;/p&gt;
+&lt;/header&gt;
+</pre
+						>
+						<p class="demo-caption">
+							AI starts the draft. I fix the structure.
+						</p>
+					</div>
+				</div>
+
+				<!-- Workflow Timeline (pretty) -->
+				<div class="flow-modern" role="list">
+					<div class="step" role="listitem">
+						<div class="dot"><span class="ico">🎨</span></div>
+						<div class="label">Figma</div>
+					</div>
+
+					<div class="step" role="listitem">
+						<div class="dot"><span class="ico">🤖</span></div>
+						<div class="label">AI Draft</div>
+					</div>
+
+					<div class="step" role="listitem">
+						<div class="dot"><span class="ico">🛠️</span></div>
+						<div class="label">Refine</div>
+					</div>
+
+					<div class="step" role="listitem">
+						<div class="dot"><span class="ico">🧩</span></div>
+						<div class="label">Platform</div>
+					</div>
+
+					<div class="step" role="listitem">
+						<div class="dot"><span class="ico">✅</span></div>
+						<div class="label">QA</div>
+					</div>
+				</div>
+
+				<!-- helper -->
+				<div
+					class="fixed bottom-4 inset-x-0 flex justify-center pointer-events-none"
+				>
+					<div
+						class="pointer-events-auto rounded-full bg-white/5 border border-white/10 backdrop-blur px-3 py-2 text-xs text-slate-300 shadow-soft"
+					>
+						Use ← → or click to progress
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- MARK: 6. Animations — Saves the Serious Word -->
+		<section
+			id="s6"
+			class="min-h-screen grid place-items-center px-4 py-20 bg-gradient-to-b from-white/70 via-violet-50 to-pink-50 relative overflow-hidden"
+		>
+			<div class="max-w-5xl text-center relative z-10">
+				<p class="text-sm uppercase tracking-wider text-slate-500">Motion</p>
+				<h2 class="mt-3 text-4xl md:text-5xl font-extrabold text-slate-800">
+					Animations saves the serious word
+				</h2>
+				<p class="mt-4 text-slate-600 max-w-2xl mx-auto">
+					A bit of motion changes the mood — guiding the eye, softening tone,
+					and keeping your UI alive.
+				</p>
+
+				<!-- Lottie animation -->
+				<div class="mt-10 flex justify-center">
+					<dotlottie-wc
+						src="https://lottie.host/20f718cb-032b-4829-995c-8e13d5929aef/4lDCACkAbt.lottie"
+						style="width: 320px; height: 320px"
+						autoplay
+						loop
+					></dotlottie-wc>
+				</div>
+
+				<p class="mt-6 text-slate-500 italic">
+					“Good animation doesn’t distract — it connects.”
+				</p>
+			</div>
+		</section>
+		<!-- MARK: 7. Case Study — The Real Build -->
+		<section
+			id="s7"
+			class="min-h-screen grid place-items-center px-4 py-20 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] via-[#111] to-[#181818]"
+		>
+			<div class="max-w-6xl w-full text-slate-100">
+				<!-- Header -->
+				<div class="text-center mb-12">
+					<p class="text-sm uppercase tracking-wider text-slate-400">
+						Real Project
+					</p>
+					<h2
+						class="mt-2 text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-violet-400 via-pink-400 to-orange-300 bg-clip-text text-transparent"
+					>
+						Figma → Code → WordPress
+					</h2>
+					<p class="mt-3 text-slate-400 max-w-3xl mx-auto">
+						A real example: one design, one codebase — no shortcuts, no pixel
+						drift.
+					</p>
+				</div>
+
+				<!-- Content Grid -->
+				<div class="grid lg:grid-cols-2 gap-10 items-start">
+					<!-- Compare -->
+					<div class="compare darkcard">
+						<header class="font-semibold text-slate-200 mb-2">
+							Figma vs Live
+						</header>
+						<div class="compare-frame">
+							<img
+								src="/assets/figma-sample.png"
+								alt="Built site"
+								class="built"
+							/>
+							<img
+								src="/assets/result-desktop.png"
+								alt="Figma design"
+								class="figma"
+								id="s7TopImg"
+							/>
+							<input
+								type="range"
+								id="s7Slider"
+								min="0"
+								max="100"
+								value="50"
+								aria-label="Compare Figma vs Live"
+							/>
+						</div>
+						<p class="mt-2 text-sm text-slate-400 text-center">
+							Drag slider — left: design, right: final.
+						</p>
+					</div>
+
+					<!-- Notes -->
+					<div class="darkcard p-6">
+						<h3 class="text-xl font-semibold mb-4 text-white">
+							What I Kept Exact
+						</h3>
+						<ul class="space-y-2 text-slate-300">
+							<li>🎨 Brand palette and gradients</li>
+							<li>🖤 The correct black — never #000</li>
+							<li>🔤 Type scale, spacing, and rhythm</li>
+							<li>🧭 Clean semantic HTML and ACF fields</li>
+							<li>🚀 Lazy loading, compressed assets</li>
+							<li>♿ Accessibility and focus states</li>
+						</ul>
+
+						<div class="mt-6 grid sm:grid-cols-3 gap-4">
+							<div class="metric-dark">
+								<div class="k">±1px</div>
+								<div class="l">layout drift</div>
+							</div>
+							<div class="metric-dark">
+								<div class="k">100%</div>
+								<div class="l">color match</div>
+							</div>
+							<div class="metric-dark">
+								<div class="k">A11y</div>
+								<div class="l">contrast pass</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Quote -->
+				<div class="text-center mt-16">
+					<blockquote
+						class="text-xl md:text-2xl font-medium text-slate-200 italic"
+					>
+						“Pixel perfect is not control — it’s respect for the designer’s
+						eye.”
+					</blockquote>
+					<p class="mt-2 text-slate-400">Built by Dasha · DashDev Studio</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- MARK: 8. Live Q&A -->
+		<section
+			id="s8"
+			class="min-h-screen grid place-items-center px-4 py-20 relative overflow-hidden bg-gradient-to-b from-[#0a0a0a] via-[#111] to-[#181818]"
+		>
+			<div class="max-w-5xl w-full text-center relative z-10">
+				<p class="text-sm uppercase tracking-wider text-slate-400">Live Q&A</p>
+				<h2
+					class="mt-2 text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[var(--c1)] via-[var(--c2)] to-[var(--c3)] bg-clip-text text-transparent animate-flicker"
+				>
+					Ask Me Anything
+				</h2>
+				<p class="mt-3 text-slate-300 text-lg max-w-2xl mx-auto">
+					Let’s talk design, code, AI, and the little details that make
+					interfaces *feel right*.
+				</p>
+
+				<!-- Animated cards -->
+				<div
+					id="qaShow"
+					class="mt-12 grid sm:grid-cols-2 gap-6 text-left text-slate-200"
+				>
+					<div class="qa-card card p-6">
+						<h3 class="font-semibold text-xl mb-2 text-[var(--c1)]">
+							“Do you still code by hand?”
+						</h3>
+						<p>
+							Yes — I love control. AI helps draft, but I always refine for
+							structure, accessibility, and feel.
+						</p>
+					</div>
+
+					<div class="qa-card card p-6">
+						<h3 class="font-semibold text-xl mb-2 text-[var(--c2)]">
+							“Why so much focus on details?”
+						</h3>
+						<p>
+							Because users feel them — even when they don’t see them. Design
+							care = trust.
+						</p>
+					</div>
+
+					<div class="qa-card card p-6">
+						<h3 class="font-semibold text-xl mb-2 text-[var(--c3)]">
+							“Do you use frameworks?”
+						</h3>
+						<p>
+							Only when needed. Most of my projects are pure HTML, CSS, and JS —
+							lightweight and clean.
+						</p>
+					</div>
+
+					<div class="qa-card card p-6">
+						<h3 class="font-semibold text-xl mb-2 text-[var(--c1)]">
+							“How can we work together?”
+						</h3>
+						<p>
+							Visit
+							<a
+								href="https://dash-dev.net"
+								target="_blank"
+								class="text-[var(--c2)] underline hover:text-[var(--c3)]"
+								>dash-dev.net</a
+							>
+							— or just say hi after the session!
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- MARK: Footer (Stage Outro) -->
+		<footer id="siteFooter">
+			<img
+				src="/assets/dashameditation.png"
+				alt="Dasha meditating — design & code harmony"
+			/>
+
+			<a href="https://dash-dev.net" target="_blank" rel="noopener">
+				<img src="/assets/3dashDev.png" alt="#dashDev logo" />
+			</a>
+
+			<p>© 2025 #dashDev Studio</p>
+
+			<p class="footer-quote">“Where pixels meditate — and divs behave.”</p>
+		</footer>
+	</body>
+</html>
