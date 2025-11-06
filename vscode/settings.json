@@ -1,0 +1,24 @@
+{
+	// Output: overwrite original or put optimized files in a subfolder
+	"image-optimizer.outputFolder": "", // empty = same folder (overwrite manually if needed)
+
+	// JPEG (photos, social cards)
+	"image-optimizer.jpeg.quality": 82, // 75–85 is a sweet spot
+	"image-optimizer.jpeg.progressive": true,
+
+	// PNG (logos/UI with transparency)
+	"image-optimizer.png.optimizationLevel": 3, // 0–7, higher = smaller/slower
+	"image-optimizer.png.lossless": true,
+
+	// WebP (modern browsers)
+	"image-optimizer.webp.enabled": true,
+	"image-optimizer.webp.quality": 80, // 70–85 typical
+
+	// AVIF (optional, even smaller)
+	"image-optimizer.avif.enabled": true,
+	"image-optimizer.avif.quality": 50, // 40–60 typical
+
+	// SVG
+	"image-optimizer.svg.multipass": true,
+	"image-optimizer.svg.removeViewBox": false // keep viewBox for responsive
+}

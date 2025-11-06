@@ -1,13 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!-- Charset & viewport -->
 		<meta charset="UTF-8" />
-		<!-- add viewport-fit + prevent Android text auto-zoom -->
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1, viewport-fit=cover"
 		/>
+
+		<!-- Primary SEO -->
 		<title>Dasha Deriagina | Link In Bio</title>
+		<meta
+			name="description"
+			content="UX/UI designer & front-end developer. Design in Figma, code it to life. Portfolio, contact, and socials."
+		/>
+		<link rel="canonical" href="https://dash-dev.net/link-in-bio.html" />
+		<meta name="robots" content="index,follow,max-image-preview:large" />
+		<meta name="theme-color" content="#ffffff" />
+
+		<!-- Social Cards -->
+		<meta property="og:type" content="profile" />
+		<meta property="og:site_name" content="DashDev Studio" />
+		<meta property="og:url" content="https://dash-dev.net/link-in-bio.html" />
+		<meta property="og:title" content="Dasha Deriagina — Link In Bio" />
+		<meta
+			property="og:description"
+			content="UX/UI designer & front-end developer. Design in Figma, code it to life. Portfolio, contact, and socials."
+		/>
+		<meta
+			property="og:image"
+			content="https://dash-dev.net/images/social/dashdev-card.png?v=2"
+		/>
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:type" content="image/png" />
+		<meta
+			property="og:image:alt"
+			content="DashDev — Pixel-perfect UX/UI & Front-End"
+		/>
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Dasha Deriagina — Link In Bio" />
+		<meta
+			name="twitter:description"
+			content="UX/UI designer & front-end developer. Design in Figma, code it to life."
+		/>
+		<meta
+			name="twitter:image"
+			content="https://dash-dev.net/images/social/dashdev-card.png?v=2"
+		/>
+
+		<!-- Icons -->
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
 		<!-- Fonts -->
 		<link
@@ -15,255 +60,58 @@
 			rel="stylesheet"
 		/>
 
+		<!-- Lottie WC (deferred) -->
+		<script
+			src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
+			type="module"
+			defer
+		></script>
+
+		<!-- Preload avatar (LCP) -->
+		<link
+			rel="preload"
+			as="image"
+			href="/images/linkInBio/dashaLinkInBio.jpg"
+			fetchpriority="high"
+		/>
+
 		<style>
-			/* --- global --- */
+			/* ===== Base ===== */
+			:root {
+				--ink: #111;
+				--muted: #555;
+				--brand: #f17396;
+				--card: #fff;
+				--shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+			}
 			html {
 				-webkit-text-size-adjust: 100%;
 				text-size-adjust: 100%;
 			}
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+			}
 			body {
 				margin: 0;
-				font-family: "IBM Plex Sans", sans-serif;
+				font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto,
+					sans-serif;
+				color: var(--ink);
 				background: #fff;
-				color: #111;
 				text-align: center;
 				padding: 20px;
 			}
 
-			.container {
-				max-width: 420px;
-				margin: 0 auto;
-				padding: 40px 20px;
-				border: 1px solid #ccc;
-				border-radius: 12px;
-				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-				animation: fadeInUp 1s ease-out both;
-				position: relative;
-				background: #fff; /* avoids gradient bleed under */
-			}
-
-			@keyframes fadeInUp {
-				from {
-					opacity: 0;
-					transform: translateY(30px);
-				}
-				to {
-					opacity: 1;
-					transform: translateY(0);
-				}
-			}
-
-			.greeting {
-				position: absolute;
-				top: -30px;
-				left: 50%;
-				transform: translateX(-50%);
-				background: #f17396;
-				color: #fff;
-				padding: 8px 16px;
-				border-radius: 20px;
-				font-size: 14px;
-				font-weight: 500;
-				opacity: 0;
-				animation: popFade 1.6s ease-out 0.5s forwards;
-			}
-			@keyframes popFade {
-				0% {
-					opacity: 0;
-					transform: translate(-50%, -10px);
-				}
-				50% {
-					opacity: 1;
-					transform: translate(-50%, 0);
-				}
-				100% {
-					opacity: 0;
-					transform: translate(-50%, -10px);
-				}
-			}
-
-			.avatar {
-				width: 180px;
-				height: 180px;
-				border-radius: 50%;
-				object-fit: cover;
-				margin-bottom: 20px;
-				animation: scaleIn 1s ease forwards;
-			}
-			@keyframes scaleIn {
-				0% {
-					transform: scale(0.6);
-					opacity: 0;
-				}
-				100% {
-					transform: scale(1);
-					opacity: 1;
-				}
-			}
-
-			h1 {
-				font-size: 36px;
-				margin-bottom: 4px;
-			}
-			h2 {
-				font-size: 18px;
-				font-weight: 400;
-				color: #555;
-				margin: 0 0 20px;
-			}
-			.tagline {
-				font-size: 15px;
-				font-style: italic;
-				color: #444;
-				margin: 0 0 25px;
-			}
-
-			.icons {
-				display: flex;
-				justify-content: center;
-				gap: 16px;
-				margin-bottom: 30px;
-			}
-			.icons img {
-				width: 40px;
-				height: 40px;
-				border-radius: 50%;
-				transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
-				animation: fadeInIcons 1s ease-in both;
-			}
-			.icons img:hover {
-				transform: translateY(-5px) scale(1.2);
-				box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-				filter: brightness(1.1);
-			}
-			@keyframes fadeInIcons {
-				from {
-					opacity: 0;
-					transform: scale(0.8);
-				}
-				to {
-					opacity: 1;
-					transform: scale(1);
-				}
-			}
-
-			/* --- BUTTONS (fixed) --- */
-			.btn {
-				display: inline-flex; /* consistent layout */
-				align-items: center;
-				justify-content: center;
-				gap: 0.5rem;
-				width: 100%;
-				max-width: 320px;
-				min-height: 48px;
-				padding: 14px 22px;
-				border-radius: 12px;
-				font-weight: 600;
-				font-size: 22px; /* was 24px */
-				line-height: 1; /* avoid vertical wrap */
-				white-space: nowrap; /* 🔒 one line */
-				overflow: hidden;
-				text-overflow: ellipsis;
-				text-decoration: none;
-				margin-bottom: 16px;
-				box-sizing: border-box;
-				-webkit-appearance: none;
-			}
-			.btn.primary {
-				background: #111;
-				color: #fff;
-				box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-			}
-			.btn.primary:hover {
-				background: #333;
-				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-			}
-
-			.btn.secondary {
-				position: relative;
-				background: #fff;
-				color: #000;
-				border: 2px solid #000;
-				padding-right: 48px; /* room for arrow */
-			}
-			.btn.secondary:hover {
-				background: #f7f7f7;
-				box-shadow: 0 4px 12px rgba(247, 115, 150, 0.25);
-			}
-
-			.arrow-icon {
-				position: absolute;
-				right: 18px;
-				top: 50%;
-				transform: translateY(-50%);
-				width: 20px;
-				height: 20px;
-				flex: 0 0 auto;
-			}
-
-			.bio-text {
-				margin-top: 20px;
-				font-size: 16px;
-				color: #333;
-				line-height: 1.4;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				gap: 8px;
-			}
-			.bio-text .second-line {
-				max-width: 340px;
-				text-align: center;
-			}
-
-			.divider {
-				margin: 30px auto;
-				height: 2px;
-				background: linear-gradient(to right, #9f6edb, #f17396, #f5a142);
-				border: none;
-				width: 80%;
-			}
-			.footer {
-				font-size: 15px;
-				color: #888;
-				margin-top: 0;
-			}
-			.footer span {
-				color: #f17396;
-			}
-
-			/* --- S8+ and smaller tweaks (360px logical width) --- */
-			@media (max-width: 360px) {
-				.avatar {
-					width: 120px;
-					height: 120px;
-				}
-				.container {
-					padding: 30px 15px;
-				}
-				.btn {
-					font-size: 18px;
-					padding: 12px 18px;
-					border-radius: 10px;
-				}
-				.btn.secondary {
-					padding-right: 42px;
-				}
-				.arrow-icon {
-					right: 14px;
-					width: 18px;
-					height: 18px;
-				}
-			}
-
+			/* ===== Background animation ===== */
 			.animated-bg {
 				position: fixed;
 				inset: 0;
+				z-index: -1;
+				opacity: 0.5;
 				background: linear-gradient(-45deg, #ffafbd, #ffc3a0, #a18cd1, #fbc2eb);
 				background-size: 400% 400%;
-				z-index: -1;
 				animation: gradientFlow 15s ease infinite;
-				opacity: 0.5;
 			}
 			@keyframes gradientFlow {
 				0% {
@@ -276,51 +124,316 @@
 					background-position: 0% 50%;
 				}
 			}
+
+			/* ===== Card ===== */
+			.container {
+				max-width: 420px;
+				margin: 0 auto;
+				padding: 32px 18px;
+				border: 1px solid #e7e7e7;
+				border-radius: 14px;
+				background: var(--card);
+				box-shadow: var(--shadow);
+				animation: fadeInUp 700ms ease-out both;
+			}
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			/* ===== Avatar ===== */
+			.avatar-wrapper {
+				width: 180px;
+				height: 180px;
+				margin: 0 auto 2px; /* tiny gap under photo */
+			}
+			.avatar {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				object-fit: cover;
+				display: block;
+				animation: scaleIn 700ms ease-out both;
+			}
+			@keyframes scaleIn {
+				from {
+					transform: scale(0.6);
+					opacity: 0;
+				}
+				to {
+					transform: scale(1);
+					opacity: 1;
+				}
+			}
+
+			/* ===== Lottie “Hello” UNDER avatar ===== */
+			.hello-lottie {
+				display: block;
+				width: 480px; /* match avatar width */
+				max-width: 100%;
+				margin: -60px auto -60px; /* tight spacing above/below */
+				pointer-events: none;
+				opacity: 0.95;
+			}
+
+			/* ===== Text ===== */
+			h1 {
+				font: 600 32px/1.15 "IBM Plex Sans", sans-serif;
+				margin: 6px 0 2px;
+			}
+			h2 {
+				font: 400 18px/1.35 "IBM Plex Sans", sans-serif;
+				color: var(--muted);
+				margin: 0 0 14px;
+			}
+			.tagline {
+				font: italic 15px/1.35 "IBM Plex Sans", sans-serif;
+				color: #444;
+				margin: 0 0 18px;
+			}
+
+			/* ===== Icons ===== */
+			.icons {
+				display: flex;
+				justify-content: center;
+				gap: 14px;
+				margin: 0 0 18px;
+			}
+			.icons img {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
+				box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+			}
+			.icons img:hover {
+				transform: translateY(-3px) scale(1.12);
+				box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+				filter: brightness(1.05);
+			}
+
+			/* ===== Buttons ===== */
+			.btn {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				gap: 0.5rem;
+				width: 100%;
+				max-width: 320px;
+				min-height: 48px;
+				padding: 12px 18px;
+				border-radius: 12px;
+				font-weight: 600;
+				font-size: 20px;
+				line-height: 1;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				text-decoration: none;
+				margin: 0 0 12px;
+				-webkit-appearance: none;
+			}
+			.btn.primary {
+				background: #111;
+				color: #fff;
+				box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+			}
+			.btn.primary:hover {
+				background: #333;
+				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+			}
+			.btn.secondary {
+				position: relative;
+				background: #fff;
+				color: #000;
+				border: 2px solid #000;
+				padding-right: 44px;
+			}
+			.btn.secondary:hover {
+				background: #f7f7f7;
+				box-shadow: 0 4px 12px rgba(247, 115, 150, 0.25);
+			}
+			.arrow-icon {
+				position: absolute;
+				right: 16px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 20px;
+				height: 20px;
+			}
+
+			/* ===== Bio ===== */
+			.bio-text {
+				margin: 14px 0 0;
+				font-size: 16px;
+				color: #333;
+				line-height: 1.45;
+				display: grid;
+				gap: 6px;
+				place-items: center;
+			}
+			.bio-text .second-line {
+				max-width: 340px;
+			}
+
+			.divider {
+				margin: 22px auto;
+				width: 80%;
+				height: 2px;
+				border: 0;
+				background: linear-gradient(90deg, #9f6edb, #f17396, #f5a142);
+			}
+			.footer {
+				font-size: 14px;
+				color: #888;
+			}
+			.footer span {
+				color: var(--brand);
+			}
+
+			/* ===== Small devices (<=360px) ===== */
+			@media (max-width: 360px) {
+				.container {
+					padding: 26px 14px;
+				}
+				.avatar-wrapper {
+					width: 150px;
+					height: 150px;
+				}
+				.hello-lottie {
+					width: 480px;
+				}
+				.btn {
+					font-size: 18px;
+					padding: 11px 16px;
+					border-radius: 10px;
+				}
+				.btn.secondary {
+					padding-right: 40px;
+				}
+				.arrow-icon {
+					right: 12px;
+					width: 18px;
+					height: 18px;
+				}
+			}
 		</style>
 	</head>
 
 	<body>
-		<div class="animated-bg"></div>
-		<div class="container">
-			<div class="greeting">Hi, I’m Dasha 👋</div>
+		<div class="animated-bg" aria-hidden="true"></div>
 
-			<a href="https://dash-dev.net" target="_blank">
-				<img
-					src="/images/linkInBio/dashaLinkInBio.jpg"
-					alt="Dasha"
-					class="avatar"
-				/>
-			</a>
-
-			<h1>Dasha Deriagina</h1>
-			<h2>UX/UI Designer & Front-End Developer</h2>
-			<p class="tagline">Design in Figma. Code it to life.</p>
-
-			<div class="icons">
-				<a href="https://www.behance.net/dariaderiagina" target="_blank"
-					><img src="/images/linkInBio/beIcon.png" alt="Behance"
-				/></a>
-				<a href="https://www.linkedin.com/in/daria-web-design/" target="_blank"
-					><img src="/images/linkInBio/linkedin.png" alt="LinkedIn"
-				/></a>
-				<a href="https://github.com/dariaderiagina" target="_blank"
-					><img src="/images/linkInBio/github.png" alt="GitHub"
-				/></a>
-				<a href="mailto:thedash.dev@gmail.com"
-					><img src="/images/linkInBio/emailIcon.png" alt="Email"
-				/></a>
+		<main class="container">
+			<!-- Avatar -->
+			<div class="avatar-wrapper">
+				<a
+					href="https://dash-dev.net"
+					target="_blank"
+					rel="noopener"
+					aria-label="Open DashDev portfolio"
+				>
+					<img
+						src="/images/linkInBio/dashaLinkInBio.jpg"
+						alt="Portrait of Dasha Deriagina"
+						class="avatar"
+						width="360"
+						height="360"
+					/>
+				</a>
 			</div>
 
-			<a href="https://dash-dev.net" class="btn primary" target="_blank"
-				><span>My Portfolio</span></a
-			>
+			<!-- Lottie “Hello” UNDER the photo (tight spacing) -->
+			<dotlottie-wc
+				src="https://lottie.host/8aff891a-e57a-4bde-baca-d82a103373b6/1d3xTkqESf.lottie"
+				autoplay
+				loop
+				class="hello-lottie"
+				aria-hidden="true"
+			></dotlottie-wc>
 
-			<a href="/contact/contact.html" class="btn secondary" target="_blank">
+			<h1>Dasha Deriagina</h1>
+			<h2>UX/UI Designer &amp; Front-End Developer</h2>
+			<p class="tagline">Design in Figma. Code it to life.</p>
+
+			<nav class="icons" aria-label="Social links">
+				<a
+					href="https://www.behance.net/dariaderiagina"
+					target="_blank"
+					rel="noopener"
+				>
+					<img
+						src="/images/linkInBio/beIcon.png"
+						alt="Behance"
+						width="40"
+						height="40"
+						loading="lazy"
+					/>
+				</a>
+				<a
+					href="https://www.linkedin.com/in/daria-web-design/"
+					target="_blank"
+					rel="noopener"
+				>
+					<img
+						src="/images/linkInBio/linkedin.png"
+						alt="LinkedIn"
+						width="40"
+						height="40"
+						loading="lazy"
+					/>
+				</a>
+				<a
+					href="https://github.com/dariaderiagina"
+					target="_blank"
+					rel="noopener"
+				>
+					<img
+						src="/images/linkInBio/github.png"
+						alt="GitHub"
+						width="40"
+						height="40"
+						loading="lazy"
+					/>
+				</a>
+				<a href="mailto:thedash.dev@gmail.com">
+					<img
+						src="/images/linkInBio/emailIcon.png"
+						alt="Email"
+						width="40"
+						height="40"
+						loading="lazy"
+					/>
+				</a>
+			</nav>
+
+			<a
+				href="https://dash-dev.net"
+				class="btn primary"
+				target="_blank"
+				rel="noopener"
+			>
+				<span>My Portfolio</span>
+			</a>
+
+			<a
+				href="/contact/contact.html"
+				class="btn secondary"
+				target="_blank"
+				rel="noopener"
+			>
 				<span>Let’s Work Together</span>
 				<img
 					src="/images/linkInBio/buttonArrow.png"
-					alt="Arrow"
+					alt=""
 					class="arrow-icon"
+					width="20"
+					height="20"
 				/>
 			</a>
 
@@ -334,13 +447,15 @@
 				>
 			</p>
 
-			<div class="divider"></div>
+			<hr class="divider" />
 
 			<div class="footer">
 				© 2025 Made with <span>🫶🏼</span> by DashDev<br />
-				All work shown is original & designed by me
+				All work shown is original &amp; designed by me
 			</div>
-		</div>
-		<script src="script.js"></script>
+		</main>
+
+		<!-- Optional: your own JS -->
+		<script src="script.js" defer></script>
 	</body>
 </html>
