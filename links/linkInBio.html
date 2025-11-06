@@ -2,7 +2,11 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- add viewport-fit + prevent Android text auto-zoom -->
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, viewport-fit=cover"
+		/>
 		<title>Dasha Deriagina | Link In Bio</title>
 
 		<!-- Fonts -->
@@ -12,6 +16,11 @@
 		/>
 
 		<style>
+			/* --- global --- */
+			html {
+				-webkit-text-size-adjust: 100%;
+				text-size-adjust: 100%;
+			}
 			body {
 				margin: 0;
 				font-family: "IBM Plex Sans", sans-serif;
@@ -30,6 +39,7 @@
 				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
 				animation: fadeInUp 1s ease-out both;
 				position: relative;
+				background: #fff; /* avoids gradient bleed under */
 			}
 
 			@keyframes fadeInUp {
@@ -49,7 +59,7 @@
 				left: 50%;
 				transform: translateX(-50%);
 				background: #f17396;
-				color: white;
+				color: #fff;
 				padding: 8px 16px;
 				border-radius: 20px;
 				font-size: 14px;
@@ -57,7 +67,6 @@
 				opacity: 0;
 				animation: popFade 1.6s ease-out 0.5s forwards;
 			}
-
 			@keyframes popFade {
 				0% {
 					opacity: 0;
@@ -81,7 +90,6 @@
 				margin-bottom: 20px;
 				animation: scaleIn 1s ease forwards;
 			}
-
 			@keyframes scaleIn {
 				0% {
 					transform: scale(0.6);
@@ -94,25 +102,20 @@
 			}
 
 			h1 {
-				font-family: "IBM Plex Sans", sans-serif;
 				font-size: 36px;
 				margin-bottom: 4px;
 			}
-
 			h2 {
 				font-size: 18px;
 				font-weight: 400;
 				color: #555;
-				margin-top: 0;
-				margin-bottom: 20px;
+				margin: 0 0 20px;
 			}
-
 			.tagline {
 				font-size: 15px;
 				font-style: italic;
 				color: #444;
-				margin-top: 0px;
-				margin-bottom: 25px;
+				margin: 0 0 25px;
 			}
 
 			.icons {
@@ -121,21 +124,18 @@
 				gap: 16px;
 				margin-bottom: 30px;
 			}
-
 			.icons img {
 				width: 40px;
 				height: 40px;
 				border-radius: 50%;
-				transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+				transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
 				animation: fadeInIcons 1s ease-in both;
 			}
-
 			.icons img:hover {
 				transform: translateY(-5px) scale(1.2);
 				box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 				filter: brightness(1.1);
 			}
-
 			@keyframes fadeInIcons {
 				from {
 					opacity: 0;
@@ -147,44 +147,50 @@
 				}
 			}
 
+			/* --- BUTTONS (fixed) --- */
 			.btn {
-				display: inline-block;
+				display: inline-flex; /* consistent layout */
+				align-items: center;
+				justify-content: center;
+				gap: 0.5rem;
 				width: 100%;
 				max-width: 320px;
+				min-height: 48px;
 				padding: 14px 22px;
-				border-radius: 8px;
-				font-weight: 500;
-				font-size: 24px;
-				font-family: "IBM Plex Sans", sans-serif;
+				border-radius: 12px;
+				font-weight: 600;
+				font-size: 22px; /* was 24px */
+				line-height: 1; /* avoid vertical wrap */
+				white-space: nowrap; /* 🔒 one line */
+				overflow: hidden;
+				text-overflow: ellipsis;
 				text-decoration: none;
 				margin-bottom: 16px;
 				box-sizing: border-box;
-				transition: all 0.3s ease;
+				-webkit-appearance: none;
 			}
-
 			.btn.primary {
 				background: #111;
-				color: white;
+				color: #fff;
 				box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 			}
-
 			.btn.primary:hover {
 				background: #333;
 				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 			}
 
 			.btn.secondary {
-				border: 2px solid #000;
-				color: #000;
-				background: white;
 				position: relative;
-				padding-right: 48px;
+				background: #fff;
+				color: #000;
+				border: 2px solid #000;
+				padding-right: 48px; /* room for arrow */
 			}
-
 			.btn.secondary:hover {
 				background: #f7f7f7;
 				box-shadow: 0 4px 12px rgba(247, 115, 150, 0.25);
 			}
+
 			.arrow-icon {
 				position: absolute;
 				right: 18px;
@@ -192,6 +198,7 @@
 				transform: translateY(-50%);
 				width: 20px;
 				height: 20px;
+				flex: 0 0 auto;
 			}
 
 			.bio-text {
@@ -204,10 +211,9 @@
 				align-items: center;
 				gap: 8px;
 			}
-
 			.bio-text .second-line {
-				text-align: center;
 				max-width: 340px;
+				text-align: center;
 			}
 
 			.divider {
@@ -217,41 +223,48 @@
 				border: none;
 				width: 80%;
 			}
-
 			.footer {
 				font-size: 15px;
 				color: #888;
-				margin-top: 0px;
+				margin-top: 0;
 			}
-
 			.footer span {
 				color: #f17396;
 			}
 
-			@media (max-width: 480px) {
-				.container {
-					padding: 30px 15px;
-				}
-
+			/* --- S8+ and smaller tweaks (360px logical width) --- */
+			@media (max-width: 360px) {
 				.avatar {
 					width: 120px;
 					height: 120px;
+				}
+				.container {
+					padding: 30px 15px;
+				}
+				.btn {
+					font-size: 18px;
+					padding: 12px 18px;
+					border-radius: 10px;
+				}
+				.btn.secondary {
+					padding-right: 42px;
+				}
+				.arrow-icon {
+					right: 14px;
+					width: 18px;
+					height: 18px;
 				}
 			}
 
 			.animated-bg {
 				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
+				inset: 0;
 				background: linear-gradient(-45deg, #ffafbd, #ffc3a0, #a18cd1, #fbc2eb);
 				background-size: 400% 400%;
 				z-index: -1;
 				animation: gradientFlow 15s ease infinite;
 				opacity: 0.5;
 			}
-
 			@keyframes gradientFlow {
 				0% {
 					background-position: 0% 50%;
@@ -284,25 +297,26 @@
 			<p class="tagline">Design in Figma. Code it to life.</p>
 
 			<div class="icons">
-				<a href="https://www.behance.net/dariaderiagina" target="_blank">
-					<img src="/images/linkInBio/beIcon.png" alt="Behance" />
-				</a>
-				<a href="https://www.linkedin.com/in/daria-web-design/" target="_blank">
-					<img src="/images/linkInBio/linkedin.png" alt="LinkedIn" />
-				</a>
-				<a href="https://github.com/dariaderiagina" target="_blank">
-					<img src="/images/linkInBio/github.png" alt="GitHub" />
-				</a>
-				<a href="mailto:thedash.dev@gmail.com">
-					<img src="/images/linkInBio/emailIcon.png" alt="Email" />
-				</a>
+				<a href="https://www.behance.net/dariaderiagina" target="_blank"
+					><img src="/images/linkInBio/beIcon.png" alt="Behance"
+				/></a>
+				<a href="https://www.linkedin.com/in/daria-web-design/" target="_blank"
+					><img src="/images/linkInBio/linkedin.png" alt="LinkedIn"
+				/></a>
+				<a href="https://github.com/dariaderiagina" target="_blank"
+					><img src="/images/linkInBio/github.png" alt="GitHub"
+				/></a>
+				<a href="mailto:thedash.dev@gmail.com"
+					><img src="/images/linkInBio/emailIcon.png" alt="Email"
+				/></a>
 			</div>
 
 			<a href="https://dash-dev.net" class="btn primary" target="_blank"
-				>My Portfolio</a
+				><span>My Portfolio</span></a
 			>
+
 			<a href="/contact/contact.html" class="btn secondary" target="_blank">
-				Let’s Work Together
+				<span>Let’s Work Together</span>
 				<img
 					src="/images/linkInBio/buttonArrow.png"
 					alt="Arrow"
