@@ -491,20 +491,20 @@
 				for design.
 			</p>
 		</section>
-		<!-- MARK: 3a. Link-in-Bio — Figma → Live -->
+		<!-- MARK: 3a. Link-in-Bio — Figma → Live (Final Clean Version) -->
 		<section
 			id="s3a"
 			class="relative px-4 py-20 overflow-hidden"
 			style="background: linear-gradient(180deg, #fdfdfd 0%, #fafafa 100%)"
 		>
-			<!-- subtle Figma grid -->
+			<!-- Subtle background grid -->
 			<div
 				class="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:64px_64px] opacity-25"
 				aria-hidden="true"
 			></div>
 
 			<div class="relative z-10 mx-auto max-w-6xl">
-				<!-- header -->
+				<!-- Header -->
 				<div class="text-center mb-8">
 					<p class="text-xs uppercase tracking-wider text-slate-500">
 						Case: Link-in-Bio
@@ -513,149 +513,113 @@
 						From Figma frame to live page
 					</h2>
 					<p class="mt-2 text-slate-600 max-w-3xl mx-auto">
-						Designed in Figma → exported PNGs/icons + copied fonts & gradients →
-						asked ChatGPT for a clean scaffold → refined → shipped.
+						Designed in Figma → exported assets → asked ChatGPT for scaffold →
+						refined → shipped.
 					</p>
 				</div>
 
-				<!-- compact thumbs -->
+				<!-- Image Grid -->
 				<div class="mx-auto w-full max-w-5xl">
-					<div class="grid grid-cols-2 md:grid-cols-3 gap-3 place-items-center">
-						<!-- helper: thumb component -->
-						<figure class="w-full max-w-[160px]">
-							<img
-								src="./assets/LinkInBio.png"
-								alt="Figma link-in-bio"
-								class="w-full aspect-[3/4] object-contain rounded-xl border border-slate-200 shadow-sm"
-								loading="lazy"
-							/>
-							<figcaption class="mt-1 text-[11px] text-slate-500 text-center">
-								Figma frame
-							</figcaption>
-						</figure>
-
-						<figure class="w-full max-w-[160px]">
-							<img
-								src="./assets/link1.png"
-								alt="Export portrait"
-								class="w-full aspect-[3/4] object-contain rounded-xl border border-slate-200 shadow-sm"
-								loading="lazy"
-							/>
-							<figcaption class="mt-1 text-[11px] text-slate-500 text-center">
-								Portrait PNG
-							</figcaption>
-						</figure>
-
-						<figure class="w-full max-w-[160px]">
-							<img
-								src="./assets/link2.png"
-								alt="Typography"
-								class="w-full aspect-[3/4] object-contain rounded-xl border border-slate-200 shadow-sm"
-								loading="lazy"
-							/>
-							<figcaption class="mt-1 text-[11px] text-slate-500 text-center">
-								Typography
-							</figcaption>
-						</figure>
-
-						<figure class="w-full max-w-[160px]">
-							<img
-								src="./assets/link3.png"
-								alt="Layout"
-								class="w-full aspect-[3/4] object-contain rounded-xl border border-slate-200 shadow-sm"
-								loading="lazy"
-							/>
-							<figcaption class="mt-1 text-[11px] text-slate-500 text-center">
-								Layout
-							</figcaption>
-						</figure>
-
-						<figure class="w-full max-w-[160px]">
-							<img
-								src="./assets/link4.png"
-								alt="Icons"
-								class="w-full aspect-[3/4] object-contain rounded-xl border border-slate-200 shadow-sm"
-								loading="lazy"
-							/>
-							<figcaption class="mt-1 text-[11px] text-slate-500 text-center">
-								Icons
-							</figcaption>
-						</figure>
-
-						<figure class="w-full max-w-[160px]">
-							<img
-								src="./assets/Chat GPT results.png"
-								alt="ChatGPT result"
-								class="w-full aspect-[3/4] object-contain rounded-xl border border-slate-200 shadow-sm"
-								loading="lazy"
-							/>
-							<figcaption class="mt-1 text-[11px] text-slate-500 text-center">
-								GPT scaffold
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-
-				<!-- live preview -->
-				<div class="mt-8 flex flex-col items-center">
-					<button
-						id="togglePreview"
-						class="inline-flex items-center gap-2 rounded-xl px-5 py-2 bg-slate-900 text-white hover:bg-slate-800 transition shadow"
-					>
-						👀 View Live Preview
-					</button>
-
-					<div
-						id="livePreviewWrap"
-						class="mt-4 hidden w-full max-w-4xl rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white"
-					>
-						<!-- loading shimmer -->
-						<div
-							id="previewLoader"
-							class="h-[56vh] sm:h-[480px] animate-pulse bg-gradient-to-r from-slate-100 via-slate-50 to-slate-100"
-						></div>
-
-						<!-- iframe (may be blocked by headers) -->
-						<iframe
-							id="liveIframe"
-							class="w-full h-[56vh] sm:h-[480px] hidden"
-							src="https://dash-dev.net/links/linkInBio.html"
-							loading="lazy"
-							style="border: 0"
-							referrerpolicy="no-referrer-when-downgrade"
-							sandbox="allow-same-origin allow-scripts allow-forms"
+					<div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+						<!-- LARGE IMAGE 1 -->
+						<figure
+							class="relative col-span-2 md:col-span-4 row-span-2 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden"
 						>
-						</iframe>
-
-						<!-- fallback -->
-						<div id="previewFallback" class="hidden p-4 text-center">
-							<p class="text-sm text-slate-600">
-								Inline preview is blocked by site security. You can open it in a
-								new tab:
-							</p>
 							<a
 								href="https://dash-dev.net/links/linkInBio.html"
 								target="_blank"
-								rel="noopener"
-								class="mt-3 inline-flex items-center gap-2 rounded-lg px-4 py-2 bg-slate-900 text-white hover:bg-slate-800"
+								rel="noopener noreferrer"
+								class="absolute right-3 top-3 inline-flex items-center gap-2 rounded-lg px-3 py-1 text-sm border border-slate-300 bg-white/90 hover:bg-white transition"
 							>
-								Open live page
+								View live
 								<svg
 									width="16"
 									height="16"
-									fill="currentColor"
-									class="opacity-90"
+									viewBox="0 0 24 24"
+									aria-hidden="true"
 								>
 									<path
-										d="M6.75 3.5h5.75v5.75h-1.5V6.56l-6.22 6.22-1.06-1.06L10 5.5H6.75z"
+										d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3Z"
+										fill="currentColor"
 									/>
 								</svg>
 							</a>
-						</div>
+							<img
+								src="./assets/LinkInBio.png"
+								alt="Link in Bio preview"
+								class="w-full h-full object-contain aspect-video bg-slate-50"
+								loading="lazy"
+							/>
+						</figure>
+
+						<!-- LARGE IMAGE 2 -->
+						<figure
+							class="relative col-span-2 md:col-span-2 row-span-2 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden"
+						>
+							<a
+								href="https://dash-dev.net/links/linkInBio.html"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="absolute right-3 top-3 inline-flex items-center gap-2 rounded-lg px-3 py-1 text-sm border border-slate-300 bg-white/90 hover:bg-white transition"
+							>
+								View live
+							</a>
+							<img
+								src="./assets/Chat GPT results.png"
+								alt="GPT scaffold preview"
+								class="w-full h-full object-contain aspect-[4/3] bg-slate-50"
+								loading="lazy"
+							/>
+						</figure>
+
+						<!-- SMALL THUMBNAILS -->
+						<figure
+							class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden"
+						>
+							<img
+								src="./assets/link1.png"
+								alt="Preview"
+								class="w-full aspect-[3/4] object-contain bg-slate-50"
+								loading="lazy"
+							/>
+						</figure>
+
+						<figure
+							class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden"
+						>
+							<img
+								src="./assets/link2.png"
+								alt="Preview"
+								class="w-full aspect-[3/4] object-contain bg-slate-50"
+								loading="lazy"
+							/>
+						</figure>
+
+						<figure
+							class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden"
+						>
+							<img
+								src="./assets/link3.png"
+								alt="Preview"
+								class="w-full aspect-[3/4] object-contain bg-slate-50"
+								loading="lazy"
+							/>
+						</figure>
+
+						<figure
+							class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden"
+						>
+							<img
+								src="./assets/link4.png"
+								alt="Preview"
+								class="w-full aspect-[3/4] object-contain bg-slate-50"
+								loading="lazy"
+							/>
+						</figure>
 					</div>
 				</div>
 
-				<!-- prompt (copyable) -->
+				<!-- Prompt Box -->
 				<div
 					class="mt-8 bg-white/80 backdrop-blur border border-slate-200 rounded-2xl p-4 shadow-sm"
 				>
@@ -688,6 +652,22 @@ Include smooth hover effects, a short intro, and two buttons: My Portfolio (grad
 					</p>
 				</div>
 			</div>
+
+			<!-- Copy script -->
+			<script>
+				const copyBtn = document.getElementById("copyPrompt");
+				if (copyBtn) {
+					copyBtn.addEventListener("click", async () => {
+						const text = document.getElementById("promptText").innerText.trim();
+						try {
+							await navigator.clipboard.writeText(text);
+							const ok = document.getElementById("copyOK");
+							ok.classList.remove("hidden");
+							setTimeout(() => ok.classList.add("hidden"), 1500);
+						} catch {}
+					});
+				}
+			</script>
 		</section>
 
 		<!-- MARK: 4. Myth Break -->
@@ -804,36 +784,6 @@ Include smooth hover effects, a short intro, and two buttons: My Portfolio (grad
 							<li>Drop-in animations</li>
 							<li>Small files</li>
 							<li>Nice feedback</li>
-						</ul>
-					</article>
-
-					<article class="tool-card card">
-						<header class="tool-head">🧩 WordPress (PHP)</header>
-						<p class="tool-sub">When WP is needed.</p>
-						<ul class="tool-list">
-							<li>Static → PHP template</li>
-							<li>ACF for content</li>
-							<li>Semantic theme</li>
-						</ul>
-					</article>
-
-					<article class="tool-card card light-card">
-						<header class="tool-head">🪄 Webflow</header>
-						<p class="tool-sub">Fast builds.</p>
-						<ul class="tool-list">
-							<li>Clean classes</li>
-							<li>Custom code for polish</li>
-							<li>CMS for teams</li>
-						</ul>
-					</article>
-
-					<article class="tool-card card">
-						<header class="tool-head">🛍️ Shopify</header>
-						<p class="tool-sub">Liquid sections.</p>
-						<ul class="tool-list">
-							<li>Theme settings</li>
-							<li>Utility approach</li>
-							<li>Perf budgets</li>
 						</ul>
 					</article>
 				</div>
