@@ -1887,3 +1887,101 @@ p.subtitle {
 		--bs-gutter-y: 1rem;
 	}
 }
+/* LIVE / NEWS SECTION */
+/* LIVE / NEWS SECTION */
+
+.live-section {
+	padding: 80px 0;
+	background: #0b0b0b;
+}
+
+.live-section .section-title {
+	margin-bottom: 0.75rem;
+}
+
+/* Карточка-обёртка новостей */
+.live-carousel {
+	max-width: 720px;
+	margin: 0 auto;
+	margin-top: 1.5rem;
+	padding: 18px 20px 20px;
+	border-radius: 24px;
+	background: #111;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+	overflow: hidden; /* можно оставить, но уже не критично */
+}
+
+/* Один слайд = обычный блок, НЕ absolute */
+.live-slide {
+	display: none; /* по умолчанию скрыты */
+	opacity: 0;
+	transform: translateX(16px);
+	transition: opacity 0.4s ease, transform 0.4s ease;
+	display: none;
+}
+
+.live-slide.is-active {
+	display: grid; /* включаем сеткой */
+	grid-template-rows: auto auto auto;
+	row-gap: 0.75rem;
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* тег сверху */
+.live-tag {
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	font-size: 0.75rem;
+	color: #ff7c5c;
+}
+
+/* картинка */
+.live-media img {
+	width: 100%;
+	border-radius: 16px;
+	display: block;
+	height: 230px;
+	object-fit: cover;
+}
+
+/* текст */
+.live-title {
+	font-size: 1.15rem;
+	font-weight: 600;
+	margin: 0.4rem 0 0.25rem;
+	color: #ffffff;
+}
+
+.live-text {
+	font-size: 0.96rem;
+	color: #e5e5e5;
+	margin-bottom: 0.4rem;
+}
+
+.live-link {
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: #ff7c5c;
+	text-decoration: none;
+}
+
+.live-link:hover {
+	text-decoration: underline;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+	.live-section {
+		padding: 64px 0;
+	}
+
+	.live-carousel {
+		padding: 16px 16px 18px;
+	}
+
+	.live-media img {
+		height: 210px;
+	}
+}
