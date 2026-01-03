@@ -1,0 +1,12 @@
+# System
+.DS_Store
+
+# IDE / temp
+.scratch/
+.vscode/
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
