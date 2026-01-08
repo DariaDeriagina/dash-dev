@@ -1,251 +1,365 @@
+<!-- julia-avramidis-case.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Julia Avramidis — Product Design Case Study</title>
+  <title>Julia Avramidis — Website Case Study (UX/UI + WordPress)</title>
 
-  <meta name="description" content="Product design case study: end-to-end UX, UI, and implementation of a content-driven digital product." />
-  <meta name="author" content="DashDev" />
+  <meta name="description" content="Website case study: a 6-week end-to-end UX, UI, and WordPress build for a screenwriter and script consultant. Includes UX discovery, wireframes, ACF CMS, SEO validation, and deployment on SiteGround." />
+  <meta name="author" content="DashDev Studio" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Fonts (match Julia vibe) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./julia-case.css" />
 </head>
 
 <body>
 
-<header class="case-header">
-  <a class="brand" href="https://dash-dev.net">DashDev</a>
+  <!-- Simple top bar (DashDev) -->
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href="https://dash-dev.net">DashDev Studio</a>
 
-  <h1>
-    Julia Avramidis
-    <span>Product Design Case Study</span>
-  </h1>
+      <nav class="topbar__links" aria-label="Case study links">
+        <!-- TODO: replace FIGMA_LINK -->
+        <a class="btn btn--outline btn--sm" href="https://www.figma.com/design/W8owY5FJUsDeoUi4k1r7Ul/Julia-Avramidis?node-id=99-753&t=L332PqI0FfGct79l-1
+" target="_blank" rel="noopener">View Figma</a>
+        <a class="btn btn--primary btn--sm" href="https://juliaavramidis.com" target="_blank" rel="noopener">Live Website</a>
+      </nav>
+    </div>
+  </header>
 
-  <p class="subtitle">
-    Designing and launching a content-driven digital product that balances emotional
-    storytelling with usability, clarity, and long-term scalability.
-  </p>
+  <main>
 
-  <div class="meta">
-    <span>Role: Product Designer (UX/UI) + Implementation</span>
-    <span>Timeline: 6 weeks</span>
-    <span>Platform: Web</span>
-    <span>Tools: Figma, WordPress, ACF</span>
-  </div>
-</header>
+    <!-- HERO -->
+    <section class="hero section">
+      <div class="container hero__grid">
 
-<main class="case">
+        <div class="hero__content">
+          <h1 class="hero__title">Julia Avramidis — Website Case Study</h1>
+          <p class="hero__subtitle">
+            A 6-week end-to-end UX, UI, and WordPress build for a screenwriter and script consultant.
+          </p>
 
-<!-- HERO / FINAL UI -->
-<section>
-  <figure class="case-media">
-    <img src="./images/juliaavramidis/hifiHome.png"
-         alt="Final homepage UI showing cinematic hero and primary CTA" />
-    <figcaption>Final homepage — cinematic positioning and primary call-to-action</figcaption>
-  </figure>
-</section>
+          <div class="hero__meta">
+            <div class="pill"><strong>Role:</strong> UX/UI Designer &amp; WordPress Developer</div>
+            <div class="pill"><strong>Timeline:</strong> 6 weeks (UX → UI → Dev → Deploy)</div>
+            <div class="pill"><strong>Platform:</strong> WordPress (custom theme)</div>
+            <div class="pill"><strong>CMS:</strong> Advanced Custom Fields (ACF)</div>
+            <div class="pill"><strong>Hosting:</strong> SiteGround</div>
+            <div class="pill"><strong>Tools:</strong> Figma</div>
+          </div>
 
-<section>
-  <h2>Project Overview</h2>
-  <p>
-    Julia Avramidis is a cinematic screenwriter and script consultant building a
-    professional digital presence within the Canadian and international creative
-    community.
-  </p>
-  <p>
-    The goal was to design and launch a <strong>content-driven digital product</strong>
-    that clearly communicates her services, builds trust, and supports editorial growth
-    — without overwhelming users.
-  </p>
+          <div class="hero__cta">
+            <!-- TODO: replace FIGMA_LINK -->
+            <a class="btn btn--primary" href="https://www.figma.com/design/W8owY5FJUsDeoUi4k1r7Ul/Julia-Avramidis?node-id=99-753&t=L332PqI0FfGct79l-1
+" target="_blank" rel="noopener">View Figma</a>
+            <a class="btn btn--outline" href="https://juliaavramidis.com" target="_blank" rel="noopener">Live Website</a>
+          </div>
+        </div>
 
-  <ul>
-    <li><strong>Screenwriter</strong> — creative voice, cinematic tone</li>
-    <li><strong>Script Consultant</strong> — structure, clarity, professional guidance</li>
-  </ul>
-</section>
+        <div class="hero__media">
+          <!-- Use your real file path. Example below uses your uploaded file name. -->
+          <div class="device-frame" aria-label="Mobile preview video">
+            <video class="device-video" autoplay muted loop playsinline preload="metadata">
+              <source src="./images/juliaavramidis/MobileSitePreview.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <p class="media-caption">Mobile walkthrough — showing live interaction and mobile-first readability.</p>
+        </div>
 
-<section>
-  <h2>Problem Statement</h2>
-  <p>
-    Julia needed a professional platform that could convert visitors into meaningful
-    conversations while preserving a calm, personal tone.
-  </p>
-  <p>
-    The key challenge was balancing emotional storytelling with usability, while
-    designing a system manageable by a non-technical client.
-  </p>
-</section>
+      </div>
+    </section>
 
-<section>
-  <h2>Users & Goals</h2>
+    <!-- QUICK OVERVIEW -->
+    <section class="section">
+      <div class="container narrow">
+        <h2 class="section-title">Project Overview</h2>
+        <p class="lead">
+          This project involved the complete design and development of a personal brand website for Julia Avramidis,
+          a screenwriter and script consultant offering story development and script consulting services.
+        </p>
+        <p>
+          The website was designed and delivered in <strong>6 weeks</strong>, covering the full process from UX discovery and
+          visual direction to custom WordPress development, SEO setup, and live deployment.
+        </p>
+      </div>
+    </section>
 
-  <h3>Primary Users</h3>
-  <ul>
-    <li>Independent filmmakers</li>
-    <li>Producers and directors</li>
-    <li>Writers seeking script feedback</li>
-    <li>Film students and emerging creators</li>
-  </ul>
+    <!-- DIVIDER (cinematic) -->
+    <section class="section-divider section-divider--bg" aria-label="Section divider">
+      <div class="divider-inner">
+        <div class="divider-text">UX DISCOVERY</div>
+        <!-- Optional background image behind text (if you want):
+          <div class="divider-image" aria-hidden="true">
+            <img class="divider-image__img" src="./images/juliaavramidis/your-divider.jpg" alt="" />
+          </div>
+        -->
+      </div>
+    </section>
 
-  <h3>User Needs</h3>
-  <ul>
-    <li>Clear understanding of services</li>
-    <li>Trust and credibility</li>
-    <li>A sense of Julia’s creative voice</li>
-    <li>Low-pressure, simple contact</li>
-  </ul>
-</section>
+    <!-- CONTEXT -->
+    <section class="section">
+      <div class="container narrow">
+        <h2 class="section-title">Context</h2>
+        <p>
+          Julia needed a website that could support her growing professional presence while remaining personal, calm,
+          and cinematic in tone. As both a <strong>screenwriter</strong> and a <strong>script consultant</strong>, her work sits between
+          creative storytelling and structured guidance — and the site needed to communicate both roles clearly without
+          feeling fragmented or overly promotional.
+        </p>
+        <p>
+          The experience also had to be mobile-first, SEO-ready from launch, and easy for a non-technical client to manage
+          independently.
+        </p>
+      </div>
+    </section>
 
-<!-- USER JOURNEY -->
-<section>
-  <h2>User Journey</h2>
+    <!-- UX STRATEGY -->
+    <section class="section">
+      <div class="container">
+        <div class="two-col">
+          <div>
+            <h2 class="section-title">UX Discovery &amp; Strategy</h2>
+            <p class="lead">
+              The UX phase focused on defining purpose, audience needs, and constraints — then translating those insights into a
+              calm, editorial experience that builds trust without adding friction.
+            </p>
 
-  <p>
-    The user journey was intentionally designed to remain simple and focused,
-    reducing cognitive load while guiding users toward meaningful contact.
-  </p>
+            <div class="callout">
+              <h3 class="callout__title">Guiding UX principle</h3>
+              <p class="callout__text">
+                <strong>Restraint.</strong> Prioritize clarity, confidence, and easy contact — not features.
+              </p>
+            </div>
 
-  <ol>
-    <li>Discover Julia’s role and positioning</li>
-    <li>Understand available services</li>
-    <li>Build trust through tone, structure, and testimonials</li>
-    <li>Explore editorial content for deeper context (optional)</li>
-    <li>Initiate contact via a low-friction email form</li>
-  </ol>
+            <h3 class="subhead">Functional requirements (UX-level)</h3>
+            <ul class="styled-list">
+              <li>No pricing display</li>
+              <li>Email contact form</li>
+              <li>No scheduling / calendar tools</li>
+              <li>Blog capability for future articles</li>
+              <li>Simple, minimal navigation</li>
+              <li>Mobile-first readability</li>
+            </ul>
+          </div>
 
-  <p>
-    This streamlined flow informed all UX, layout, and content decisions,
-    ensuring clarity without overwhelming first-time visitors.
-  </p>
-</section>
+          <figure class="case-media">
+            <img src="./images/juliaavramidis/MoodBoard1.jpg" alt="Moodboard defining cinematic editorial direction" />
+            <figcaption>Early visual direction — cinematic, editorial, warm, and minimal.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
+    <!-- TARGET + NEEDS -->
+    <section class="section section--surface">
+      <div class="container">
+        <h2 class="section-title">Audience, Needs &amp; Journey</h2>
 
-<!-- IA -->
-<section>
-  <h2>Information Architecture</h2>
-  <figure class="case-media">
-    <img src="./images/juliaavramidis/SiteMap.png"
-         alt="Website sitemap and information architecture" />
-    <figcaption>Simple, scalable information architecture</figcaption>
-  </figure>
+        <div class="cards">
+          <article class="card">
+            <h3 class="card__title">Target audience</h3>
+            <ul class="styled-list">
+              <li>Independent filmmakers</li>
+              <li>Producers and directors</li>
+              <li>Film students and emerging creators</li>
+              <li>Writers seeking story development or feedback</li>
+              <li>Industry professionals scouting writing talent</li>
+            </ul>
+            <p class="card__note">
+              Secondary audiences included local Windsor creatives, community organizations, and readers interested in her editorial writing.
+            </p>
+          </article>
 
-  <ul>
-    <li>Home</li>
-    <li>About</li>
-    <li>Services (two packages)</li>
-    <li>Insights (blog)</li>
-    <li>Contact</li>
-  </ul>
-</section>
+          <article class="card">
+            <h3 class="card__title">User problems &amp; needs</h3>
+            <ul class="styled-list">
+              <li>Help with structure, pacing, and development</li>
+              <li>Clear guidance to improve clarity and quality</li>
+              <li>Trust indicators (testimonials, writing samples)</li>
+              <li>A sense of Julia’s creative voice</li>
+              <li>Easy, low-pressure email communication</li>
+            </ul>
+            <p class="card__note">
+              UX intentionally removed friction: no booking tools, no pricing pressure, and minimal navigation.
+            </p>
+          </article>
 
-<!-- WIREFRAMES -->
-<section>
-  <h2>Wireframes & UX Decisions</h2>
-  <figure class="case-media">
-    <img src="./images/juliaavramidis/Wireframes.png"
-         alt="Low-fidelity wireframes validating layout and hierarchy" />
-    <figcaption>Wireframes validating content hierarchy and CTA placement</figcaption>
-  </figure>
+          <article class="card">
+            <h3 class="card__title">Simplified user journey</h3>
+            <ol class="styled-ol">
+              <li>Discover Julia’s role (screenwriter + script consultant)</li>
+              <li>Understand services through two clear offerings</li>
+              <li>Build trust via tone, design, and testimonials</li>
+              <li>Explore blog/articles (optional)</li>
+              <li>Contact Julia via email form</li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <p>
-    Early wireframes reduced visual rework and ensured alignment before high-fidelity
-    design and development.
-  </p>
-</section>
+    <!-- WIREFRAMES -->
+    <section class="section">
+      <div class="container">
+        <div class="two-col two-col--flip">
+          <div>
+            <h2 class="section-title">Wireframes &amp; UX Decisions</h2>
+            <p class="lead">
+              Wireframes validated hierarchy, editorial pacing, and CTA placement early — reducing visual rework and keeping the
+              experience calm and readable across devices.
+            </p>
 
-<!-- DESIGN SYSTEM -->
-<section>
-  <h2>Visual Direction & Design System</h2>
-  <figure class="case-media">
-    <img src="./images/juliaavramidis/MoodBoard1.jpg"
-         alt="Moodboard defining cinematic editorial direction" />
-    <figcaption>Cinematic editorial moodboard</figcaption>
-  </figure>
+            <h3 class="subhead">Key UX decisions</h3>
+            <ul class="styled-list">
+              <li>Minimal navigation to reduce cognitive load</li>
+              <li>Editorial spacing to support calm reading</li>
+              <li>Clear, non-pressuring contact path</li>
+              <li>Mobile-first structure from the start</li>
+            </ul>
+          </div>
 
-  <figure class="case-media">
-    <img src="./images/juliaavramidis/ColorTypeSystem.jpg"
-         alt="Typography and color system" />
-    <figcaption>Typography and color system</figcaption>
-  </figure>
-</section>
+          <figure class="case-media">
+            <img src="./images/juliaavramidis/Wireframes.png" alt="Low-fidelity wireframes validating layout and hierarchy" />
+            <figcaption>Wireframes validating content hierarchy and CTA clarity.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-<!-- SERVICES -->
-<section>
-  <h2>Service Presentation</h2>
-  <figure class="case-media">
-    <img src="./images/juliaavramidis/ServicesPage.png"
-         alt="Services page with two clearly defined offerings" />
-    <figcaption>Service layout focused on clarity and trust</figcaption>
-  </figure>
-</section>
+    <!-- UI + SYSTEM -->
+    <section class="section section--surface">
+      <div class="container">
+        <h2 class="section-title">UI Design in Figma</h2>
+        <p class="lead narrow">
+          Once the UX structure was approved, the project moved into high-fidelity UI design. The visual system focused on editorial typography,
+          clear hierarchy, and restrained accents to support a cinematic tone without sacrificing readability.
+        </p>
 
-<!-- CONTACT -->
-<section>
-  <h2>Contact Form UX</h2>
-  <figure class="case-media">
-    <img src="./images/juliaavramidis/Contact_Desktop.jpg"
-         alt="Minimal contact form UX" />
-    <figcaption>Low-friction, email-only contact experience</figcaption>
-  </figure>
+        <div class="media-grid">
+          <!-- Replace these with your best 2–3 polished UI screenshots -->
+          <figure class="case-media">
+            <img src="./images/juliaavramidis/hifiHome.png" alt="Final homepage UI showing cinematic hero and primary CTA" />
+            <figcaption>Final homepage — cinematic positioning and primary call-to-action.</figcaption>
+          </figure>
 
-  <ul>
-    <li>Minimal required fields</li>
-    <li>Human, non-pressuring language</li>
-    <li>Mobile-first usability</li>
-  </ul>
-</section>
+          <figure class="case-media">
+            <img src="./images/juliaavramidis/ServicesPage.png" alt="Services page with two clearly defined offerings" />
+            <figcaption>Services — clear offerings, editorial rhythm, minimal friction.</figcaption>
+          </figure>
+        </div>
 
-<!-- CMS -->
-<section>
-  <h2>CMS & Backend Design</h2>
-  <figure class="case-media">
-    <img src="./images/juliaavramidis/CMSBackEnd.png"
-         alt="ACF field groups in WordPress CMS" />
-    <figcaption>Custom CMS structure using ACF</figcaption>
-  </figure>
+        <div class="center-cta">
+          <!-- TODO: replace FIGMA_LINK -->
+          <a class="btn btn--primary" href="https://www.figma.com/design/W8owY5FJUsDeoUi4k1r7Ul/Julia-Avramidis?node-id=99-753&t=L332PqI0FfGct79l-1
+" target="_blank" rel="noopener">Open the Figma file</a>
+        </div>
+      </div>
+    </section>
 
-  <p>
-    The CMS allows the client to manage content independently while preserving
-    design consistency.
-  </p>
-</section>
+    <!-- CMS -->
+    <section class="section">
+      <div class="container">
+        <div class="two-col">
+          <div>
+            <h2 class="section-title">Development &amp; CMS</h2>
+            <p class="lead">
+              The website was built as a custom WordPress theme (no page builders), with content structured using ACF to keep editing safe and predictable.
+            </p>
+            <p>
+              Field groups were designed around real content needs (hero, about, services, testimonials, dividers, contact, footer),
+              allowing the client to update text and images without breaking layout consistency.
+            </p>
 
-<!-- SEO / PERFORMANCE -->
-<section>
-  <h2>SEO & Performance</h2>
-  <figure class="case-media">
-    <img src="./images/juliaavramidis/SEO.png"
-         alt="Lighthouse performance and SEO scores" />
-    <figcaption>Lighthouse audit — performance, accessibility, SEO</figcaption>
-  </figure>
-</section>
+            <h3 class="subhead">Implementation notes</h3>
+            <ul class="styled-list">
+              <li>Custom theme architecture for consistent typography and spacing</li>
+              <li>ACF-driven sections for client-safe editing</li>
+              <li>Deployment on SiteGround for reliability and WordPress-friendly performance tooling</li>
+            </ul>
+          </div>
 
-<section>
-  <h2>Outcome</h2>
-  <ul>
-    <li>Fully launched, production-ready product</li>
-    <li>Clear service positioning</li>
-    <li>Low-friction user journey</li>
-    <li>Scalable CMS</li>
-  </ul>
-</section>
+          <figure class="case-media">
+            <img src="./images/juliaavramidis/CMSBackEnd.png" alt="ACF field groups in WordPress CMS" />
+            <figcaption>Custom CMS structure using ACF — designed for non-technical editing.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <h2>Why This Matters (Product Design)</h2>
-  <p>
- This project reflects full product design ownership—from early discovery and UX strategy
-to system-level thinking, interface design, and real-world delivery.
-It demonstrates the ability to translate user needs and business constraints into a
-scalable, maintainable digital product.
-  </p>
-</section>
+    <!-- SEO -->
+    <section class="section section--surface">
+      <div class="container narrow">
+        <h2 class="section-title">SEO &amp; Results</h2>
+        <p class="lead">
+          The website launched with a strong technical foundation: clean semantic markup, controlled meta data, mobile-first structure, and performance-conscious implementation.
+        </p>
 
-<footer class="case-footer">
-  <a href="https://juliaavramidis.com" target="_blank">Live Site</a>
-  <a href="https://dash-dev.net/contact/contact.html">Work with me</a>
-</footer>
+        <figure class="case-media">
+          <img src="./images/juliaavramidis/SEO100.png" alt="Lighthouse audit showing high performance, accessibility, best practices, and SEO scores" />
+          <figcaption>Lighthouse validation — performance, accessibility, best practices, and SEO.</figcaption>
+        </figure>
+      </div>
+    </section>
 
-</main>
+    <!-- OUTCOME -->
+    <section class="section">
+      <div class="container narrow">
+        <h2 class="section-title">Outcome</h2>
+        <ul class="styled-list">
+          <li>Production-ready, fully launched website</li>
+          <li>Clear positioning and low-friction user journey</li>
+          <li>Editorial, cinematic visual language aligned to the brand</li>
+          <li>Scalable CMS that supports client independence</li>
+          <li>SEO validation and strong technical scores after launch</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FOOTER (Julia-inspired) + Chair decor -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-title">DashDev Studio</div>
+          <p class="footer-desc">
+            UX • UI • WordPress Development<br />
+            Case study: Julia Avramidis
+          </p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer links">
+          <ul>
+            <li><a href="https://www.figma.com/design/W8owY5FJUsDeoUi4k1r7Ul/Julia-Avramidis?node-id=99-753&t=L332PqI0FfGct79l-1
+" target="_blank" rel="noopener">View Figma</a></li>
+            <li><a href="https://juliaavramidis.com" target="_blank" rel="noopener">Live Website</a></li>
+            <li><a href="https://dash-dev.net" target="_blank" rel="noopener">DashDev Home</a></li>
+            <li><a href="https://dash-dev.net/contact/contact.html" target="_blank" rel="noopener">Work with me</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-socials">
+          <a class="footer-social" href="https://dash-dev.net" target="_blank" rel="noopener">Portfolio</a>
+          <a class="footer-social" href="https://dash-dev.net/contact/contact.html" target="_blank" rel="noopener">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> DashDev Studio — All rights reserved.</p>
+      </div>
+
+      <!-- Chair decor -->
+      <img class="footer-chair" src="./images/juliaavramidis/Chair.png" alt="" aria-hidden="true" />
+    </footer>
+
+  </main>
+
+  <script>
+    // small enhancement for footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
